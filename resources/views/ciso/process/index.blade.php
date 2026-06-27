@@ -23,6 +23,7 @@
             titleArField=""
             headerTitle="Browse Processes"
             headerDescription="Select a process to explore detailed information and requirements"
+            imagePattern="/Images/process/Slide{n}.JPG"
             wrapperClass="process-card-wrapper"
         />
     </div>

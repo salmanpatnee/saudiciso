@@ -7,19 +7,10 @@
     @endphp
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <x-section-header :title="$process->title">
-            <x-slot:icon>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
-                    <path fill-rule="evenodd" d="M4.5 9.75a6 6 0 0 1 11.573-2.226 3.75 3.75 0 0 1 4.133 4.303A4.5 4.5 0 0 1 18 20.25h-2.515a2.25 2.25 0 0 1-2.228-2.024 4.5 4.5 0 0 0-3.503-4.21 4.5 4.5 0 0 0-4.637 0 2.25 2.25 0 0 1-2.228 2.024H4.5a4.5 4.5 0 0 1 0-9.5ZM9 12a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm3-4.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                </svg>
-            </x-slot:icon>
-        </x-section-header>
-
         <x-two-column-layout>
             <x-slot:main>
-                <x-iso-content-card title="{{ $process->title }}">
-                    {{ $process->description }}
-                </x-iso-content-card>
+                <img src="{{ $slideImage }}" alt="{{ $process->title }}" loading="lazy"
+                    class="block w-full h-auto rounded-2xl" />
             </x-slot:main>
 
             <x-slot:sidebar>

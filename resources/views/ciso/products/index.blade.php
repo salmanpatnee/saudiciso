@@ -23,6 +23,7 @@
             titleArField=""
             headerTitle="Browse Products"
             headerDescription="Select a product to explore detailed information and capabilities"
+            imagePattern="/Images/products/Slide{n}.JPG"
             wrapperClass="product-card-wrapper"
         />
     </div>

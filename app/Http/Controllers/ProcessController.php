@@ -9,11 +9,15 @@ class ProcessController extends Controller
     public function index()
     {
         $allProcess = Process::all();
+
         return view('ciso/process/index', compact('allProcess'));
     }
 
     public function show(Process $process)
     {
-        return view('ciso/process/show', compact('process'));
+        $slideNumber = Process::where('id', '<=', $process->id)->count();
+        $slideImage = "/Images/process/Slide{$slideNumber}.JPG";
+
+        return view('ciso/process/show', compact('process', 'slideImage'));
     }
 }

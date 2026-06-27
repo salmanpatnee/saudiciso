@@ -14,13 +14,15 @@
             </svg>
         </div> --}}
 
-        <!-- Title -->
-        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
-            {!! $title !!}
-        </h3>
+        @if (filled($title))
+            <!-- Title -->
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
+                {!! $title !!}
+            </h3>
 
-        <!-- Divider -->
-        <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-6"></div>
+            <!-- Divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-6"></div>
+        @endif
 
         <!-- Description -->
         <div class="text-2xl text-white/90 leading-relaxed space-y-4" style="text-align: justify">
