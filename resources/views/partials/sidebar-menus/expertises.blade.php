@@ -1,0 +1,1 @@
+<x-sidebar-menu-item route_name="expertises.index" label_ar="" label="Manage Expertises" />

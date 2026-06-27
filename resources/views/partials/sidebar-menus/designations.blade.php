@@ -1,0 +1,1 @@
+<x-sidebar-menu-item route_name="designations.index" label_ar="" label="Manage Designations" />

@@ -1,0 +1,49 @@
+// Check duplicate expert_id
+$duplicateExpertIds = \DB::table('hr_expert_master_table')->select('expert_id', \DB::raw('COUNT(*) as count'))->groupBy('expert_id')->having(\DB::raw('COUNT(*)'), '>', 1)->get();
+echo "=== DUPLICATE EXPERT_ID ===\n";
+echo "Count: " . $duplicateExpertIds->count() . "\n";
+$duplicateExpertIds->each(function($row) { echo "expert_id: {$row->expert_id} (appears {$row->count} times)\n"; });
+
+// Check duplicate names
+$duplicateNames = \DB::table('hr_expert_master_table')->select('name', \DB::raw('COUNT(*) as count'))->groupBy('name')->having(\DB::raw('COUNT(*)'), '>', 1)->get();
+echo "\n=== DUPLICATE NAMES ===\n";
+echo "Count: " . $duplicateNames->count() . "\n";
+$duplicateNames->each(function($row) { echo "name: '{$row->name}' (appears {$row->count} times)\n"; });
+
+// Check duplicate linkedin_profile
+$duplicateLinkedIn = \DB::table('hr_expert_master_table')->select('linkedin_profile', \DB::raw('COUNT(*) as count'))->where('linkedin_profile', '!=', null)->where('linkedin_profile', '!=', '')->groupBy('linkedin_profile')->having(\DB::raw('COUNT(*)'), '>', 1)->get();
+echo "\n=== DUPLICATE LINKEDIN_PROFILE ===\n";
+echo "Count: " . $duplicateLinkedIn->count() . "\n";
+$duplicateLinkedIn->each(function($row) { echo "linkedin_profile: '{$row->linkedin_profile}' (appears {$row->count} times)\n"; });
+
+// Check orphaned nationality_id
+$orphanedNationality = \DB::table('hr_expert_master_table')->whereNotNull('nationality_id')->where('nationality_id', '!=', '')->leftJoin('nationalities', 'hr_expert_master_table.nationality_id', '=', 'nationalities.id')->whereNull('nationalities.id')->select('hr_expert_master_table.expert_id', 'hr_expert_master_table.name', 'hr_expert_master_table.nationality_id')->get();
+echo "\n=== ORPHANED NATIONALITY_ID ===\n";
+echo "Count: " . $orphanedNationality->count() . "\n";
+$orphanedNationality->each(function($row) { echo "expert_id: {$row->expert_id}, name: '{$row->name}', nationality_id: {$row->nationality_id}\n"; });
+
+// Check orphaned organization_id
+$orphanedOrganization = \DB::table('hr_expert_master_table')->whereNotNull('organization_id')->where('organization_id', '!=', '')->leftJoin('hr_organization_table', 'hr_expert_master_table.organization_id', '=', 'hr_organization_table.organization_id')->whereNull('hr_organization_table.organization_id')->select('hr_expert_master_table.expert_id', 'hr_expert_master_table.name', 'hr_expert_master_table.organization_id')->get();
+echo "\n=== ORPHANED ORGANIZATION_ID ===\n";
+echo "Count: " . $orphanedOrganization->count() . "\n";
+$orphanedOrganization->each(function($row) { echo "expert_id: {$row->expert_id}, name: '{$row->name}', organization_id: {$row->organization_id}\n"; });
+
+// Check orphaned industry_id
+$orphanedIndustry = \DB::table('hr_expert_master_table')->whereNotNull('industry_id')->where('industry_id', '!=', '')->leftJoin('hr_industry_table', 'hr_expert_master_table.industry_id', '=', 'hr_industry_table.industry_id')->whereNull('hr_industry_table.industry_id')->select('hr_expert_master_table.expert_id', 'hr_expert_master_table.name', 'hr_expert_master_table.industry_id')->get();
+echo "\n=== ORPHANED INDUSTRY_ID ===\n";
+echo "Count: " . $orphanedIndustry->count() . "\n";
+$orphanedIndustry->each(function($row) { echo "expert_id: {$row->expert_id}, name: '{$row->name}', industry_id: {$row->industry_id}\n"; });
+
+// Summary statistics
+$totalRecords = \DB::table('hr_expert_master_table')->count();
+$nullNationality = \DB::table('hr_expert_master_table')->whereNull('nationality_id')->orWhere('nationality_id', '')->count();
+$nullOrganization = \DB::table('hr_expert_master_table')->whereNull('organization_id')->orWhere('organization_id', '')->count();
+$nullIndustry = \DB::table('hr_expert_master_table')->whereNull('industry_id')->orWhere('industry_id', '')->count();
+
+echo "\n=== SUMMARY ===\n";
+echo "Total records: $totalRecords\n";
+echo "Records with NULL/empty nationality_id: $nullNationality\n";
+echo "Records with NULL/empty organization_id: $nullOrganization\n";
+echo "Records with NULL/empty industry_id: $nullIndustry\n";
+
+exit()
