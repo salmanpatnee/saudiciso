@@ -4,6 +4,7 @@ use App\Http\Controllers\ArtifactAttachmentController;
 use App\Http\Controllers\ArtifactController;
 use App\Http\Controllers\BestPracticeController;
 use App\Http\Controllers\CisoEducationController;
+use App\Http\Controllers\CisoToolkitController;
 use App\Http\Controllers\CMS_ISO_27001Controller;
 use App\Http\Controllers\CMSController;
 use App\Http\Controllers\ControlAssessmentController;
@@ -37,8 +38,8 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SubDomainController;
 use App\Http\Controllers\TempFileUploadController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/clear', function () {
     Artisan::call('cache:clear');
@@ -48,7 +49,6 @@ Route::get('/clear', function () {
 
     return response()->json(['message' => 'All caches cleared successfully.']);
 })->name('clear-cache');
-
 
 Route::view('/', 'welcome')->name('welcome');
 Route::middleware(['guest'])->group(function () {
@@ -162,6 +162,10 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
     Route::get('/cms/create-resource/{process}', [ResourceController::class, 'create'])->name('resource.create');
     Route::post('/upload-resource', [ResourceController::class, 'store'])->name('resource.store');
 
+    // ------------MANAGE CISO TOOLKIT--------------
+
+    Route::resource('ciso-toolkit', CisoToolkitController::class)->except(['show'])->names('admin.ciso-toolkit');
+
     // ------------MANAGE ISO-27001 CONTENT--------------
 
     Route::resource('iso27001', CMS_ISO_27001Controller::class);
@@ -181,7 +185,11 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
 
         // ------------------CISO Toolkit-------------------------
 
-        Route::view('/toolkit', 'ciso/ciso-toolkit/index')->name('ciso-toolkit.index');
+        Route::get('/toolkit', function () {
+            $toolkits = \App\Models\CisoToolkit::latest()->get();
+
+            return view('ciso/ciso-toolkit/index', compact('toolkits'));
+        })->name('ciso-toolkit.index');
 
         // ------------------CISO Education-------------------------
 
