@@ -1,10 +1,16 @@
-@props(['route_name', 'route_param' => null, 'title', 'title_ar'])
+@props(['route_name', 'route_param' => null, 'title', 'title_ar' => null, 'image' => null])
 
 @if ($route_name)
     <a href="{{ route($route_name, html_entity_decode($route_param)) }}" class="block h-full group">
 @else
     <a href="#" class="block h-full group">
 @endif
+@if ($image)
+    <div class="relative h-full rounded-3xl overflow-hidden border border-brand-800/30 dark:border-gray-700/50 shadow-lg transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/20 hover:scale-[1.02]">
+        <img src="{{ $image }}" alt="{{ $title }}" loading="lazy"
+            class="block w-full h-auto object-cover" />
+    </div>
+@else
     <div class="relative bg-gradient-to-br from-brand-900 to-brand-950 dark:from-brand-950 dark:to-gray-900 border border-brand-800/30 dark:border-gray-700/50 px-6 py-10 rounded-3xl h-full min-h-[260px] flex flex-col overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/20 hover:border-brand-700 hover:scale-[1.02] group-hover:from-brand-800 group-hover:to-brand-950">
 
         <!-- Decorative gradient orb -->
@@ -47,4 +53,5 @@
         <!-- Bottom accent line -->
         <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </div>
+@endif
 </a>
