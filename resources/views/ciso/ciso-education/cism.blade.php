@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Applying CISM Knowledge in KSA')
+@section('title', 'Applying CISM Knowledge in Practice')
 @section('title_ar', '')
 @section('content')
 
