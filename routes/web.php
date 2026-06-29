@@ -18,6 +18,7 @@ use App\Http\Controllers\DataUploaderController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\EvidenceController;
 use App\Http\Controllers\ExpertiseController;
+use App\Http\Controllers\HotTopicController;
 use App\Http\Controllers\HotTopicsController;
 use App\Http\Controllers\HRCertificationController;
 use App\Http\Controllers\HROrganizationController;
@@ -166,6 +167,11 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
 
     Route::resource('ciso-toolkit', CisoToolkitController::class)->except(['show'])->names('admin.ciso-toolkit');
 
+    // ------------MANAGE HOT TOPICS--------------
+
+    Route::resource('hot-topics', HotTopicController::class)->except(['show'])->names('admin.hot-topics');
+    Route::delete('hot-topics-resource/{resource}', [HotTopicController::class, 'destroyResource'])->name('admin.hot-topics.resource.destroy');
+
     // ------------MANAGE ISO-27001 CONTENT--------------
 
     Route::resource('iso27001', CMS_ISO_27001Controller::class);
@@ -205,7 +211,7 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
 
         // ------------------Hot Topics-------------------------
 
-        Route::get('/hot-topics', HotTopicsController::class)->name('hot-topics.index');
+        Route::get('/hot-topics', [HotTopicsController::class, 'index'])->name('hot-topics.index');
 
         Route::prefix('hot-topics')->group(function () {
             Route::view('/compliance-challenges', 'ciso/hot-topics/compliance-challenges')->name('compliance-challenges');
@@ -222,6 +228,8 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
             Route::view('/incident-management-cybersecurity-incident-management', 'ciso/hot-topics/incident-management-cybersecurity-incident-management')->name('incident-management');
             Route::view('/review-vs-audit', 'ciso/hot-topics/review-vs-audit')->name('review-vs-audit');
         });
+
+        Route::get('/hot-topics/{hotTopic}', [HotTopicsController::class, 'show'])->name('hot-topics.show');
 
         // ------------------People-------------------------
 
