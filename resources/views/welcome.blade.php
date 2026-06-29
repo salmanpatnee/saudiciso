@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaudiCiso.net - Your Ultimate Strategic Partner</title>
     <meta name="color-scheme" content="light only">
-    <link rel="stylesheet" href="css/landing.css?v=2.5">
+    <link rel="stylesheet" href="css/landing.css?v=2.6">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,43 @@
         <nav class="site-nav">
             <div class="container site-nav__inner">
                 <img class="site-nav__logo" src="Images/SaudiCISOLogo.png" alt="SaudiCiso.net">
-                <button type="button" id="navContactButton" class="btn btn--primary">Contact Us!</button>
+                <div class="site-nav__actions">
+                    @auth
+                        <form method="POST" action="{{ route('login.destroy') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-login  btn--ghost">Logout</button>
+                        </form>
+                    @else
+                        <a href="/vciso" class="btn btn-login  btn--ghost">Sign In</a>
+                    @endauth
+                    <button type="button" id="navContactButton" class="btn btn--primary">Contact Us!</button>
+                </div>
             </div>
         </nav>
+
+        <header class="hero">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <span class="eyebrow">Instantly Empowering Saudi CISO</span>
+                    <h1>What is Your Biggest <span class="hero__accent">Problem</span> Today?</h1>
+                    <p class="hero__sub">We have the Solution. Guaranteed!</p>
+                    <div class="hero__actions">
+                        <button type="button" id="headerContactButton" class="btn btn--primary">Contact Us!</button>
+                        <a href="/vciso" class="btn btn--ghost">@auth Access Platform @else Sign In @endauth</a>
+                    </div>
+                    <ul class="hero__trust">
+                        <li>1200+ Certified Staff in KSA</li>
+                        <li>50+ Compliance Documents</li>
+                        <li>Built for the Saudi Market</li>
+                    </ul>
+                </div>
+                <div class="hero__media">
+                    <div class="hero__visual">
+                        <img src="Images/ThreePs5.png" alt="SaudiCiso.net">
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <section class="section goodnews">
             <div class="container">
@@ -41,30 +75,6 @@
                 </div>
             </div>
         </section>
-
-        <header class="hero">
-            <div class="container hero__grid">
-                <div class="hero__content">
-                    <span class="eyebrow">Instantly Empowering Saudi CISO</span>
-                    <h1>What is Your Biggest <span class="hero__accent">Problem</span> Today?</h1>
-                    <p class="hero__sub">We have the Solution. Guaranteed!</p>
-                    <div class="hero__actions">
-                        <button type="button" id="headerContactButton" class="btn btn--primary">Contact Us!</button>
-                        <a href="/vciso" class="btn btn--ghost">Sign In</a>
-                    </div>
-                    <ul class="hero__trust">
-                        <li>1200+ Certified Staff in KSA</li>
-                        <li>50+ Compliance Documents</li>
-                        <li>Built for the Saudi Market</li>
-                    </ul>
-                </div>
-                <div class="hero__media">
-                    <div class="hero__visual">
-                        <img src="Images/ThreePs5.png" alt="SaudiCiso.net">
-                    </div>
-                </div>
-            </div>
-        </header>
 
         <section class="section" id="ppp">
             <div class="container">
@@ -202,7 +212,7 @@
             <div class="container">
                 <div class="portal__card reveal">
                     <h2 class="signin-heading">Portal Access for Paid Members</h2>
-                    <a href="/vciso" class="btn btn--navy">Sign In</a>
+                    <a href="/vciso" class="btn btn--navy">@auth Access Platform @else Sign In @endauth</a>
                 </div>
             </div>
         </section>
