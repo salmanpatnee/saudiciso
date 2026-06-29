@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaudiCiso.com - Your Ultimate Strategic Partner</title>
+    <title>SaudiCiso.net - Your Ultimate Strategic Partner</title>
     <meta name="color-scheme" content="light only">
     <link rel="stylesheet" href="css/landing.css?v=2.5">
 
@@ -19,7 +19,7 @@
 
         <nav class="site-nav">
             <div class="container site-nav__inner">
-                <img class="site-nav__logo" src="Images/SaudiCISOLogo.png" alt="SaudiCiso.com">
+                <img class="site-nav__logo" src="Images/SaudiCISOLogo.png" alt="SaudiCiso.net">
                 <button type="button" id="navContactButton" class="btn btn--primary">Contact Us!</button>
             </div>
         </nav>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="hero__media">
                     <div class="hero__visual">
-                        <img src="Images/ThreePs5.png" alt="SaudiCiso.com">
+                        <img src="Images/ThreePs5.png" alt="SaudiCiso.net">
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
 
         <section class="section section--alt">
             <div class="container">
-                <p class="value__lead">SaudiCiso.com is a subscription-based professional platform created
+                <p class="value__lead">SaudiCiso.net is a subscription-based professional platform created
                     exclusively for Chief Information Security Officers (CISOs) in the Kingdom of Saudi Arabia.</p>
 
                 <div class="value-grid">
@@ -209,8 +209,8 @@
 
         <footer class="site-footer">
             <div class="container site-footer__inner">
-                <img src="Images/SaudiCISOLogo.png" alt="SaudiCiso.com">
-                <p>&copy; {{ date('Y') }} SaudiCiso.com. All rights reserved.</p>
+                <img src="Images/SaudiCISOLogo.png" alt="SaudiCiso.net">
+                <p>&copy; {{ date('Y') }} SaudiCiso.net. All rights reserved.</p>
             </div>
         </footer>
 
