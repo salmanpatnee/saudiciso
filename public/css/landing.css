@@ -231,9 +231,26 @@ h3 {
   width: auto;
 }
 
+.site-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.site-nav__actions .btn--ghost:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
 .site-nav .btn {
   padding: 11px 22px;
   font-size: 0.95rem;
+}
+.site-nav .btn.btn-login {
+  color: #fff;
+}
+.btn--ghost.btn-login:hover {
+  border-color: #fff;
 }
 
 /* --------------------------------------------------------------------------

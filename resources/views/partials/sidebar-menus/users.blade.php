@@ -3,3 +3,5 @@
 <x-sidebar-menu-item route_name="artifacts.index" label="Artifact Management" />
 <x-sidebar-menu-item route_name="evidences.index" label="Evidence Management" />
 <x-sidebar-menu-item route_name="iso27001.index" label="Manage ISO-27001" />
+<x-sidebar-menu-item route_name="admin.ciso-toolkit.index" label="CISO Toolkit" />
+<x-sidebar-menu-item route_name="admin.hot-topics.index" label="Hot Topics" />

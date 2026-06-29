@@ -16,22 +16,22 @@ class CisoEducationController extends Controller
     {
         $data = [
             [
-                'title' => 'Applying CISSP Knowledge in KSA',
+                'title' => 'Applying CISSP Knowledge in Practice',
                 'route' => 'cissp',
                 'image_url' => 'CISSPLogo.png'
             ],
             [
-                'title' => 'Applying CISM Knowledge in KSA',
+                'title' => 'Applying CISM Knowledge in Practice',
                 'route' => 'cism',
                 'image_url' => 'CISMLogo.png'
             ],
             [
-                'title' => 'Applying CGEIT Knowledge in KSA',
+                'title' => 'Applying CGEIT Knowledge in Practice',
                 'route' => 'cgeit',
                 'image_url' => 'CGEITLogo.png'
             ],
             [
-                'title' => 'Applying PMP Knowledge in KSA',
+                'title' => 'Applying PMP Knowledge in Practice',
                 'route' => 'pmp',
                 'image_url' => 'PMPLogo.png'
             ],
