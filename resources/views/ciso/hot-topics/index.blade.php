@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.ciso-full')
+@section('title', 'Hot Topics')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@push('css')
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Hot Topics</title>
-    <link rel="stylesheet" href="{{ asset('css/ciso-lifeline.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --navy: #00053C;
             --navy-2: #0A1559;
             --gold: #C9A227;
-            --page: #F4F6F8;
             --card: #FFFFFF;
             --border: #E6E9EF;
             --divider: #EEF1F5;
@@ -25,18 +17,10 @@
             --muted: #6B7280;
         }
 
-        body {
-            background: var(--page);
-        }
-
-        body::before {
-            display: none;
-        }
-
         .kb {
             width: 100%;
-            margin: 2.5rem 0 4rem;
-            padding: 0 2.5rem;
+            margin: 0;
+            padding: 1.5rem;
             animation: kb-fade .5s ease both;
         }
 
@@ -252,6 +236,10 @@
         }
 
         @media (max-width: 640px) {
+            .kb {
+                padding: 1rem;
+            }
+
             .kb__head {
                 flex-direction: column;
                 align-items: flex-start;
@@ -268,92 +256,58 @@
             }
         }
     </style>
+@endpush
 
-</head>
-
-<body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-left">
-                <a href="{{ route('vciso') }}">
-                    <span class="logo" :class="sidebarToggle ? 'hidden' : ''">
-                        <span class="flex items-center space-x-2">
-                            <img src="/Images/SaudiCISOLogo.png" alt="Logo" style="height: 80px; width: auto;">
-                        </span>
-                    </span>
-                </a>
+@section('content')
+    <div class="kb">
+        <div class="kb__head">
+            <div>
+                <p class="kb__eyebrow">Hot Topics</p>
+                <h1 class="kb__title">Browse Hot Topics</h1>
+                <span class="kb__rule"></span>
             </div>
-
-            @auth
-                <div class="nav-right">
-                    <a href="{{ route('vciso') }}" class="admin-portal-btn" title="Back">
-                        <i class='bx bx-arrow-back'></i>
-                        <span>Back</span>
-                    </a>
-                    @if (auth()->user()->role_id == 1)
-                        <a href="{{ route('users.index') }}" class="admin-portal-btn" title="Admin Portal">
-                            <i class='bx bx-cog'></i>
-                            <span>Admin Portal</span>
-                        </a>
-                    @else
-                        <a href="{{ route('profile.edit') }}" class="admin-portal-btn" title="Update Profile">
-                            <i class='bx bx-cog'></i>
-                            <span>Update Profile</span>
-                        </a>
-                    @endif
-
-                    <form id="logout-form" action="{{ route('login.destroy') }}" method="POST" style="display: inline;">
-                        @csrf
-                        <button type="submit" class="logout-btn" title="Logout">
-                            <i class='bx bx-log-out'></i>
-                            <span>Sign out</span>
-                        </button>
-                    </form>
-                </div>
-            @endauth
-        </nav>
-    </header>
-
-    <main class="main">
-        <div class="kb">
-            <div class="kb__head">
-                <div>
-                    <p class="kb__eyebrow">Hot Topics</p>
-                    <h1 class="kb__title">Browse Hot Topics</h1>
-                    <span class="kb__rule"></span>
-                </div>
-                <span class="kb__pill">
-                    <i class='bx bx-grid-alt'></i> {{ $hotTopics->count() }} {{ $hotTopics->count() === 1 ? 'Topic' : 'Topics' }}
-                </span>
-            </div>
-
-            <section class="kb-card">
-                <header class="kb-card__bar">
-                    <span class="kb-card__icon"><i class='bx bxs-news'></i></span>
-                    <h2 class="kb-card__title">Hot Topics</h2>
-                </header>
-                <div class="kb-card__body">
-                    @forelse ($hotTopics as $item)
-                        <a class="kb-row" href="{{ route('hot-topics.show', $item) }}"
-                            style="animation-delay: {{ $loop->index * 60 }}ms">
-                            <span class="kb-row__left">
-                                <span class="kb-row__dot"></span>
-                                <span class="kb-row__title">{{ $item->title }}</span>
-                            </span>
-                            <span class="kb-row__right">
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </span>
-                        </a>
-                    @empty
-                        <p class="kb-empty">No hot topics available yet.</p>
-                    @endforelse
-                </div>
-            </section>
+            <span class="kb__pill">
+                <i class='bx bx-grid-alt'></i> {{ $hotTopics->count() }} {{ $hotTopics->count() === 1 ? 'Topic' : 'Topics' }}
+            </span>
         </div>
-    </main>
-    <!-- Elfsight AI Chatbot | Saudi Ciso -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-50a59065-4154-49f7-a375-961a269cf1c2" data-elfsight-app-lazy></div>
-</body>
 
-</html>
+        <section class="kb-card">
+            <header class="kb-card__bar">
+                <span class="kb-card__icon"><i class='bx bxs-news'></i></span>
+                <h2 class="kb-card__title">Hot Topics</h2>
+            </header>
+            <div class="kb-card__body">
+                @forelse ($hotTopics as $item)
+                    <a class="kb-row" href="{{ route('hot-topics.show', $item) }}"
+                        style="animation-delay: {{ $loop->index * 60 }}ms">
+                        <span class="kb-row__left">
+                            <span class="kb-row__dot"></span>
+                            <span class="kb-row__title">{{ $item->title }}</span>
+                        </span>
+                        <span class="kb-row__right">
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </span>
+                    </a>
+                @empty
+                    <p class="kb-empty">No hot topics available yet.</p>
+                @endforelse
+            </div>
+        </section>
+    </div>
+@endsection
+
+@push('scripts')
+    {{-- Strip the shared layout's inner bordered wrapper around the .kb content
+         so it isn't double-boxed (scoped to this page; runs only where .kb exists). --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var kb = document.querySelector('.kb');
+            if (kb && kb.parentElement) {
+                var wrapper = kb.parentElement;
+                wrapper.style.border = '0';
+                wrapper.style.background = 'transparent';
+                wrapper.style.boxShadow = 'none';
+            }
+        });
+    </script>
+@endpush
