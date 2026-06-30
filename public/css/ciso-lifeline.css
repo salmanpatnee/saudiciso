@@ -499,9 +499,27 @@ a {
         padding: 0.5rem 1rem;
     }
 
+    /* Stretch sections so the stacked cards can share one uniform width */
+    .hero-section,
+    .branches-section,
+    .core-areas-section {
+        justify-self: stretch;
+        width: 100%;
+    }
+
+    /* Uniform, centered width for every card type on mobile */
+    .hero-card,
+    .branch-card,
+    .area-card {
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .hero-card {
         padding: 1rem 1.5rem;
-        margin: 0 0.5rem;
     }
 
     .hero-title {
@@ -520,24 +538,21 @@ a {
     }
 
     .branch-connector {
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .connector-line {
-        width: 40px;
-        height: 2px;
+        display: none;
     }
 
     .areas-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        max-width: 400px;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .area-card {
         padding: 1rem;
-        min-width: auto;
+        min-width: 0;
     }
 
     .home-link span {

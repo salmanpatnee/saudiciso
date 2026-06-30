@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaudiCiso.net - Your Ultimate Strategic Partner</title>
     <meta name="color-scheme" content="light only">
-    <link rel="stylesheet" href="css/landing.css?v=2.6">
+    <link rel="stylesheet" href="css/landing.css?v=2.7">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +22,7 @@
                 <img class="site-nav__logo" src="Images/SaudiCISOLogo.png" alt="SaudiCiso.net">
                 <div class="site-nav__actions">
                     @auth
-                        <form method="POST" action="{{ route('login.destroy') }}">
-                            @csrf
-                            <button type="submit" class="btn btn-login  btn--ghost">Logout</button>
-                        </form>
+                        <a href="/vciso" class="btn btn-login  btn--ghost">Access Platform</a>
                     @else
                         <a href="/vciso" class="btn btn-login  btn--ghost">Sign In</a>
                     @endauth
