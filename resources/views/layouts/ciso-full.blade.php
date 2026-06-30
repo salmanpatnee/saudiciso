@@ -25,8 +25,7 @@
                             </x-alert-success>
                         @endif
 
-                        <div
-                            class="relative max-w-full overflow-x-auto   rounded-lg border border-gray-200 bg-white  dark:border-gray-800 dark:bg-white/[0.03]">
+                        <div class="relative max-w-full overflow-x-auto">
                             @yield('content')
                         </div>
 

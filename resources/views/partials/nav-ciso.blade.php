@@ -26,7 +26,7 @@
             
             <!-- Hamburger Toggle BTN -->
             <a href="{{ route('vciso') }}" class="lg:hidden">
-                <img class="dark:hidden w-12" src="{{ asset('Images/SaudiCISOLogo.png') }}" alt="Logo" />
+                <img class="dark:hidden w-20" src="{{ asset('Images/SaudiCISOLogo.png') }}" alt="Logo" />
             </a>
             <!-- Application nav menu button -->
             <button
