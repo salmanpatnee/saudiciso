@@ -1,25 +1,11 @@
 @include('partials.header')
 
 <!-- ===== Page Wrapper Start ===== -->
-<div class="relative z-1 bg-white dark:bg-gray-900">
-    <div class="relative flex flex-col w-full min-h-screen dark:bg-gray-900 lg:flex-row">
-
-        <!-- Mobile / tablet brand header (mirrors the desktop panel, hidden on large screens) -->
-        <div class="relative flex items-center justify-center overflow-hidden bg-brand-950 px-6 py-10 lg:hidden">
-            <div class="absolute right-0 top-0 -z-1 w-40 max-w-[160px] opacity-90">
-                <img src="{{ asset('Images/shape/grid-01.svg') }}" alt="grid" />
-            </div>
-            <div class="absolute bottom-0 left-0 -z-1 w-40 max-w-[160px] rotate-180 opacity-90">
-                <img src="{{ asset('Images/shape/grid-01.svg') }}" alt="grid" />
-            </div>
-            <a href="{{ route('vciso') }}" class="relative z-1 block">
-                <img src="{{ asset('Images/SaudiCISOLogo.png') }}" class="w-32" alt="Logo" />
-            </a>
-        </div>
-
+<div class="relative p-6 bg-white z-1 dark:bg-gray-900 sm:p-0">
+    <div class="relative flex flex-col justify-center w-full h-screen dark:bg-gray-900 sm:p-0 lg:flex-row">
         <!-- Form -->
-        <div class="flex flex-col flex-1 w-full p-6 sm:p-8 lg:w-1/2">
-            <div class="w-full max-w-md pt-4 mx-auto lg:pt-10">
+        <div class="flex flex-col flex-1 w-full lg:w-1/2">
+            <div class="w-full max-w-md pt-10 mx-auto">
                 <a href="{{ route('welcome') }}"
                     class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
                     <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -30,7 +16,7 @@
                     Back
                 </a>
             </div>
-            <div class="flex flex-col justify-center w-full max-w-md mx-auto py-8">
+            <div class="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
                 <div>
                     <div class="mb-5 sm:mb-8">
                         <h1
@@ -92,7 +78,7 @@
             </div>
         </div>
 
-        <div class="relative items-center hidden w-full bg-brand-950 dark:bg-white/5 lg:grid lg:w-1/2">
+        <div class="relative items-center hidden w-full h-full bg-brand-950 dark:bg-white/5 lg:grid lg:w-1/2">
             <div class="flex items-center justify-center z-1">
                 <!-- ===== Common Grid Shape Start ===== -->
                 <div class="absolute right-0 top-0 -z-1 w-full max-w-[250px] xl:max-w-[450px]">
