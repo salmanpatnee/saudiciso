@@ -13,19 +13,12 @@
                 @method('PUT')
             @endif
             <div class="space-y-6 border-t border-gray-100 p-5 sm:p-6">
-                <x-form.grid-col>
+                <x-form.grid-col-full>
                     <div>
                         <x-form.field label="Title" name="title" required="true" placeholder="Enter Title"
                             :value="$item?->title" />
                     </div>
-                    <div>
-                        <x-form.upload-field label="Featured Image (JPG, PNG, WEBP)" name="featured_image" />
-                        @if ($item?->featured_image_path)
-                            <img src="{{ asset('storage/' . $item->featured_image_path) }}" alt="{{ $item->title }}"
-                                class="mt-2 h-24 w-24 rounded object-cover">
-                        @endif
-                    </div>
-                </x-form.grid-col>
+                </x-form.grid-col-full>
 
                 <x-form.grid-col-full>
                     <x-form.textarea-field label="Body" name="body" placeholder="Enter body content"
@@ -65,18 +58,5 @@
         @endif
     </div>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
-    <script>
-        const editorSelectors = [
-            '#body',
-        ];
-
-        editorSelectors.forEach(selector => {
-            ClassicEditor
-                .create(document.querySelector(selector))
-                .catch(error => {
-                    console.error(`Error initializing editor for ${selector}:`, error);
-                });
-        });
-    </script>
+    @vite('resources/js/hot-topics-editor.js')
 @endsection
