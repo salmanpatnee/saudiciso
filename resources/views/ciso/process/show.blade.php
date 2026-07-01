@@ -17,7 +17,6 @@
                 <x-resource-sidebar>
                     <x-iso-templates link="{{ route('process.resource.template', $process_id) }}" />
                     <x-iso-checklist link="{{ route('process.resource.checklist', $process_id) }}" />
-                    <x-iso-video link="{{ route('process.resource.videos', $process_id) }}" />
                     <x-iso-glossary link="{{ route('process.resource.glossary', $process_id) }}" />
                 </x-resource-sidebar>
             </x-slot:sidebar>
