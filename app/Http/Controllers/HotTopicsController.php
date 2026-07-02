@@ -9,7 +9,7 @@ class HotTopicsController extends Controller
 {
     public function index(): View
     {
-        $hotTopics = HotTopic::latest()->get();
+        $hotTopics = HotTopic::orderBy('id')->get();
 
         return view('ciso/hot-topics/index', compact('hotTopics'));
     }
