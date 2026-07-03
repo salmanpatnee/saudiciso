@@ -1,51 +1,335 @@
 @extends('layouts.ciso-full')
 @section('title', $hotTopic->title)
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #00053C;
+            --navy-2: #0A1559;
+            --gold: #C9A227;
+            --page: #F4F6F8;
+            --card: #FFFFFF;
+            --border: #E6E9EF;
+            --divider: #EEF1F5;
+            --ink: #1F2430;
+            --muted: #6B7280;
+        }
+
+        .kb {
+            width: 100%;
+            margin: 0 0 1rem;
+            padding: 0 1rem;
+            animation: kb-fade .5s ease both;
+        }
+
+        .kb__head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .kb__eyebrow {
+            margin: 0 0 .35rem;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .kb__title {
+            margin: 0;
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+            line-height: 1.1;
+            color: var(--navy);
+        }
+
+        .kb__rule {
+            display: block;
+            width: 64px;
+            height: 3px;
+            margin-top: .7rem;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .kb__pill {
+            flex: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            padding: .5rem .95rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--navy);
+            box-shadow: 0 1px 2px rgba(0, 5, 60, .04);
+            text-decoration: none;
+        }
+
+        .kb__pill i {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .kb-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px -20px rgba(0, 5, 60, .28);
+            animation: kb-rise .55s ease both;
+            margin-bottom: 1.5rem;
+        }
+
+        .kb-card__bar {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(90deg, var(--navy), var(--navy-2));
+            color: #fff;
+        }
+
+        .kb-card__bar::after {
+            content: "";
+            position: absolute;
+            top: -60%;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, .08), transparent 70%);
+            pointer-events: none;
+        }
+
+        .kb-card__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(201, 162, 39, .18);
+            color: var(--gold);
+            font-size: 1.25rem;
+        }
+
+        .kb-card__title {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: .01em;
+        }
+
+        .kb-card__body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kb-card__content {
+            padding: 1.5rem;
+            color: var(--ink);
+            line-height: 1.7;
+        }
+
+        .kb-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .95rem 1.5rem;
+            border-bottom: 1px solid var(--divider);
+            color: var(--navy);
+            transition: background .2s ease, transform .2s ease;
+            animation: kb-up .45s ease both;
+        }
+
+        .kb-row:last-child {
+            border-bottom: 0;
+        }
+
+        .kb-row__left {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            min-width: 0;
+        }
+
+        .kb-row__dot {
+            flex: none;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            transition: transform .2s ease;
+        }
+
+        .kb-row__title {
+            font-weight: 600;
+            font-size: .96rem;
+            color: var(--navy);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transition: color .2s ease;
+        }
+
+        .kb-row__right {
+            flex: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .7rem;
+            color: var(--muted);
+        }
+
+        .kb-row__ext {
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            color: var(--muted);
+            background: #F1F3F7;
+            border: 1px solid var(--border);
+            padding: .15rem .45rem;
+            border-radius: 5px;
+        }
+
+        .kb-row__right i {
+            font-size: 1.2rem;
+            color: var(--navy);
+            transition: color .2s ease, transform .2s ease;
+        }
+
+        .kb-row:hover {
+            background: #F8FAFC;
+            transform: translateX(4px);
+        }
+
+        .kb-row:hover .kb-row__title {
+            color: var(--gold);
+        }
+
+        .kb-row:hover .kb-row__dot {
+            transform: scale(1.4);
+        }
+
+        .kb-row:hover .kb-row__right i {
+            color: var(--gold);
+            transform: translateY(1px);
+        }
+
+        .kb-empty {
+            text-align: center;
+            color: var(--muted);
+            padding: 2.5rem 1.5rem;
+            margin: 0;
+        }
+
+        @keyframes kb-fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes kb-rise {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes kb-up {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .kb {
+                padding: 0 0.25rem;
+            }
+
+            .kb__head {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 1.25rem;
+            }
+
+            .kb-card__bar {
+                padding: 0.85rem 1rem;
+            }
+
+            .kb-row {
+                padding: 0.85rem 1rem;
+            }
+
+            .kb-row__ext {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .kb, .kb-card, .kb-row {
+                animation: none;
+            }
+
+            .kb-row:hover {
+                transform: none;
+            }
+        }
+    </style>
+@endpush
+
 @section('content')
-    <article class="px-5 py-6 sm:px-7">
-        <a href="{{ route('hot-topics.index') }}"
-            class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-900">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
-                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 0 1 0 1.06L9.06 10l3.73 3.71a.75.75 0 1 1-1.06 1.06l-4.25-4.24a.75.75 0 0 1 0-1.06l4.25-4.24a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-            </svg>
-            Back to Hot Topics
-        </a>
+    <div class="kb">
+        <div class="kb__head">
+            <div>
+                <p class="kb__eyebrow">{{ $hotTopic->category?->value ?? 'Hot Topics' }}</p>
+                <h1 class="kb__title">{{ $hotTopic->title }}</h1>
+                <span class="kb__rule"></span>
+            </div>
+            <a class="kb__pill" href="{{ route('hot-topics.index') }}">
+                <i class='bx bx-arrow-back'></i> Back to Hot Topics
+            </a>
+        </div>
 
         @if ($hotTopic->body)
-            <div class="topics-content prose mt-6 max-w-none text-gray-800">
-                {!! $hotTopic->body !!}
-            </div>
-        @endif
-
-        @if ($hotTopic->resources->isNotEmpty())
-            <section class="mt-8 border-t border-gray-100 pt-6">
-                <h2 class="mb-3 text-lg font-bold text-gray-900">Downloadable Resources</h2>
-                <ul class="divide-y divide-gray-100 overflow-hidden rounded-xl border border-gray-200">
-                    @foreach ($hotTopic->resources as $resource)
-                        <li>
-                        <a href="{{ asset('storage/' . $resource->file_path) }}" download="{{ $resource->file_name }}"
-                            class="flex items-center justify-between gap-3 bg-white px-4 py-3 transition-colors hover:bg-gray-50">
-                            <span class="flex min-w-0 items-center gap-3">
-                                <span class="inline-flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-50 text-brand-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                                        <path d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l3.122 3.12A1.5 1.5 0 0 1 16 6.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 3 16.5v-13Z" />
-                                    </svg>
-                                </span>
-                                <span class="truncate text-sm font-medium text-gray-800">{{ $resource->file_name }}</span>
-                            </span>
-                            <span class="flex flex-none items-center gap-2 text-gray-400">
-                                <span class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide text-gray-500">
-                                    {{ strtoupper(pathinfo($resource->file_name, PATHINFO_EXTENSION)) }}
-                                </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                                    <path fill-rule="evenodd" d="M10 3a.75.75 0 0 1 .75.75v8.69l2.97-2.97a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 10.53a.75.75 0 1 1 1.06-1.06l2.97 2.97V3.75A.75.75 0 0 1 10 3Z" clip-rule="evenodd" />
-                                    <path d="M3.5 14.75a.75.75 0 0 0-1.5 0v.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-.5a.75.75 0 0 0-1.5 0v.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-.5Z" />
-                                </svg>
-                            </span>
-                        </a>
-                        </li>
-                    @endforeach
-                </ul>
+            <section class="kb-card">
+                <div class="kb-card__content">
+                    {!! $hotTopic->body !!}
+                </div>
             </section>
         @endif
-    </article>
+
+        <section class="kb-card">
+            <header class="kb-card__bar">
+                <span class="kb-card__icon"><i class='bx bxs-folder'></i></span>
+                <h2 class="kb-card__title">Downloadable Resources</h2>
+            </header>
+            <div class="kb-card__body">
+                @forelse ($hotTopic->resources as $resource)
+                    <a class="kb-row" href="{{ asset('storage/' . $resource->file_path) }}"
+                        download="{{ $resource->file_name }}" style="animation-delay: {{ $loop->index * 60 }}ms">
+                        <span class="kb-row__left">
+                            <span class="kb-row__dot"></span>
+                            <span class="kb-row__title">{{ $resource->file_name }}</span>
+                        </span>
+                        <span class="kb-row__right">
+                            <span class="kb-row__ext">{{ strtoupper(pathinfo($resource->file_name, PATHINFO_EXTENSION)) }}</span>
+                            <i class='bx bx-download'></i>
+                        </span>
+                    </a>
+                @empty
+                    <p class="kb-empty">No resources attached to this hot topic yet.</p>
+                @endforelse
+            </div>
+        </section>
+    </div>
 @endsection

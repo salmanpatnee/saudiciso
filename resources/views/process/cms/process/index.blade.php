@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <x-table.action-wrapper title="Process List">
-            {{-- <x-action.button label="Add Process" route_name="cms.create" /> --}}
+            <x-action.button label="Add Process" route_name="cms.create" />
         </x-table.action-wrapper>
 
         <x-table.table-sticky>

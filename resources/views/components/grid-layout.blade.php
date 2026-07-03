@@ -12,6 +12,7 @@
     'columns' => 'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3',
     'gap' => 'gap-6',
     'imagePattern' => null,
+    'imageField' => null,
     'animationDelay' => 0.04,
     'showAnimation' => true,
     'wrapperClass' => 'card-wrapper'
@@ -38,7 +39,10 @@
                     @if($itemComponent)
                         @php
                             $itemRouteName = $routeNameField ? (data_get($item, $routeNameField, '')) : ($routeName ?? '');
-                            $itemImage = $imagePattern ? str_replace('{n}', $index + 1, $imagePattern) : null;
+                            $itemUploadedImage = $imageField ? data_get($item, $imageField) : null;
+                            $itemImage = $itemUploadedImage
+                                ? asset('storage/' . $itemUploadedImage)
+                                : ($imagePattern ? str_replace('{n}', $index + 1, $imagePattern) : null);
                         @endphp
                         <x-dynamic-component
                             :component="$itemComponent"

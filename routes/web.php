@@ -215,22 +215,6 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
 
         Route::get('/hot-topics', [HotTopicsController::class, 'index'])->name('hot-topics.index');
 
-        Route::prefix('hot-topics')->group(function () {
-            Route::view('/compliance-challenges', 'ciso/hot-topics/compliance-challenges')->name('compliance-challenges');
-            Route::view('/key-performance-indicator', 'ciso/hot-topics/key-performance-indicator')->name('key-performance-indicator');
-            Route::view('/essential-kpis-kris', 'ciso/hot-topics/essential-kpis-kris')->name('essential-kpis-kris');
-            Route::view('/risk-management-methodologies', 'ciso/hot-topics/risk-management-methodologies')->name('risk-management-methodologies');
-            Route::view('/control-assessment-risk-assessment', 'ciso/hot-topics/control-assessment-risk-assessment')->name('control-assessment-risk-assessment');
-            Route::view('/26-essential-items-checklist-awareness-topics', 'ciso/hot-topics/26-essential-items-checklist-awareness-topics')->name('26-essential-items');
-            Route::view('/enhancing-staff-knowledge-skill', 'ciso/hot-topics/enhancing-staff-knowledge-skill')->name('enhancing-staff-knowledge');
-            Route::view('/asset-inventory-configuration-management-database', 'ciso/hot-topics/asset-inventory-configuration-management-database')->name('asset-inventory');
-            Route::view('/essential-practical-cryptographic-deployment', 'ciso/hot-topics/essential-practical-cryptographic-deployment')->name('essential-practical-cryptographic');
-            Route::view('/data-information', 'ciso/hot-topics/data-information')->name('data-information');
-            Route::view('/selecting-va-pen-tester', 'ciso/hot-topics/selecting-va-pen-tester')->name('selecting-va-pen-tester');
-            Route::view('/incident-management-cybersecurity-incident-management', 'ciso/hot-topics/incident-management-cybersecurity-incident-management')->name('incident-management');
-            Route::view('/review-vs-audit', 'ciso/hot-topics/review-vs-audit')->name('review-vs-audit');
-        });
-
         Route::get('/hot-topics/{hotTopic}', [HotTopicsController::class, 'show'])->name('hot-topics.show');
 
         // ------------------People-------------------------

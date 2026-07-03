@@ -24,6 +24,7 @@
             headerTitle="Browse Processes"
             headerDescription="Select a process to explore detailed information and requirements"
             imagePattern="/Images/process/Slide{n}.JPG"
+            imageField="featured_image_path"
             wrapperClass="process-card-wrapper"
         />
     </div>

@@ -23,10 +23,22 @@
                     <span dir="rtl" style="padding-right: .5em">{{ $process->title_ar }}</span>
                 </x-info-col>
 
+                <x-info-col label="Featured Image">
+                    @if ($process->featured_image_path)
+                        <img src="{{ asset('storage/' . $process->featured_image_path) }}"
+                            alt="{{ $process->title }}" class="h-16 w-16 rounded object-cover">
+                    @else
+                        <span class="text-gray-400">&mdash;</span>
+                    @endif
+                </x-info-col>
             </x-info-row>
 
             <x-info-col-lg label="Process Description">
-                {{ $process->description ?? '—' }}
+                @if ($process->description)
+                    {!! $process->description !!}
+                @else
+                    —
+                @endif
             </x-info-col-lg>
         </div>
 

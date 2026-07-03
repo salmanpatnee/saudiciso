@@ -15,8 +15,12 @@ class ProcessController extends Controller
 
     public function show(Process $process)
     {
-        $slideNumber = Process::where('id', '<=', $process->id)->count();
-        $slideImage = "/Images/process/Slide{$slideNumber}.JPG";
+        if ($process->featured_image_path) {
+            $slideImage = asset('storage/'.$process->featured_image_path);
+        } else {
+            $slideNumber = Process::where('id', '<=', $process->id)->count();
+            $slideImage = "/Images/process/Slide{$slideNumber}.JPG";
+        }
 
         return view('ciso/process/show', compact('process', 'slideImage'));
     }

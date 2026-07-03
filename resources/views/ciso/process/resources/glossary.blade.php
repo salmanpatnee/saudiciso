@@ -2,7 +2,7 @@
 @push('css')
     <style>
         #process_banner {
-            min-height: 350px;
+            display: none;
         }
     </style>
 @endpush
@@ -11,25 +11,23 @@
     @php
         $process_id = html_entity_decode($processWithGlossary->process_id);
     @endphp
-    <div class="gap-6 grid grid-cols-1 px-4">
-        <div class="hover:shadow-lg mx-auto p-6 rounded-lg shadow text-white transition">
-            <x-iso-content-card title="{{ $processWithGlossary->title }}">
-                {{ $processWithGlossary->description }}
-            </x-iso-content-card>
-        </div>
-    </div>
-
-
 @endsection
 
 @section('additional_content')
     <div class="bg-white my-6 p-5 rounded-2xl">
+        @if (session('error'))
+            <x-alert-error>
+                {{ session('error') }}
+            </x-alert-error>
+        @endif
+        @if (session('success'))
+            <x-alert-success>
+                {{ session('success') }}
+            </x-alert-success>
+        @endif
 
-        <div class="process-content">
-            @include('ciso/process/resources/resource-table', [
-                'resources' => $processWithGlossary->resources,
-            ])
-
-        </div>
+        @include('ciso/process/resources/resource-table', [
+            'resources' => $processWithGlossary->resources,
+        ])
     </div>
 @endsection

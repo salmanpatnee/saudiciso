@@ -17,6 +17,7 @@ import 'ckeditor5/ckeditor5.css';
 
 const editorSelectors = [
     '#body',
+    '#description',
 ];
 
 editorSelectors.forEach(selector => {
