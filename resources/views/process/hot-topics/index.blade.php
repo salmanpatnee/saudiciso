@@ -20,7 +20,7 @@
                 @foreach ($hotTopics as $hotTopic)
                     <tr>
                         <x-table.td> <x-table.serial :loop="$loop" :paginator="$hotTopics" /></x-table.td>
-                        <x-table.td>{{ $hotTopic->title }}</x-table.td>
+                        <x-table.td>{!! $hotTopic->title !!}</x-table.td>
                         <x-table.td>{{ $hotTopic->category?->value }}</x-table.td>
                         <x-table.td>
                             @if ($hotTopic->featured_image_path)

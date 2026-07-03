@@ -16,7 +16,7 @@
                 <x-form.grid-col-full>
                     <div>
                         <x-form.field label="Title" name="title" required="true" placeholder="Enter Title"
-                            :value="$item?->title" />
+                            :value="html_entity_decode($item?->title ?? '')" />
                     </div>
                 </x-form.grid-col-full>
 
