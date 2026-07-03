@@ -296,28 +296,30 @@
             </span>
         </div>
 
-        <section class="kb-card">
-            <header class="kb-card__bar">
-                <span class="kb-card__icon"><i class='bx bxs-folder'></i></span>
-                <h2 class="kb-card__title">Toolkit Documents</h2>
-            </header>
-            <div class="kb-card__body">
-                @forelse ($toolkits as $item)
-                    <a class="kb-row" href="{{ asset('storage/' . $item->file_path) }}"
-                        download="{{ $item->file_name }}" style="animation-delay: {{ $loop->index * 60 }}ms">
-                        <span class="kb-row__left">
-                            <span class="kb-row__dot"></span>
-                            <span class="kb-row__title">{{ $item->title }}</span>
-                        </span>
-                        <span class="kb-row__right">
-                            <span class="kb-row__ext">{{ strtoupper(pathinfo($item->file_name, PATHINFO_EXTENSION)) }}</span>
-                            <i class='bx bx-download'></i>
-                        </span>
-                    </a>
-                @empty
-                    <p class="kb-empty">No toolkit files available yet.</p>
-                @endforelse
-            </div>
-        </section>
+        @foreach ($categories as $category)
+            <section class="kb-card" style="margin-bottom: 1.5rem;">
+                <header class="kb-card__bar">
+                    <span class="kb-card__icon"><i class='bx bxs-folder'></i></span>
+                    <h2 class="kb-card__title">{{ $category->value }}</h2>
+                </header>
+                <div class="kb-card__body">
+                    @forelse ($toolkitsByCategory->get($category->value, collect()) as $item)
+                        <a class="kb-row" href="{{ asset('storage/' . $item->file_path) }}"
+                            download="{{ $item->file_name }}" style="animation-delay: {{ $loop->index * 60 }}ms">
+                            <span class="kb-row__left">
+                                <span class="kb-row__dot"></span>
+                                <span class="kb-row__title">{{ $item->title }}</span>
+                            </span>
+                            <span class="kb-row__right">
+                                <span class="kb-row__ext">{{ strtoupper(pathinfo($item->file_name, PATHINFO_EXTENSION)) }}</span>
+                                <i class='bx bx-download'></i>
+                            </span>
+                        </a>
+                    @empty
+                        <p class="kb-empty">No toolkit files available for this category yet.</p>
+                    @endforelse
+                </div>
+            </section>
+        @endforeach
     </div>
 @endsection

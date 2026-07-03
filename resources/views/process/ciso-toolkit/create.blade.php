@@ -19,6 +19,13 @@
                             :value="$item?->title" />
                     </div>
                     <div>
+                        <x-form.select label="Category" name="category" required="true" :custom_data="$categories"
+                            :value="$item?->category?->value" />
+                    </div>
+                </x-form.grid-col>
+
+                <x-form.grid-col>
+                    <div>
                         <x-form.upload-field label="File (PDF, DOC, DOCX, TXT)" name="file" :required="!$item" />
                         @if ($item?->file_name)
                             <p class="mt-1 text-sm text-gray-500">Current file: {{ $item->file_name }}</p>

@@ -193,8 +193,10 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
 
         Route::get('/toolkit', function () {
             $toolkits = \App\Models\CisoToolkit::latest()->get();
+            $toolkitsByCategory = $toolkits->groupBy(fn ($item) => $item->category?->value);
+            $categories = \App\Enums\Category::cases();
 
-            return view('ciso/ciso-toolkit/index', compact('toolkits'));
+            return view('ciso/ciso-toolkit/index', compact('toolkits', 'toolkitsByCategory', 'categories'));
         })->name('ciso-toolkit.index');
 
         // ------------------CISO Education-------------------------

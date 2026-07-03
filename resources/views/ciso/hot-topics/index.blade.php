@@ -281,27 +281,29 @@
             </span>
         </div>
 
-        <section class="kb-card">
-            <header class="kb-card__bar">
-                <span class="kb-card__icon"><i class='bx bxs-news'></i></span>
-                <h2 class="kb-card__title">Hot Topics</h2>
-            </header>
-            <div class="kb-card__body">
-                @forelse ($hotTopics as $item)
-                    <a class="kb-row" href="{{ route('hot-topics.show', $item) }}"
-                        style="animation-delay: {{ $loop->index * 60 }}ms">
-                        <span class="kb-row__left">
-                            <span class="kb-row__dot"></span>
-                            <span class="kb-row__title">{{ $item->title }}</span>
-                        </span>
-                        <span class="kb-row__right">
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </span>
-                    </a>
-                @empty
-                    <p class="kb-empty">No hot topics available yet.</p>
-                @endforelse
-            </div>
-        </section>
+        @foreach ($categories as $category)
+            <section class="kb-card" style="margin-bottom: 1.5rem;">
+                <header class="kb-card__bar">
+                    <span class="kb-card__icon"><i class='bx bxs-news'></i></span>
+                    <h2 class="kb-card__title">{{ $category->value }}</h2>
+                </header>
+                <div class="kb-card__body">
+                    @forelse ($hotTopicsByCategory->get($category->value, collect()) as $item)
+                        <a class="kb-row" href="{{ route('hot-topics.show', $item) }}"
+                            style="animation-delay: {{ $loop->index * 60 }}ms">
+                            <span class="kb-row__left">
+                                <span class="kb-row__dot"></span>
+                                <span class="kb-row__title">{{ $item->title }}</span>
+                            </span>
+                            <span class="kb-row__right">
+                                <i class='bx bx-right-arrow-alt'></i>
+                            </span>
+                        </a>
+                    @empty
+                        <p class="kb-empty">No hot topics available for this category yet.</p>
+                    @endforelse
+                </div>
+            </section>
+        @endforeach
     </div>
 @endsection

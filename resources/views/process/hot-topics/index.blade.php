@@ -11,6 +11,7 @@
             <x-table.thead>
                 <x-table.th label="S.No" />
                 <x-table.th label="Title" />
+                <x-table.th label="Category" />
                 <x-table.th label="Featured Image" />
                 <x-table.th label="Resources" />
                 <x-table.th label="Action" />
@@ -20,6 +21,7 @@
                     <tr>
                         <x-table.td> <x-table.serial :loop="$loop" :paginator="$hotTopics" /></x-table.td>
                         <x-table.td>{{ $hotTopic->title }}</x-table.td>
+                        <x-table.td>{{ $hotTopic->category?->value }}</x-table.td>
                         <x-table.td>
                             @if ($hotTopic->featured_image_path)
                                 <img src="{{ asset('storage/' . $hotTopic->featured_image_path) }}"

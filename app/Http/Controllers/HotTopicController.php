@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Category;
 use App\Models\HotTopic;
 use App\Models\Resource;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class HotTopicController extends Controller
@@ -21,14 +23,16 @@ class HotTopicController extends Controller
     public function create(): View
     {
         $item = null;
+        $categories = array_column(Category::cases(), 'value');
 
-        return view('process/hot-topics/create', compact('item'));
+        return view('process/hot-topics/create', compact('item', 'categories'));
     }
 
     public function store(Request $request): RedirectResponse
     {
         $attributes = $request->validate([
             'title' => 'required|string|max:255',
+            'category' => ['required', Rule::enum(Category::class)],
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'body' => 'nullable|string',
             'resources' => 'nullable|array',
@@ -37,6 +41,7 @@ class HotTopicController extends Controller
 
         $hotTopic = HotTopic::create([
             'title' => $attributes['title'],
+            'category' => $attributes['category'],
             'body' => $attributes['body'] ?? null,
             'featured_image_path' => $request->file('featured_image')?->store('hot-topics/images', 'public'),
         ]);
@@ -50,14 +55,16 @@ class HotTopicController extends Controller
     public function edit(HotTopic $hotTopic): View
     {
         $item = $hotTopic->load('resources');
+        $categories = array_column(Category::cases(), 'value');
 
-        return view('process/hot-topics/create', compact('item'));
+        return view('process/hot-topics/create', compact('item', 'categories'));
     }
 
     public function update(Request $request, HotTopic $hotTopic): RedirectResponse
     {
         $attributes = $request->validate([
             'title' => 'required|string|max:255',
+            'category' => ['required', Rule::enum(Category::class)],
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'body' => 'nullable|string',
             'resources' => 'nullable|array',
@@ -66,6 +73,7 @@ class HotTopicController extends Controller
 
         $data = [
             'title' => $attributes['title'],
+            'category' => $attributes['category'],
             'body' => $attributes['body'] ?? null,
         ];
 

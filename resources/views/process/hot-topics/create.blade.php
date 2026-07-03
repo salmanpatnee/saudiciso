@@ -21,6 +21,13 @@
                 </x-form.grid-col-full>
 
                 <x-form.grid-col-full>
+                    <div>
+                        <x-form.select label="Category" name="category" required="true" :custom_data="$categories"
+                            :value="$item?->category?->value" />
+                    </div>
+                </x-form.grid-col-full>
+
+                <x-form.grid-col-full>
                     <x-form.textarea-field label="Body" name="body" placeholder="Enter body content"
                         :value="$item?->body" html="true" />
                 </x-form.grid-col-full>

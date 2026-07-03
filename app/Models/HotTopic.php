@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -15,5 +16,12 @@ class HotTopic extends Model
     public function resources(): MorphMany
     {
         return $this->morphMany(Resource::class, 'resourceable');
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'category' => Category::class,
+        ];
     }
 }

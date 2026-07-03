@@ -11,6 +11,7 @@
             <x-table.thead>
                 <x-table.th label="S.No" />
                 <x-table.th label="Title" />
+                <x-table.th label="Category" />
                 <x-table.th label="File" />
                 <x-table.th label="Action" />
             </x-table.thead>
@@ -19,6 +20,7 @@
                     <tr>
                         <x-table.td> <x-table.serial :loop="$loop" :paginator="$toolkits" /></x-table.td>
                         <x-table.td>{{ $toolkit->title }}</x-table.td>
+                        <x-table.td>{{ $toolkit->category?->value }}</x-table.td>
                         <x-table.td>
                             <a href="{{ asset('storage/' . $toolkit->file_path) }}" target="_blank"
                                 class="text-blue-600 hover:underline">{{ $toolkit->file_name }}</a>

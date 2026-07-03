@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Category;
 use App\Models\CisoToolkit;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class CisoToolkitController extends Controller
@@ -20,14 +22,16 @@ class CisoToolkitController extends Controller
     public function create(): View
     {
         $item = null;
+        $categories = array_column(Category::cases(), 'value');
 
-        return view('process/ciso-toolkit/create', compact('item'));
+        return view('process/ciso-toolkit/create', compact('item', 'categories'));
     }
 
     public function store(Request $request): RedirectResponse
     {
         $attributes = $request->validate([
             'title' => 'required|string|max:255',
+            'category' => ['required', Rule::enum(Category::class)],
             'file' => 'required|file|extensions:pdf,doc,docx,txt|max:20480',
         ]);
 
@@ -35,6 +39,7 @@ class CisoToolkitController extends Controller
 
         CisoToolkit::create([
             'title' => $attributes['title'],
+            'category' => $attributes['category'],
             'file_name' => $file->getClientOriginalName(),
             'file_path' => $file->store('ciso-toolkit', 'public'),
             'file_type' => $file->getClientMimeType(),
@@ -47,18 +52,23 @@ class CisoToolkitController extends Controller
     public function edit(CisoToolkit $cisoToolkit): View
     {
         $item = $cisoToolkit;
+        $categories = array_column(Category::cases(), 'value');
 
-        return view('process/ciso-toolkit/create', compact('item'));
+        return view('process/ciso-toolkit/create', compact('item', 'categories'));
     }
 
     public function update(Request $request, CisoToolkit $cisoToolkit): RedirectResponse
     {
         $attributes = $request->validate([
             'title' => 'required|string|max:255',
+            'category' => ['required', Rule::enum(Category::class)],
             'file' => 'nullable|file|extensions:pdf,doc,docx,txt|max:20480',
         ]);
 
-        $data = ['title' => $attributes['title']];
+        $data = [
+            'title' => $attributes['title'],
+            'category' => $attributes['category'],
+        ];
 
         if ($request->hasFile('file')) {
             Storage::disk('public')->delete($cisoToolkit->file_path);
