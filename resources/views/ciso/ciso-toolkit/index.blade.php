@@ -308,7 +308,7 @@
                             download="{{ $item->file_name }}" style="animation-delay: {{ $loop->index * 60 }}ms">
                             <span class="kb-row__left">
                                 <span class="kb-row__dot"></span>
-                                <span class="kb-row__title">{{ $item->title }}</span>
+                                <span class="kb-row__title">{!! html_entity_decode($item->title) !!}</span>
                             </span>
                             <span class="kb-row__right">
                                 <span class="kb-row__ext">{{ strtoupper(pathinfo($item->file_name, PATHINFO_EXTENSION)) }}</span>

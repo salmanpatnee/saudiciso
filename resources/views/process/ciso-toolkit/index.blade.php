@@ -19,7 +19,7 @@
                 @foreach ($toolkits as $toolkit)
                     <tr>
                         <x-table.td> <x-table.serial :loop="$loop" :paginator="$toolkits" /></x-table.td>
-                        <x-table.td>{{ $toolkit->title }}</x-table.td>
+                        <x-table.td>{!! html_entity_decode($toolkit->title) !!}</x-table.td>
                         <x-table.td>{{ $toolkit->category?->value }}</x-table.td>
                         <x-table.td>
                             <a href="{{ asset('storage/' . $toolkit->file_path) }}" target="_blank"
