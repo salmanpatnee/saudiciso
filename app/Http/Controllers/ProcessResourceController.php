@@ -8,13 +8,26 @@ use Illuminate\Support\Facades\Storage;
 
 class ProcessResourceController extends Controller
 {
+    private function slideImageFor(Process $process): string
+    {
+        if ($process->featured_image_path) {
+            return asset('storage/'.$process->featured_image_path);
+        }
+
+        $slideNumber = Process::where('id', '<=', $process->id)->count();
+
+        return "/Images/process/Slide{$slideNumber}.JPG";
+    }
+
     public function checklist(Process $process)
     {
         $processWithChecklist = $process->load(['resources' => function ($query) {
             $query->where('resource_type', 'checklist');
         }]);
 
-        return view('ciso/process/resources/checklist', compact('processWithChecklist'));
+        $slideImage = $this->slideImageFor($process);
+
+        return view('ciso/process/resources/checklist', compact('processWithChecklist', 'slideImage'));
     }
 
     public function videos(Process $process)
@@ -56,7 +69,9 @@ class ProcessResourceController extends Controller
             $query->where('resource_type', 'template');
         }]);
 
-        return view('ciso/process/resources/template', compact('processWithTemplates'));
+        $slideImage = $this->slideImageFor($process);
+
+        return view('ciso/process/resources/template', compact('processWithTemplates', 'slideImage'));
     }
 
     public function pdfTemplate(Resource $resource)
@@ -73,7 +88,9 @@ class ProcessResourceController extends Controller
             $query->where('resource_type', 'glossary');
         }]);
 
-        return view('ciso/process/resources/glossary', compact('processWithGlossary'));
+        $slideImage = $this->slideImageFor($process);
+
+        return view('ciso/process/resources/glossary', compact('processWithGlossary', 'slideImage'));
     }
 
     public function download(Resource $resource)
