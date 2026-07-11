@@ -1,6 +1,9 @@
 @include('partials.header')
 <!-- ===== Page Wrapper Start ===== -->
 <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar Mobile Overlay -->
+    <div x-show="sidebarToggle" @click="sidebarToggle = false"
+        class="fixed inset-0 z-9990 bg-gray-900/50 lg:hidden" x-cloak></div>
     @include('partials.sidebar')
     <!-- ===== Content Area Start ===== -->
     <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
@@ -9,7 +12,16 @@
         <!-- ===== Main Content Start ===== -->
         <main>
             <div class="bg-brand-950 flex grow items-center justify-between lg:flex-row lg:px-6 py-3">
-                <div>
+                <div class="flex items-center gap-2">
+                    <button type="button" class="lg:hidden text-white p-2 -ml-1"
+                        @click.stop="sidebarToggle = ! sidebarToggle" aria-label="Toggle sidebar">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                    </button>
                     <img class="lg:hidden" src="{{ asset('Images/SaudiCISOLogo.png') }}" alt="Logo" width="80"
                                 height="80">
                 </div>

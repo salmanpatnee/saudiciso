@@ -2,19 +2,27 @@
  <aside :class="sidebarToggle ? 'translate-x-0 lg:w-[90px]' : '-translate-x-full'"
      class="-translate-x-full bg-brand-950 border-gray-200  fixed flex flex-col h-screen left-0 lg:static lg:translate-x-0 overflow-y-hidden px-5 sidebar text-white top-0 w-[290px] z-9999">
      <!-- SIDEBAR HEADER -->
-     <div :class="sidebarToggle ? 'justify-center' : 'justify-between'"
+     <div :class="sidebarToggle ? 'lg:justify-center justify-between' : 'justify-between'"
          class="flex items-center gap-2 pt-3 sidebar-header pb-7">
          <a href="{{ route('vciso') }}">
-             <span class="logo" :class="sidebarToggle ? 'hidden' : ''">
+             <span class="logo" :class="sidebarToggle ? 'lg:hidden' : ''">
                  <span class="flex items-center space-x-2">
                      <img class="dark:hidden w-20" src="{{ asset('Images/SaudiCISOLogo.png') }}" alt="Logo" />
                      {{-- <span class="dark:hidden text-2xl font-semibold">CISO 360</span> --}}
                  </span>
              </span>
-             <img class="logo-icon" :class="sidebarToggle ? 'lg:block mt-10 w-20' : 'hidden'"
+             <img class="logo-icon" :class="sidebarToggle ? 'hidden lg:block lg:mt-10 w-20' : 'hidden'"
                  src="{{ asset('Images/SaudiCISOLogo.png') }}" alt="Logo" />
 
          </a>
+         <button type="button" class="lg:hidden text-white p-1" @click="sidebarToggle = false"
+             aria-label="Close sidebar">
+             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+                 <line x1="18" y1="6" x2="6" y2="18" />
+                 <line x1="6" y1="6" x2="18" y2="18" />
+             </svg>
+         </button>
      </div>
      <!-- SIDEBAR HEADER -->
      <div class="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
