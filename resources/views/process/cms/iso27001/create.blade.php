@@ -41,7 +41,7 @@
                 </div>
 
                 <div>
-                    <x-form.label label="Upload Implementation Templates"
+                    <x-form.label label="Upload Implementation Documents"
                         for="templateUploadEle" />
                     <input type="file" class="filepond" name="templateUploadEle" multiple credits="false"
                         id="templateUploadEle">
