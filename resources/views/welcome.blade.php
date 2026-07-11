@@ -33,7 +33,6 @@
                         <a href="#solutions">Solutions</a>
                         <a href="#talent">Talent</a>
                         <a href="#documents">Documents</a>
-                        <a href="#advisory">Advisory</a>
                         <a href="#about">About</a>
                         <a href="#contact">Contact</a>
                     </div>
