@@ -1,0 +1,24 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-98e34d91.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/hot-topics-editor.css": {
+    "file": "assets/hot-topics-editor-45b8c4f9.css",
+    "src": "resources/js/hot-topics-editor.css"
+  },
+  "resources/js/hot-topics-editor.js": {
+    "css": [
+      "assets/hot-topics-editor-45b8c4f9.css"
+    ],
+    "file": "assets/hot-topics-editor-7a0e90ad.js",
+    "isEntry": true,
+    "src": "resources/js/hot-topics-editor.js"
+  }
+}
