@@ -14,7 +14,7 @@
         {{ $attributes->merge(['class' => 'inline-block']) }}>
 @endif
 <button type="{{ $type }}"
-    {{ $attributes->merge(['class' => "bg-brand-950 font-medium hover:bg-brand-600 inline-flex items-center p-3 rounded-lg shadow-theme-xs text-sm text-white transition $class"]) }}>
+    {{ $attributes->merge(['class' => "bg-gradient-to-br from-[#f0cf3a] to-[#fff1a1] font-bold hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(240,207,58,.45)] inline-flex items-center p-3 rounded-full shadow-[0_10px_24px_rgba(240,207,58,.3)] text-sm text-[#04130e] transition-all $class"]) }}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="w-4 h-4">
         <path stroke-linecap="round" stroke-linejoin="round"

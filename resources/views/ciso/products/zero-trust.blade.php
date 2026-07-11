@@ -1,11 +1,16 @@
 @extends('layouts.ciso-full')
 @section('title', 'Zero Trust')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
-
-
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
         <p>Zero Trust is a cybersecurity framework that follows the principle of "never trust, always verify," ensuring that
             all users, devices, and network components are continuously authenticated and authorized before being granted
             access. Unlike traditional perimeter-based security models, Zero Trust assumes that threats exist both inside
@@ -25,7 +30,7 @@
             developments in Zero Trust will focus on AI-driven threat detection, automation, and integration with Extended
             Detection and Response (XDR) platforms to create a more proactive cybersecurity posture. The shift from implicit
             trust models to Zero Trust ensures a more resilient and adaptive security framework.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -87,7 +92,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for Zero Trust
         </h3>
         <x-table.table>
@@ -162,7 +167,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial Zero Trust
+        <h3 class="kb-heading">4. Commercial Zero Trust
             Products</h3>
         <x-table.table>
             <x-table.thead>
@@ -245,7 +250,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">5. Top 10 Challenges Related
+        <h3 class="kb-heading">5. Top 10 Challenges Related
             to Zero Trust</h3>
         <ol>
             <li>Implementing Zero Trust across legacy systems.</li>
@@ -259,7 +264,7 @@
             <li>Automating security responses without disrupting workflows.</li>
             <li>Aligning Zero Trust with compliance and regulatory requirements.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10
+        <h3 class="kb-heading">6. Key Features of Top 10
             Zero Trust Products
         </h3>
         <x-table.table>
@@ -362,7 +367,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">7. Top 10 Takeaways for CISO
+        <h3 class="kb-heading">7. Top 10 Takeaways for CISO
         </h3>
         <ol>
             <li>Zero Trust minimizes the risk of unauthorized access.</li>
@@ -378,7 +383,7 @@
             <li>Future Zero Trust developments will focus on automation and
                 AI-driven security.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -470,7 +475,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of Zero Trust (3-5
+        <h3 class="kb-heading">9. Future of Zero Trust (3-5
             Years)</h3>
         <x-table.table>
             <x-table.thead>
@@ -532,7 +537,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">10. Top 10 Points for
+        <h3 class="kb-heading">10. Top 10 Points for
             Zero-Trust Readiness
         </h3>
         <ol>
@@ -561,7 +566,7 @@
             <li>Compliance-driven enforcement of Zero
                 Trust security policies.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">11. Top 10 Points for
+        <h3 class="kb-heading">11. Top 10 Points for
             AI-Readiness</h3>
         <ol>
             <li>AI-powered risk scoring for identity

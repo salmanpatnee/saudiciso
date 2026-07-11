@@ -1,0 +1,197 @@
+.kb-product-detail {
+    --navy: #00053C;
+    --navy-2: #0A1559;
+    --gold: #C9A227;
+    --card: #FFFFFF;
+    --border: #E6E9EF;
+    --divider: #EEF1F5;
+    --ink: #1F2430;
+    animation: kb-fade .5s ease both;
+}
+
+.kb-product-detail p {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.kb-heading {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin: 2.5rem 0 1.1rem;
+    padding: .85rem 1.1rem;
+    background: linear-gradient(90deg, var(--navy), var(--navy-2));
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.02rem;
+    line-height: 1.4;
+    box-shadow: 0 10px 24px -14px rgba(0, 5, 60, .5);
+}
+
+h2.kb-heading {
+    margin-top: 1.5rem;
+}
+
+.kb-product-detail h2,
+.kb-product-detail h3 {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin: 2.5rem 0 1.1rem;
+    padding: .85rem 1.1rem;
+    background: linear-gradient(90deg, var(--navy), var(--navy-2));
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.02rem;
+    line-height: 1.4;
+    box-shadow: 0 10px 24px -14px rgba(0, 5, 60, .5);
+}
+
+.kb-product-detail h2 {
+    margin-top: 1.5rem;
+}
+
+.kb-subheading {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    margin: 1.5rem 0 .75rem;
+    color: var(--navy-2);
+    font-weight: 700;
+    font-size: .95rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.kb-subheading::before {
+    content: '';
+    flex: none;
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--gold);
+}
+
+.kb-product-detail strong,
+.kb-product-detail b {
+    color: var(--navy-2);
+}
+
+.kb-product-detail ul {
+    list-style: none;
+    margin: 0 0 1.75rem;
+    padding: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -24px rgba(0, 5, 60, .28);
+}
+
+.kb-product-detail ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    padding: .85rem 1.25rem;
+    border-bottom: 1px solid var(--divider);
+    color: var(--ink);
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+.kb-product-detail ul li:last-child {
+    border-bottom: none;
+}
+
+.kb-product-detail ul li::before {
+    content: '';
+    flex: none;
+    width: 8px;
+    height: 8px;
+    margin-top: .55rem;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.kb-product-detail ol {
+    counter-reset: kb-counter;
+    list-style: none;
+    margin: 0 0 1.75rem;
+    padding: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -24px rgba(0, 5, 60, .28);
+}
+
+.kb-product-detail ol li {
+    counter-increment: kb-counter;
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    padding: .85rem 1.25rem;
+    border-bottom: 1px solid var(--divider);
+    color: var(--ink);
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+.kb-product-detail ol li:last-child {
+    border-bottom: none;
+}
+
+.kb-product-detail ol li::before {
+    content: counter(kb-counter);
+    flex: none;
+    width: 26px;
+    height: 26px;
+    margin-top: .05rem;
+    border-radius: 50%;
+    background: rgba(240, 207, 58, .16);
+    border: 1px solid rgba(201, 162, 39, .4);
+    color: #7a5f10;
+    font-weight: 700;
+    font-size: .78rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kb-product-detail > div {
+    margin-bottom: 1.75rem;
+}
+
+@keyframes kb-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+    .kb-heading {
+        font-size: .92rem;
+        padding: .7rem .9rem;
+    }
+
+    .kb-product-detail h2,
+    .kb-product-detail h3 {
+        font-size: .92rem;
+        padding: .7rem .9rem;
+    }
+
+    .kb-product-detail p {
+        text-align: justify;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .kb-product-detail {
+        animation: none;
+    }
+}

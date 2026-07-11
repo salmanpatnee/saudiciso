@@ -52,16 +52,59 @@
                             <span class="eyebrow__dot" aria-hidden="true"></span>
                             SaudiCISO member hub
                         </p>
-                        <h1 id="vciso-title">CISO 360 <span class="text-accent">Survival Lifeline</span></h1>
-                        <p class="vciso-hero__lead">
-                            Move quickly into the resources CISOs use most: practical toolkits, current threat context,
-                            education, people intelligence, process guidance, and product insight.
-                        </p>
+                        <h1 id="vciso-title">CISO All-in-One <span class="text-accent">Requirements are Here!</span></h1>
                     </div>
 
                     <div class="vciso-hero__panel" aria-label="Platform focus">
                         <span>Executive-ready resources</span>
                         <strong>Six focused pathways for cyber leadership decisions.</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="vciso-section vciso-section--compact" aria-labelledby="operating-areas-title">
+                <div class="container">
+                    <div class="vciso-section__head">
+                        <p class="eyebrow">Operating areas</p>
+                        <h2 id="operating-areas-title">Navigate the core of a resilient security office.</h2>
+                    </div>
+
+                    <div class="vciso-card-grid">
+                        <a href="{{ route('people.index') }}" class="vciso-card vciso-card--compact">
+                            <span class="icon-box vciso-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </span>
+                            <h3>People</h3>
+                            <p>Find Top Saudi Talent Access 1200+ Certified Staff in KSA</p>
+                        </a>
+
+                        <a href="{{ route('ciso-process.index') }}" class="vciso-card vciso-card--compact">
+                            <span class="icon-box vciso-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1A2 2 0 1 1 4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3h.1a1.7 1.7 0 0 0 .9-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1A2 2 0 1 1 19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.6.9h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6 1Z"></path>
+                                </svg>
+                            </span>
+                            <h3>Processes</h3>
+                            <p>50+ Editable Compliance Documents</p>
+                        </a>
+
+                        <a href="{{ route('ciso-products.index') }}" class="vciso-card vciso-card--compact">
+                            <span class="icon-box vciso-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                                    <path d="M8 20h8"></path>
+                                    <path d="M12 16v4"></path>
+                                </svg>
+                            </span>
+                            <h3>Products</h3>
+                            <p>Expert Product Insights Product Categories from A to Z</p>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -106,53 +149,6 @@
                             <span class="vciso-card__meta">Current priorities</span>
                             <h3>Hot Topics for CISO</h3>
                             <p>Review timely cyber leadership issues, emerging risks, and decision-ready perspectives.</p>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="vciso-section vciso-section--compact" aria-labelledby="operating-areas-title">
-                <div class="container">
-                    <div class="vciso-section__head">
-                        <p class="eyebrow">Operating areas</p>
-                        <h2 id="operating-areas-title">Navigate the core of a resilient security office.</h2>
-                    </div>
-
-                    <div class="vciso-card-grid">
-                        <a href="{{ route('people.index') }}" class="vciso-card vciso-card--compact">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </span>
-                            <h3>People</h3>
-                            <p>Find Saudi cybersecurity talent and human-resource intelligence.</p>
-                        </a>
-
-                        <a href="{{ route('ciso-process.index') }}" class="vciso-card vciso-card--compact">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                    <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1A2 2 0 1 1 4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3h.1a1.7 1.7 0 0 0 .9-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1A2 2 0 1 1 19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.6.9h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6 1Z"></path>
-                                </svg>
-                            </span>
-                            <h3>Processes</h3>
-                            <p>Work through governance, controls, evidence, and repeatable operating practices.</p>
-                        </a>
-
-                        <a href="{{ route('ciso-products.index') }}" class="vciso-card vciso-card--compact">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <rect x="3" y="4" width="18" height="12" rx="2"></rect>
-                                    <path d="M8 20h8"></path>
-                                    <path d="M12 16v4"></path>
-                                </svg>
-                            </span>
-                            <h3>Products</h3>
-                            <p>Explore security product categories and vendor-neutral evaluation context.</p>
                         </a>
                     </div>
                 </div>

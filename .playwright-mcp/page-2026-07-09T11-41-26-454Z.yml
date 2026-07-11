@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - main [ref=e4]:
+    - region "Access Saudi CISO" [ref=e6]:
+      - generic [ref=e7]:
+        - link "SaudiCISO.net home" [ref=e8] [cursor=pointer]:
+          - /url: http://saudiciso.test
+          - img "SaudiCISO.net" [ref=e9]
+        - heading "Access Saudi CISO" [level=2] [ref=e11]
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - generic [ref=e15]: Username *
+            - textbox "Username *" [ref=e16]:
+              - /placeholder: ""
+          - generic [ref=e17]:
+            - generic [ref=e19]: Password *
+            - generic [ref=e20]:
+              - textbox "Password *" [ref=e21]:
+                - /placeholder: ""
+              - button "Toggle password visibility" [ref=e22] [cursor=pointer]:
+                - img [ref=e23]
+          - button "Enter Platform" [ref=e25] [cursor=pointer]
+  - generic [ref=e26]:
+    - generic [ref=e28]:
+      - generic [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]:
+          - text: 
+          - generic: Request
+        - text: 
+        - generic [ref=e32] [cursor=pointer]:
+          - text: 
+          - generic: Timeline
+        - text: 
+        - generic [ref=e33] [cursor=pointer]:
+          - text: 
+          - generic: Views
+          - generic [ref=e34]: "10"
+        - text:    
+      - generic [ref=e35]:
+        - generic [ref=e38] [cursor=pointer]:
+          - generic: 
+        - generic [ref=e40] [cursor=pointer]:
+          - generic: 
+        - generic [ref=e41] [cursor=pointer]:
+          - generic: 
+          - generic: 166ms
+        - generic [ref=e42]:
+          - generic: 
+          - generic: 3MB
+        - generic [ref=e43]:
+          - generic: 
+          - generic: 11.x
+        - generic [ref=e44] [cursor=pointer]:
+          - generic: 
+          - generic: GET login
+    - text:                                      
+  - text: 
+  - img

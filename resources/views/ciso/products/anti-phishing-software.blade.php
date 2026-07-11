@@ -1,11 +1,17 @@
 @extends('layouts.ciso-full')
 @section('title', 'Anti-Phishing Software')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 
 
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
 
         <p>Phishing attacks are among the most prevalent cybersecurity threats, exploiting social engineering
             tactics to deceive users into revealing sensitive information. Anti-phishing software technologies have
@@ -29,7 +35,7 @@
             security awareness programs, ensuring employees recognize and avoid phishing attempts. With the rise of
             Business Email Compromise (BEC) and spear-phishing attacks, deploying anti-phishing solutions has become
             a fundamental security measure in both on-premises and cloud-based environments.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -91,7 +97,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for
             Anti-Phishing Software</h3>
         <x-table.table>
@@ -166,7 +172,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial Anti-Phishing
+        <h3 class="kb-heading">4. Commercial Anti-Phishing
             Products</h3>
         <x-table.table>
             <x-table.thead>
@@ -251,7 +257,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10
+        <h3 class="kb-heading">6. Key Features of Top 10
             Anti-Phishing
             Products</h3>
         <x-table.table>
@@ -344,7 +350,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -423,7 +429,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of Anti-Phishing
+        <h3 class="kb-heading">9. Future of Anti-Phishing
             Software in 3-5
             Years</h3>
         <x-table.table>

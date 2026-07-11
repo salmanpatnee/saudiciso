@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaudiCISO.net - Trusted Cybersecurity Expertise for Saudi Leaders</title>
-    <meta name="description" content="SaudiCISO.net connects Saudi cybersecurity leaders with trusted talent, compliance templates, advisory support, and vendor-neutral product insight.">
+    <meta name="description" content="SaudiCISO.net connects Saudi cybersecurity leaders with trusted talent, compliance documents, advisory support, and vendor-neutral product insight.">
     <meta name="color-scheme" content="dark">
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=3.5">
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=4.6">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
                     <div class="site-nav__links">
                         <a href="#solutions">Solutions</a>
                         <a href="#talent">Talent</a>
-                        <a href="#templates">Templates</a>
+                        <a href="#documents">Documents</a>
                         <a href="#advisory">Advisory</a>
                         <a href="#about">About</a>
                         <a href="#contact">Contact</a>
@@ -56,7 +56,7 @@
                         </p>
                         <h1>What is Your Biggest <span class="text-accent">Problem</span> Today?</h1>
                         <p class="hero__tagline">We have the Solution. <span class="text-accent">Guaranteed!</span></p>
-                        <p class="hero__lead">Access vetted cyber talent, executive advisory, compliance-ready templates, and vendor-neutral product intelligence built for Saudi enterprises and regulated organizations.</p>
+                        {{-- <p class="hero__lead">Access vetted cyber talent, executive advisory, compliance-ready documents, and vendor-neutral product intelligence built for Saudi enterprises and regulated organizations.</p> --}}
 
                         <div class="hero__actions">
                             <button type="button" class="btn btn--primary btn--large js-open-contact">Become a Member</button>
@@ -64,9 +64,9 @@
                         </div>
 
                         <div class="hero__proof" aria-label="Platform highlights">
-                            <span>Vendor-neutral</span>
-                            <span>PDPL aware</span>
-                            <span>Executive advisory</span>
+                            <span>1200+ Certified Staff in KSA</span>
+                            <span>50+ Compliance Documents</span>
+                            <span>Built for the Saudi Market</span>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
                                 Our Cybersecurity Professionals Database is compliant with the Saudi Personal Data Protection Law (PDPL). All information contained in the database has been collected from publicly available and publicly published sources.
                             </p>
                         </div>
-                        <span class="saudization-card__badge">Nitaqat Aligned</span>
+                        {{-- <span class="saudization-card__badge">Nitaqat Aligned</span> --}}
                     </div>
                 </div>
             </section>
@@ -104,7 +104,7 @@
                     <div class="section-head reveal">
                         <p class="eyebrow">Enterprise services</p>
                         <h2 id="services-heading">One platform for the work CISOs must get right.</h2>
-                        <p>Purpose-built support for cyber leaders who need credible expertise, faster execution, and decisions that stand up to board-level scrutiny.</p>
+                        {{-- <p>Purpose-built support for cyber leaders who need credible expertise, faster execution, and decisions that stand up to board-level scrutiny.</p> --}}
                     </div>
 
                     <div class="services-grid">
@@ -112,32 +112,30 @@
                             <span class="icon-box">
                                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                             </span>
-                            <h3>Cyber Talent</h3>
-                            <p>Find certified Saudi cybersecurity professionals for strategic roles, project delivery, and nationalization goals.</p>
+                            <h3>People</h3>
+                            <p>Find Top Saudi Talent Access 1200+ Certified Staff in KSA</p>
                         </article>
-
-                        <article class="service-card reveal" id="templates">
+                        <article class="service-card reveal">
+                            <span class="icon-box">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                            </span>
+                            <h3>Products</h3>
+                            <p>Expert Product Insights Product Categories from A to Z</p>
+                        </article>
+                        <article class="service-card reveal" id="documents">
                             <span class="icon-box">
                                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v6h6"></path><path d="M10 13h4"></path><path d="M10 17h6"></path><path d="M8 13h.01"></path><path d="M8 17h.01"></path></svg>
                             </span>
-                            <h3>Compliance Templates</h3>
-                            <p>Editable policies, processes, checklists, and governance artifacts aligned to regulated security programs.</p>
+                            <h3>Processes</h3>
+                            <p>50+ Editable Compliance Documents</p>
                         </article>
 
-                        <article class="service-card reveal" id="advisory">
+                        {{-- <article class="service-card reveal" id="advisory">
                             <span class="icon-box">
                                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
                             </span>
                             <h3>Strategic Advisory</h3>
                             <p>Priority guidance for budget planning, executive reporting, regulatory readiness, and complex cyber decisions.</p>
-                        </article>
-
-                        <article class="service-card reveal">
-                            <span class="icon-box">
-                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
-                            </span>
-                            <h3>Product Evaluation</h3>
-                            <p>Shortlist and validate security platforms with independent recommendations and local-market context.</p>
                         </article>
 
                         <article class="service-card reveal">
@@ -154,91 +152,102 @@
                             </span>
                             <h3>Risk Assessment</h3>
                             <p>Evaluate cyber maturity, control gaps, resource needs, and board-ready remediation priorities.</p>
-                        </article>
+                        </article> --}}
                     </div>
                 </div>
             </section>
 
             <section class="section section--deep" id="about" aria-labelledby="why-heading">
                 <div class="container why-grid">
-                    <div class="why-visual reveal" aria-hidden="true">
-                        <div class="orbit">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="why-panel">
-                            <p>Executive Cyber Readiness</p>
-                            <strong>Saudi-focused insight. Global-grade discipline.</strong>
-                            <div class="why-panel__rows">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
+                    <figure class="why-visual reveal why-image-card">
+                        <img src="{{ asset('Images/saudi-ciso.png') }}" alt="Confident CISO">
+                    </figure>
 
                     <div class="why-content reveal">
                         <p class="eyebrow">Why SaudiCISO</p>
                         <h2 id="why-heading">Built for leaders accountable for security, resilience, and trust.</h2>
-                        <p>SaudiCISO combines local market knowledge with vendor-neutral cyber expertise so executives can move faster without compromising diligence.</p>
+                        <p>SaudiCiso.net is a subscription-based professional platform created exclusively for CISOs in the KSA.</p>
 
                         <div class="feature-list">
                             <div>
                                 <span class="check-icon"></span>
-                                <p><strong>Saudi-focused expertise</strong> Guidance shaped by local business, talent, and regulatory realities.</p>
+                                <p><strong>Vendor-Independent</strong> 
+                                    {{-- Guidance shaped by local business, talent, and regulatory realities. --}}
+                                </p>
                             </div>
                             <div>
                                 <span class="check-icon"></span>
-                                <p><strong>Vendor-neutral recommendations</strong> Independent product insight without sales pressure.</p>
+                                <p><strong>Executive 12-Month Access</strong></p>
                             </div>
                             <div>
                                 <span class="check-icon"></span>
-                                <p><strong>Experienced advisors</strong> Executive support for decisions with operational and board impact.</p>
+                                <p><strong>Built for the Saudi Market</strong></p>
                             </div>
                             <div>
                                 <span class="check-icon"></span>
-                                <p><strong>Compliance ready</strong> Reusable templates and processes that accelerate governance work.</p>
+                                <p><strong>Pre-Developed Editable Documents</strong></p>
                             </div>
                             <div>
                                 <span class="check-icon"></span>
-                                <p><strong>Community driven</strong> A trusted network for CISOs, cyber teams, and Saudi professionals.</p>
+                                <p><strong>Direct Access to hire Saudi Cybersecurity Talent</strong></p>
+                            </div>
+                            <div>
+                                <span class="check-icon"></span>
+                                <p><strong>Optional Monthly In-Person Executive Session</strong></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section membership" aria-labelledby="membership-heading">
+            <section class="section proof-points" aria-label="Member value highlights">
                 <div class="container">
-                    <div class="membership-card reveal">
-                        <div class="membership-card__content">
-                            <p class="eyebrow">Annual membership</p>
-                            <h2 id="membership-heading">A premium operating advantage for Saudi cyber leaders.</h2>
-                            <p>Equip your security office with practical expertise, ready-to-use assets, and priority advisory access for the decisions that cannot wait.</p>
+                    <div class="proof-point reveal">
+                        <figure class="proof-point__media">
+                            <img src="{{ asset('Images/doorknowtwo.png') }}" alt="Principal Consultant knocking on your office door">
+                        </figure>
+                        <div class="proof-point__content">
+                            <span class="proof-point__index">01</span>
+                            <span class="proof-point__divider" aria-hidden="true"></span>
+                            <h3>The Principal Consultant may visit your office to resolve your pressing problem.</h3>
                         </div>
-                        <div class="membership-card__panel">
-                            <h3>Member Benefits</h3>
-                            <ul>
-                                <li>12-month executive platform access</li>
-                                <li>Compliance templates and governance documents</li>
-                                <li>Cyber talent discovery for Saudi hiring goals</li>
-                                <li>Priority advisory support</li>
-                                <li>Optional executive working sessions</li>
-                            </ul>
-                            <button type="button" class="btn btn--primary btn--full js-open-contact">Request Membership</button>
+                    </div>
+
+                    <div class="proof-point proof-point--reverse reveal">
+                        <figure class="proof-point__media">
+                            <img src="{{ asset('Images/deadlinetwo.png') }}" alt="Month end budget calendar">
+                        </figure>
+                        <div class="proof-point__content">
+                            <span class="proof-point__index">02</span>
+                            <span class="proof-point__divider" aria-hidden="true"></span>
+                            <h3>Everything within your budget until the month end.</h3>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section cta-section" id="contact" aria-labelledby="cta-heading">
+            <section class="section cta-section" id="contact" aria-label="CISO bonus offer">
                 <div class="container">
-                    <div class="cta-card reveal">
-                        <p class="eyebrow">Move with confidence</p>
-                        <h2 id="cta-heading">Give your security office the expertise, templates, and network to execute faster.</h2>
-                        <p>Speak with SaudiCISO about membership, advisory access, and the fastest way to support your cyber priorities.</p>
-                        <button type="button" class="btn btn--primary btn--large js-open-contact">Become a Member</button>
+                    <div class="bonus-banner reveal">
+                        <span class="icon-box" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 14.9 8.5 22 9.3 16.8 14.1 18.2 21 12 17.6 5.8 21 7.2 14.1 2 9.3 9.1 8.5 12 2"></polygon></svg>
+                        </span>
+                        <p><strong>Bonus for CISO:</strong> Certified Information Security Manager (CISM) Examination Voucher and Quick Review Session for Purchase Orders and Payments Received by End of the Month.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section budget-section" aria-labelledby="budget-heading">
+                <div class="container">
+                    <div class="budget-card reveal">
+                        <div class="budget-card__content">
+                            <h2 id="budget-heading">Budget Issues Solved!</h2>
+                            <p>If you have budget constraints, the full-year subscription is a minimal amount that your main supplier can easily include in their existing project costs.</p>
+                            <button type="button" class="btn btn--primary btn--large js-open-contact">Contact Us!</button>
+                        </div>
+                        <figure class="budget-card__media">
+                            <img src="{{ asset('Images/budgettwo.png') }}" alt="Scissors cutting a paper labeled Budget">
+                        </figure>
                     </div>
                 </div>
             </section>
@@ -253,6 +262,7 @@
             </div>
             <div class="container footer-bottom">
                 <p>&copy; {{ date('Y') }} SaudiCISO.net. All rights reserved.</p>
+                <p>SaudiCISO.Net is Owned and Managed by GISBA</p>
             </div>
         </footer>
     </div>

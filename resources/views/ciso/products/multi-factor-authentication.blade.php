@@ -1,11 +1,17 @@
 @extends('layouts.ciso-full')
 @section('title', 'Multi-Factor Authentication (MFA)')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 
 
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
         <p>Multi-Factor Authentication (MFA) is a security technology designed to enhance authentication by requiring users
             to provide two or more verification factors to access an account, system, or application. This technology
             significantly reduces the risk of unauthorized access, as attackers would need to compromise multiple
@@ -24,7 +30,7 @@
             endpoints, and privileged access environments to protect against account takeovers and insider threats. The
             future of MFA is driven by advancements in AI-powered authentication, passwordless authentication methods, and
             decentralized identity frameworks, improving both security and user experience.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -87,7 +93,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for
             Multi-Factor Authentication (MFA)</h3>
         <x-table.table>
@@ -164,7 +170,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial MFA Products
+        <h3 class="kb-heading">4. Commercial MFA Products
         </h3>
         <x-table.table>
             <x-table.thead>
@@ -255,7 +261,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">5. Top 10 Challenges Related
+        <h3 class="kb-heading">5. Top 10 Challenges Related
             to MFA</h3>
         <ol>
             <li>Balancing security and user convenience.</li>
@@ -269,7 +275,7 @@
             <li>Protecting MFA systems from social engineering and MFA fatigue attacks.</li>
             <li>Future-proofing MFA with passwordless authentication methods.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10 MFA
+        <h3 class="kb-heading">6. Key Features of Top 10 MFA
             Products</h3>
         <x-table.table>
             <x-table.thead>
@@ -382,7 +388,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">7. Top 10 Takeaways for CISO
+        <h3 class="kb-heading">7. Top 10 Takeaways for CISO
         </h3>
         <ol>
             <li>MFA significantly reduces the risk of credential theft.</li>
@@ -404,7 +410,7 @@
             <li>Passwordless authentication is the future of MFA strategies.
             </li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -499,7 +505,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of MFA (3-5 Years)
+        <h3 class="kb-heading">9. Future of MFA (3-5 Years)
         </h3>
         <x-table.table>
             <x-table.thead>
@@ -559,7 +565,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">10. Top 10 Points for
+        <h3 class="kb-heading">10. Top 10 Points for
             Zero-Trust Readiness
         </h3>
         <ol>
@@ -591,7 +597,7 @@
             <li>Compliance-driven enforcement of MFA
                 security policies.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">11. Top 10 Points for
+        <h3 class="kb-heading">11. Top 10 Points for
             AI-Readiness</h3>
         <ol>
             <li>AI-powered risk scoring for

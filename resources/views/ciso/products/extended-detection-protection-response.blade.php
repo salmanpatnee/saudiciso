@@ -1,11 +1,17 @@
 @extends('layouts.ciso-full')
 @section('title', 'Extended Detection Protection Response (XDR)')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 
 
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
         <p>Extended Detection and Response (XDR) is an advanced cybersecurity technology that integrates multiple security
             layers into a unified detection, investigation, and response platform. Unlike traditional Endpoint Detection and
             Response (EDR) solutions that focus solely on endpoint threats, XDR extends visibility across networks, email,
@@ -21,7 +27,7 @@
             security posture. By unifying disparate security tools into a single interface, XDR simplifies threat hunting,
             incident analysis, and forensic investigations. The future of XDR will focus on further automation, predictive
             analytics, and zero-trust architecture integration to enhance cyber resilience against emerging threats.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -83,7 +89,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for Extended
             Detection and Response (XDR)</h3>
         <x-table.table>
@@ -161,7 +167,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial XDR Products
+        <h3 class="kb-heading">4. Commercial XDR Products
         </h3>
         <x-table.table>
             <x-table.thead>
@@ -248,7 +254,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">5. Top 10 Challenges Related
+        <h3 class="kb-heading">5. Top 10 Challenges Related
             to XDR</h3>
         <ol>
             <li>Complexity in integrating with legacy security systems.</li>
@@ -262,7 +268,7 @@
             <li>Lack of skilled personnel to manage XDR effectively.</li>
             <li>Adapting to evolving attacker techniques and tactics.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10 XDR
+        <h3 class="kb-heading">6. Key Features of Top 10 XDR
             Products</h3>
         <x-table.table>
             <x-table.thead>
@@ -374,7 +380,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">7. Top 10 Takeaways for CISO
+        <h3 class="kb-heading">7. Top 10 Takeaways for CISO
         </h3>
         <ol>
             <li>XDR provides unified threat detection across multiple security
@@ -395,7 +401,7 @@
             <li>Future advancements in AI will further automate threat
                 mitigation.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -492,7 +498,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of XDR (3-5 Years)
+        <h3 class="kb-heading">9. Future of XDR (3-5 Years)
         </h3>
         <x-table.table>
             <x-table.thead>
@@ -554,7 +560,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">10. Top 10 Points for
+        <h3 class="kb-heading">10. Top 10 Points for
             Zero-Trust Readiness
         </h3>
         <ol>
@@ -588,7 +594,7 @@
                 data in transit and at
                 rest.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">11. Top 10 Points for
+        <h3 class="kb-heading">11. Top 10 Points for
             AI-Readiness</h3>
         <ol>
             <li>AI-powered predictive threat

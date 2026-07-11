@@ -1,14 +1,18 @@
 @extends('layouts.ciso-full')
 @section('title', 'Applying CISM Knowledge in Practice')
 @section('title_ar', '')
+
+@push('css')
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 
+    <div class="sm:px-7 kb-product-detail">
+        <h3 class="kb-heading">1. Information Security Governance</h3>
 
-    <div class="px-7">
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 mt-7 rounded-md text-white">1. Information Security Governance</h3>
-
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
-        <p class="mb-3 mt-3 text-lg">Effective Information Security Governance ensures that security aligns with business
+        <h4 class="kb-subheading">Implementation</h4>
+        <p>Effective Information Security Governance ensures that security aligns with business
             objectives and regulatory
             requirements. To implement this, you should first <b>develop a security governance framework</b> that integrates
             policies, standards, and risk management. Establish <b>clear security roles and responsibilities</b> across the
@@ -19,8 +23,8 @@
             implemented to adapt security governance to evolving threats.
         </p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation Summary</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Implementation Summary</h4>
+        <ul>
             <li>Establish a <b>security governance framework</b> aligned with business objectives.</li>
             <li>Define <b>clear security roles, responsibilities, and accountability</b> at all levels.</li>
             <li>Create a <b>security steering committee</b> with key stakeholders.</li>
@@ -29,8 +33,8 @@
             <li>Implement <b>continuous monitoring</b> and improvements.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges</h4>
+        <ul>
             <li>Lack of <b>executive buy-in</b> and sponsorship.</li>
             <li>Misalignment between <b>security and business objectives</b>.</li>
             <li>Difficulty in establishing <b>security ownership and accountability</b>.</li>
@@ -43,15 +47,15 @@
             <li>Integration of <b>security governance across global or multi-branch organizations</b>.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways</h4>
-        <p class="mb-3 mt-3 text-lg">Information Security Governance is the foundation of a <b>robust cybersecurity
+        <h4 class="kb-subheading">Takeaways</h4>
+        <p>Information Security Governance is the foundation of a <b>robust cybersecurity
                 strategy</b>, ensuring that
             security aligns with business goals and compliance requirements. Strong governance improves risk management,
             enhances accountability, and promotes a security-aware culture. Effective governance also supports informed
             decision-making and ensures that security investments deliver measurable business value.</p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways Summary</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Key Takeaways Summary</h4>
+        <ul>
             <li><strong>Align security governance with business objectives</strong>.</li>
             <li><strong>Define roles, responsibilities, and accountability clearly</strong>.</li>
             <li><strong>Establish a governance framework with policies and standards</strong>.</li>
@@ -60,11 +64,11 @@
             <li><strong>Drive a security-aware culture across the organization</strong>.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">2. Information Security Risk Management
+        <h3 class="kb-heading">2. Information Security Risk Management
         </h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
-        <p class="mb-3 mt-3 text-lg">Implementing Information Security Risk Management involves identifying, assessing, and
+        <h4 class="kb-subheading">Implementation</h4>
+        <p>Implementing Information Security Risk Management involves identifying, assessing, and
             mitigating security risks
             that could impact business operations. Start by defining a risk management framework based on ISO 31000, NIST
             RMF, or ISO 27005 methodologies. Conduct risk assessments to identify vulnerabilities, threats, and their impact
@@ -73,8 +77,8 @@
             intelligence and business changes. Security risks should be reported to senior management, and a risk-aware
             culture should be promoted across the organization.</p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation Summary</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Implementation Summary</h4>
+        <ul>
             <li><strong>Develop</strong> and implement a risk management framework.</li>
             <li><strong>Conduct</strong> risk assessments and risk impact analysis.</li>
             <li><strong>Maintain</strong> a risk register and assign ownership.</li>
@@ -83,8 +87,8 @@
             <li><strong>Promote</strong> risk awareness across all business functions.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges</h4>
+        <ul>
             <li><em>Identifying all critical assets and their associated risks.</em></li>
             <li><em>Lack of standardized risk assessment methodologies.</em></li>
             <li><em>Inconsistent risk appetite and tolerance levels across departments.</em></li>
@@ -97,15 +101,15 @@
             <li><em>Challenges in aligning security risk management with business continuity planning.</em></li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways</h4>
-        <p class="mb-3 mt-3 text-lg">A strong risk management program enhances an organization's ability to anticipate and
+        <h4 class="kb-subheading">Takeaways</h4>
+        <p>A strong risk management program enhances an organization's ability to anticipate and
             mitigate security threats
             before they cause significant damage. It enables proactive decision-making and ensures that security efforts are
             aligned with business risk tolerance. Implementing continuous risk monitoring allows organizations to adapt
             quickly to new cyber threats and regulatory requirements.</p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways Summary</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Key Takeaways Summary</h4>
+        <ul>
             <li>Develop a comprehensive risk management framework.</li>
             <li>Conduct periodic risk assessments and maintain a risk register.</li>
             <li>Align security risk management with enterprise risk management.</li>
@@ -114,12 +118,12 @@
             <li>Ensure risk reporting is integrated into decision-making processes.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">3. Information Security Program Development
+        <h3 class="kb-heading">3. Information Security Program Development
             and Management</h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
+        <h4 class="kb-subheading">Implementation</h4>
 
-        <p class="mb-3 mt-3 text-lg">Developing an Information Security Program requires structuring security initiatives to
+        <p>Developing an Information Security Program requires structuring security initiatives to
             protect organizational
             assets effectively. This involves defining security objectives, implementing cybersecurity controls, and
             ensuring compliance with standards like <strong>ISO 27001, NIST CSF, or CIS Controls</strong>. A robust security
@@ -127,9 +131,9 @@
                 protection</strong>. Organizations must also establish security awareness training programs, measure
             security performance using KPIs, and regularly update policies to reflect new threats and technologies.</p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation Summary</h4>
+        <h4 class="kb-subheading">Implementation Summary</h4>
 
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Define <b>security program objectives and key controls</b>.</li>
             <li>Implement security measures like <strong>IAM, endpoint, and network security</strong>.</li>
             <li>Develop <b>security awareness and training programs</b>.</li>
@@ -138,9 +142,9 @@
             <li>Regularly <b>review and enhance security policies</b>.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges</h4>
+        <h4 class="kb-subheading">Challenges</h4>
 
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Lack of <b>clear security objectives and measurable outcomes</b>.</li>
             <li><b>Budget constraints</b> impacting program implementation.</li>
             <li>Difficulty in <b>aligning security programs with business needs</b>.</li>
@@ -153,17 +157,17 @@
             <li>Difficulty in <b>measuring security program effectiveness</b>.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways</h4>
+        <h4 class="kb-subheading">Takeaways</h4>
 
-        <p class="mb-3 mt-3 text-lg">A well-structured <b>security program</b> provides an organization with a proactive
+        <p>A well-structured <b>security program</b> provides an organization with a proactive
             defense against cybersecurity
             threats. It ensures continuous improvement, compliance with regulations, and better incident response.
             <b>Security programs should be dynamic</b>, evolving with emerging threats and business needs.
         </p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways Summary</h4>
+        <h4 class="kb-subheading">Key Takeaways Summary</h4>
 
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><b>Develop and manage a security program aligned with business objectives</b>.</li>
             <li><b>Ensure compliance with security regulations and standards</b>.</li>
             <li><b>Implement strong cybersecurity controls</b> across the organization.</li>
@@ -172,12 +176,12 @@
             <li><b>Integrate security programs with enterprise IT governance</b>.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">4. Information Security Incident Management
+        <h3 class="kb-heading">4. Information Security Incident Management
         </h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
+        <h4 class="kb-subheading">Implementation</h4>
 
-        <p class="mb-3 mt-3 text-lg">An effective Incident Management Plan ensures rapid response and recovery from security
+        <p>An effective Incident Management Plan ensures rapid response and recovery from security
             breaches. Implement an
             <strong>Incident Response (IR) framework</strong> based on <strong>NIST 800-61 or ISO 27035</strong>. Define an
             incident classification system, establish an <strong>incident response team (IRT)</strong>, and conduct regular
@@ -185,9 +189,9 @@
             detect threats. Develop a post-incident review process to improve future response capabilities.
         </p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation Summary</h4>
+        <h4 class="kb-subheading">Implementation Summary</h4>
 
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Develop an <strong>incident response plan (IRP)</strong>.</li>
             <li>Establish an <strong>incident response team (IRT)</strong>.</li>
             <li>Implement <strong>SIEM and monitoring tools</strong>.</li>
@@ -196,9 +200,9 @@
             <li>Integrate incident response with business continuity plans.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges</h4>
+        <h4 class="kb-subheading">Challenges</h4>
 
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Delayed incident detection due to lack of proper monitoring tools.</li>
             <li>Inadequate incident response plans, leading to uncoordinated actions.</li>
             <li>Lack of skilled personnel to handle complex security incidents.</li>
@@ -212,9 +216,9 @@
             <li>Inconsistent post-incident reviews, reducing the ability to learn from past events.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways</h4>
+        <h4 class="kb-subheading">Takeaways</h4>
 
-        <p class="mb-3 mt-3 text-lg">A well-structured Incident Management Program ensures rapid detection, response, and
+        <p>A well-structured Incident Management Program ensures rapid detection, response, and
             recovery from cybersecurity
             incidents. Organizations should focus on developing an <strong>incident response framework</strong>, leveraging
             automation tools for real-time monitoring, and training staff for effective incident handling. Collaboration
@@ -223,9 +227,9 @@
             ensures continuous learning and enhancement of security posture.
         </p>
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways Summary</h4>
+        <h4 class="kb-subheading">Key Takeaways Summary</h4>
 
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Establish a robust <strong>Incident Response Plan (IRP)</strong> based on frameworks like <strong>NIST
                     800-61 or ISO 27035</strong>.</li>
             <li>Implement real-time monitoring tools (<strong>SIEM, SOAR</strong>) for quick detection and response.</li>

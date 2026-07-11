@@ -1,10 +1,16 @@
 @extends('layouts.ciso-full')
 @section('title', 'Application Whitelisting (Application Security)')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
         <p>Application whitelisting is a security strategy that allows only pre-approved applications to run on an
             organization's systems, preventing the execution of unauthorized or potentially malicious software. This
             technology
@@ -34,7 +40,7 @@
             integrate whitelisting with other security measures such as patch management, endpoint detection and response
             (EDR),
             and user access controls to maintain an optimal security posture.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -97,7 +103,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for
             Application Whitelisting (Application Security)</h3>
         <x-table.table>
@@ -172,7 +178,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial Products
+        <h3 class="kb-heading">4. Commercial Products
             (Application
             Whitelisting Vendors)</h3>
         <x-table.table>
@@ -260,7 +266,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">5. Top 10 Challenges Related
+        <h3 class="kb-heading">5. Top 10 Challenges Related
             to Application
             Whitelisting</h3>
         <ol>
@@ -275,7 +281,7 @@
             <li>Risk of misconfigurations leading to security gaps.</li>
             <li>Lack of awareness and expertise in managing whitelisting solutions.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10
+        <h3 class="kb-heading">6. Key Features of Top 10
             Application
             Whitelisting Products</h3>
         <x-table.table>
@@ -390,7 +396,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">7. Top 10 Takeaways for CISO
+        <h3 class="kb-heading">7. Top 10 Takeaways for CISO
         </h3>
         <ol>
             <li>Application whitelisting is critical for preventing unauthorized
@@ -410,7 +416,7 @@
             </li>
             <li>Whitelisting must complement patch management strategies.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -503,7 +509,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of Application
+        <h3 class="kb-heading">9. Future of Application
             Whitelisting (3-5
             Years)</h3>
         <x-table.table>
@@ -566,7 +572,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">10. Top 10 Points for
+        <h3 class="kb-heading">10. Top 10 Points for
             Zero-Trust Readiness
         </h3>
         <ol>
@@ -596,7 +602,7 @@
                 Trust platforms.
             </li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">11. Top 10 Points for
+        <h3 class="kb-heading">11. Top 10 Points for
             AI-Readiness</h3>
         <ol>
             <li>AI-powered application threat

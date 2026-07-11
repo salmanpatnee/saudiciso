@@ -1,11 +1,17 @@
 @extends('layouts.ciso-full')
 @section('title', 'Penetration Testing')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 
 
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
         <p>Penetration testing, also known as ethical hacking, is a cybersecurity practice designed to simulate real-world
             attacks on an organization’s IT infrastructure, applications, and networks. The objective of penetration testing
             is to identify vulnerabilities before malicious actors can exploit them. It involves a systematic approach,
@@ -24,7 +30,7 @@
             and Response (XDR) solutions to provide continuous monitoring and proactive threat mitigation. The future of
             penetration testing is driven by AI-powered threat simulations, attack surface management (ASM), and automated
             red teaming to enhance security resilience.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -88,7 +94,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for
             Penetration Testing</h3>
         <x-table.table>
@@ -170,7 +176,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial Penetration
+        <h3 class="kb-heading">4. Commercial Penetration
             Testing Products</h3>
         <x-table.table>
             <x-table.thead>
@@ -256,7 +262,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">5. Top 10 Challenges Related
+        <h3 class="kb-heading">5. Top 10 Challenges Related
             to Penetration
             Testing</h3>
         <ol>
@@ -271,7 +277,7 @@
             <li>Handling the shortage of skilled penetration testers.</li>
             <li>Integrating penetration testing results with security operations.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10
+        <h3 class="kb-heading">6. Key Features of Top 10
             Penetration Testing
             Products</h3>
         <x-table.table>
@@ -378,7 +384,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">7. Top 10 Takeaways for CISO
+        <h3 class="kb-heading">7. Top 10 Takeaways for CISO
         </h3>
         <ol>
             <li>Penetration testing enhances proactive security risk management.
@@ -398,7 +404,7 @@
                 simulation platforms.
             </li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -496,7 +502,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of NGFW (3-5 Years)
+        <h3 class="kb-heading">9. Future of NGFW (3-5 Years)
         </h3>
         <x-table.table>
             <x-table.thead>
@@ -558,7 +564,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">10. Top 10 Points for
+        <h3 class="kb-heading">10. Top 10 Points for
             Zero-Trust Readiness
         </h3>
         <ol>
@@ -594,7 +600,7 @@
                 aligned with Zero
                 Trust security models.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">11. Top 10 Points for
+        <h3 class="kb-heading">11. Top 10 Points for
             AI-Readiness</h3>
         <ol>
             <li>AI-powered vulnerability scanning and

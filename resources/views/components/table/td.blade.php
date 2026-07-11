@@ -9,7 +9,7 @@
             {{ $slot }}
         </div>
     @else
-        <span class="block font-medium text-gray-700 text-theme-sm">
+        <span class="block font-medium text-[#4e5870] text-theme-sm">
             {{ $slot }}
         </span>
     @endif

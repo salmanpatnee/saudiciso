@@ -1,16 +1,19 @@
 @extends('layouts.ciso-full')
 @section('title', 'Applying CGEIT Knowledge in Practice')
 @section('title_ar', '')
+
+@push('css')
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 
-
-
-    <div class="px-7">
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 mt-7 rounded-md text-white">1. Governance of Enterprise IT in
+    <div class="sm:px-7 kb-product-detail">
+        <h3 class="kb-heading">1. Governance of Enterprise IT in
             Cybersecurity</h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
-        <p class="mb-3 mt-3 text-lg">Governance of Enterprise IT in cybersecurity involves establishing a strong governance
+        <h4 class="kb-subheading">Implementation</h4>
+        <p>Governance of Enterprise IT in cybersecurity involves establishing a strong governance
             framework that aligns
             cybersecurity strategies with business objectives. This includes defining cybersecurity policies, roles, and
             responsibilities within the governance structure. The implementation also requires integrating cybersecurity
@@ -21,7 +24,7 @@
 
         <b>Key Implementation Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Establish cybersecurity governance aligned with enterprise IT governance.</li>
             <li>Develop cybersecurity policies, roles, and responsibilities.</li>
             <li>Integrate regulatory compliance and cybersecurity frameworks.</li>
@@ -29,8 +32,8 @@
             <li>Perform continuous monitoring and governance audits.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Lack of top management commitment to cybersecurity governance.</li>
             <li>Difficulty in aligning cybersecurity with business strategy.</li>
             <li>Inconsistent cybersecurity policies across different business units.</li>
@@ -43,8 +46,8 @@
             <li>Lack of skilled professionals for governance roles.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways</h4>
-        <p class="mb-3 mt-3 text-lg">Effective governance ensures cybersecurity is an integral part of enterprise IT
+        <h4 class="kb-subheading">Key Takeaways</h4>
+        <p>Effective governance ensures cybersecurity is an integral part of enterprise IT
             governance, mitigating risks
             while supporting business objectives. Cybersecurity policies, roles, and frameworks must be well-defined and
             continuously monitored. The Cybersecurity Steering Committee plays a crucial role in strategic oversight and
@@ -52,7 +55,7 @@
 
         <b>Key Summary Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Cybersecurity must be embedded in IT governance for effective risk management.</li>
             <li>Governance frameworks ensure alignment with regulatory standards.</li>
             <li>Defined roles and responsibilities streamline cybersecurity governance.</li>
@@ -60,10 +63,10 @@
             <li>Strategic oversight by a Cybersecurity Steering Committee is essential.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">2. IT Resources in Cybersecurity</h3>
+        <h3 class="kb-heading">2. IT Resources in Cybersecurity</h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Implementation</h4>
+        <p>
             Effective IT resource management in cybersecurity ensures that the right tools, technologies, and personnel are
             in place to mitigate cyber risks. Organizations must optimize cybersecurity investments by assessing security
             controls, ensuring proper allocation of security tools, and continuously improving capabilities such as Security
@@ -75,7 +78,7 @@
 
         <b>Key Implementation Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Optimize cybersecurity investments by aligning them with risk management.</li>
             <li>Ensure proper allocation of cybersecurity tools and personnel.</li>
             <li>Establish and enhance Security Operations Centers (SOCs).</li>
@@ -83,8 +86,8 @@
             <li>Focus on cloud security, identity management, and endpoint protection.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Budget constraints for cybersecurity tools and resources.</li>
             <li>Shortage of skilled cybersecurity professionals.</li>
             <li>Difficulty in justifying cybersecurity investments to stakeholders.</li>
@@ -98,15 +101,15 @@
         </ul>
 
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways</h4>
-        <p class="mb-3 mt-3 text-lg">Proper IT resource allocation is crucial for cybersecurity effectiveness. Organizations
+        <h4 class="kb-subheading">Key Takeaways</h4>
+        <p>Proper IT resource allocation is crucial for cybersecurity effectiveness. Organizations
             must balance security
             investments with business needs, ensuring that the right technology, personnel, and processes are in place.
             Advanced threat intelligence, automation, and cloud security play a vital role in strengthening defenses.</p>
 
         <b>Key Summary Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Resource allocation should be risk-based and business-aligned.</li>
             <li>Investments in cybersecurity must be justified through ROI analysis.</li>
             <li>Security Operations Centers enhance threat detection and response.</li>
@@ -114,11 +117,11 @@
             <li>Cloud security and endpoint protection must be prioritized.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">3. Benefits Realization in Cybersecurity
+        <h3 class="kb-heading">3. Benefits Realization in Cybersecurity
         </h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
-        <p class="mb-3 mt-3 text-lg">Benefits realization in cybersecurity focuses on ensuring that cybersecurity
+        <h4 class="kb-subheading">Implementation</h4>
+        <p>Benefits realization in cybersecurity focuses on ensuring that cybersecurity
             investments deliver measurable
             business value. This requires developing a business case for cybersecurity initiatives, implementing Key
             Performance Indicators (KPIs), and aligning security objectives with business growth. Cybersecurity should be
@@ -128,7 +131,7 @@
 
         <b>Key Implementation Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Develop a business case for cybersecurity investments.</li>
             <li>Define and monitor cybersecurity Key Performance Indicators (KPIs).</li>
             <li>Align cybersecurity goals with business objectives.</li>
@@ -136,8 +139,8 @@
             <li>Optimize cybersecurity spending based on risk assessments.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Difficulty in quantifying cybersecurity ROI.</li>
             <li>Resistance from executives in investing in proactive cybersecurity.</li>
             <li>Lack of standardized metrics for cybersecurity benefits measurement.</li>
@@ -150,15 +153,15 @@
             <li>Misalignment between security spending and actual risk mitigation.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways</h4>
-        <p class="mb-3 mt-3 text-lg">Organizations must shift from seeing cybersecurity as a cost center to recognizing it
+        <h4 class="kb-subheading">Key Takeaways</h4>
+        <p>Organizations must shift from seeing cybersecurity as a cost center to recognizing it
             as a business enabler.
             Implementing clear KPIs, justifying security investments, and continuously optimizing spending ensures that
             cybersecurity delivers real value.</p>
 
         <b>Key Summary Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Cybersecurity should be integrated into business value realization.</li>
             <li>KPIs must be defined to measure security effectiveness.</li>
             <li>Security investments should align with business risk reduction.</li>
@@ -166,10 +169,10 @@
             <li>Clear reporting improves executive buy-in for security initiatives.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">4. Risk Optimization in Cybersecurity</h3>
+        <h3 class="kb-heading">4. Risk Optimization in Cybersecurity</h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation</h4>
-        <p class="mb-3 mt-3 text-lg">Risk optimization ensures that cybersecurity risks are effectively identified,
+        <h4 class="kb-subheading">Implementation</h4>
+        <p>Risk optimization ensures that cybersecurity risks are effectively identified,
             assessed, and mitigated in
             alignment with business risk appetite. Implementing a cybersecurity risk management framework, such as ISO 27005
             or NIST RMF, helps organizations prioritize and address risks effectively. A risk register should be maintained,
@@ -179,7 +182,7 @@
 
         <b>Key Implementation Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Implement a structured cybersecurity risk management framework.</li>
             <li>Maintain a risk register and conduct periodic risk assessments.</li>
             <li>Utilize cyber risk quantification and threat modeling.</li>
@@ -187,8 +190,8 @@
             <li>Establish continuous risk monitoring and incident response capabilities.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Difficulty in aligning cybersecurity risk with enterprise risk management.</li>
             <li>Lack of accurate cyber risk quantification methodologies.</li>
             <li>Evolving cyber threats making risk assessment challenging.</li>
@@ -202,15 +205,15 @@
         </ul>
 
 
-        <h4 class="font-bold text-brand-500 text-lg">Key Takeaways</h4>
-        <p class="mb-3 mt-3 text-lg">Optimizing cybersecurity risk management ensures that risks are systematically
+        <h4 class="kb-subheading">Key Takeaways</h4>
+        <p>Optimizing cybersecurity risk management ensures that risks are systematically
             identified, assessed, and
             mitigated. Organizations must integrate cybersecurity risk into enterprise risk management, continuously monitor
             threats, and prioritize mitigation based on business impact.</p>
 
         <b>Key Summary Points:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Cyber risk management must align with enterprise risk management (ERM).</li>
             <li>Risk assessments and threat modeling enhance proactive security.</li>
             <li>A cybersecurity risk register ensures systematic risk tracking.</li>

@@ -2,12 +2,16 @@
 @section('title', 'Applying CISSP Knowledge in Practice')
 @section('title_ar', '')
 
+@push('css')
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 
-    <div class="px-7">
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 mt-7 rounded-md text-white">1. Security and Risk Management</h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">
+    <div class="sm:px-7 kb-product-detail">
+        <h3 class="kb-heading">1. Security and Risk Management</h3>
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>
             Security and Risk Management involves defining security governance, risk management, compliance, and security
             awareness programs. Organizations must establish formal security policies, perform regular risk assessments
             using
@@ -20,7 +24,7 @@
             security
             incidents.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Establish <b>Security Governance and Policies.</b></li>
             <li>Conduct <b>Risk Assessments and Risk Management Processes.</b></li>
             <li>Ensure compliance with <b>regulations (ISO 27001, SAMA, NIST, NCA, GDPR, etc.).</b></li>
@@ -28,8 +32,8 @@
             <li>Implement <b>BCP and DRP to enhance business resilience.</b></li>
             <li>Establish an <b>incident response framework</b> for handling security breaches.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Lack of executive buy-in for security governance.</li>
             <li>Difficulty in quantifying cybersecurity risks.</li>
             <li>Keeping up with regulatory compliance changes.</li>
@@ -41,8 +45,8 @@
             <li>Achieving balance between security and user convenience.</li>
             <li>Lack of standardized incident response procedures.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>
             Security and Risk Management is the <strong>foundation of cybersecurity</strong> in any organization. A
             well-defined
             <strong>governance model</strong>, <strong>risk assessment framework</strong>, and <strong>compliance
@@ -54,16 +58,16 @@
             Organizations should <strong>adopt a risk-based approach to security</strong> and integrate security into
             <strong>business processes</strong>.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>A <b>strong governance model</b> is crucial for cybersecurity success.</li>
             <li><b>Risk-based security approach</b> enhances overall protection.</li>
             <li><b>Regulatory compliance</b> is essential to avoid penalties.</li>
             <li><b>Security awareness programs</b> help mitigate human-related risks.</li>
             <li><b>BCP and DRP</b> ensure business continuity during incidents.</li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">2. Asset Security</h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h3 class="kb-heading">2. Asset Security</h3>
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>
             Asset Security focuses on protecting <strong>physical and digital assets</strong> by implementing
             <strong>classification, handling, storage, retention, and disposal policies</strong>. Organizations must create
             a
@@ -73,7 +77,7 @@
             data exfiltration. <strong>Access controls and proper disposal procedures</strong> must be followed to prevent
             unauthorized access to assets.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Establish <b>Asset Classification and Handling Policies.</b></li>
             <li>Implement <b>Data Encryption for protection.</b></li>
             <li>Deploy <b>Data Loss Prevention (DLP) solutions.</b></li>
@@ -81,8 +85,8 @@
             <li>Implement <b>secure asset disposal and data retention policies.</b></li>
             <li>Regularly audit and monitor <b>asset usage.</b></li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Difficulty in maintaining an up-to-date asset inventory.</li>
             <li>Improper handling of classified data by employees.</li>
             <li>Challenges in enforcing encryption on all sensitive data.</li>
@@ -94,8 +98,8 @@
             <li>Unauthorized data access due to misconfigured controls.</li>
             <li>Monitoring and detecting unauthorized data transfers.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>
             Effective asset security ensures <strong>data integrity, confidentiality, and availability</strong>. A
             <strong>structured asset classification system</strong> helps organizations enforce
             <strong>data protection policies</strong>. <strong>Regular audits, encryption, and secure disposal
@@ -103,17 +107,17 @@
             are necessary to safeguard sensitive information. Organizations should
             <strong>leverage DLP and access control measures</strong> to prevent data breaches.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><b>Asset classification</b> is essential for security.</li>
             <li><b>Encryption and DLP</b> protect sensitive data.</li>
             <li><b>Regular audits</b> ensure compliance and security.</li>
             <li><b>Secure asset disposal</b> prevents unauthorized access.</li>
             <li><b>Monitoring asset usage</b> improves data security.</li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">3. Security Architecture and Engineering
+        <h3 class="kb-heading">3. Security Architecture and Engineering
         </h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>
             Security Architecture and Engineering involve <strong>designing and implementing secure IT environments</strong>
             based on security principles like <strong>Defense-in-Depth, Zero Trust,</strong> and <strong>Least
                 Privilege</strong>.
@@ -122,7 +126,7 @@
             <strong>firewalls, IDS/IPS, endpoint protection, secure software development practices (SDLC),
                 and cryptographic measures</strong>.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Implement <strong>Defense-in-Depth and Zero Trust principles</strong>.</li>
             <li>Deploy <strong>firewalls, IDS/IPS, and endpoint security</strong>.</li>
             <li>Ensure <strong>secure coding practices in software development</strong>.</li>
@@ -130,8 +134,8 @@
             <li>Follow <strong>secure architecture frameworks (TOGAF, SABSA)</strong>.</li>
             <li>Conduct <strong>regular security assessments and penetration testing</strong>.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Complexity in designing a secure architecture.</li>
             <li>Legacy systems that do not support modern security controls.</li>
             <li>Lack of skilled cybersecurity architects.</li>
@@ -143,8 +147,8 @@
             <li>Integrating security in DevOps (DevSecOps challenges).</li>
             <li>Managing and monitoring security logs effectively.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>
             A well-designed <strong>security architecture</strong> ensures a <strong>proactive defense</strong> against
             cyber
             threats.
@@ -153,16 +157,16 @@
                 controls</strong>
             improve an organization's ability to <strong>detect and respond to threats</strong>.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Security-by-design</strong> approach enhances protection.</li>
             <li><strong>Zero Trust</strong> and <strong>Defense-in-Depth</strong> are critical principles.</li>
             <li><strong>Secure software development (SDLC)</strong> prevents vulnerabilities.</li>
             <li><strong>Cryptography</strong> strengthens data confidentiality and integrity.</li>
             <li><strong>Regular security testing</strong> helps identify weaknesses.</li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">3. Communication and Network Security</h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h3 class="kb-heading">3. Communication and Network Security</h3>
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>
             Communication and Network Security focus on
             <strong>securing network infrastructure, protocols, and communications</strong>.
             Organizations should implement <strong>Network Segmentation and Micro-Segmentation</strong>
@@ -176,7 +180,7 @@
                 SPF),
                 and secure DNS</strong> ensures protection of network traffic.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Implement Network Segmentation and Micro-Segmentation.</strong></li>
             <li><strong>Deploy firewalls, IDS/IPS, and NAC</strong> for perimeter security.</li>
             <li><strong>Enforce Zero Trust Network Access (ZTNA).</strong></li>
@@ -184,8 +188,8 @@
             <li><strong>Use TLS 1.3, DMARC, SPF, and DKIM</strong> for secure communication.</li>
             <li><strong>Implement VPN and endpoint security for remote access.</strong></li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Managing security in hybrid (on-premises & cloud) environments.</li>
             <li>Preventing unauthorized lateral movement within networks.</li>
             <li>Securely integrating third-party networks.</li>
@@ -197,25 +201,25 @@
             <li>Implementing Zero Trust Network Access (ZTNA) effectively.</li>
             <li>Monitoring encrypted network traffic for threats.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>
             A secure <strong>network infrastructure</strong> is critical for preventing unauthorized access and attacks.
             <strong>Network segmentation and Zero Trust principles</strong> minimize attack surfaces.
             <strong>Encryption and secure communication protocols</strong> protect data in transit.
             <strong>Continuous monitoring, intrusion detection, and proactive threat hunting</strong>
             help in identifying and mitigating cyber threats.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Network segmentation</strong> enhances security.</li>
             <li><strong>Zero Trust Network Access (ZTNA)</strong> reduces risks.</li>
             <li><strong>Encryption (TLS 1.3, WPA3, VPNs)</strong> secures communication.</li>
             <li><strong>Firewalls, IDS/IPS, and NAC</strong> prevent intrusions.</li>
             <li><strong>Continuous monitoring</strong> detects anomalies early.</li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">5. Identity and Access Management (IAM)
+        <h3 class="kb-heading">5. Identity and Access Management (IAM)
         </h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>
             IAM ensures that <strong>only authorized users</strong> have access to systems and data.
             Organizations should implement <strong>Role-Based Access Control (RBAC) and Attribute-Based Access Control
                 (ABAC)</strong>
@@ -228,7 +232,7 @@
             Conducting <strong>regular access reviews</strong> and ensuring <strong>Just-in-Time (JIT)</strong> access
             for privileged users minimizes risks.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Implement <strong>RBAC and ABAC</strong> to control access.</li>
             <li>Enforce <strong>Multi-Factor Authentication (MFA)</strong>.</li>
             <li>Use <strong>SSO and Federated Identity Management</strong>.</li>
@@ -236,8 +240,8 @@
             <li>Conduct <strong>regular user access reviews</strong>.</li>
             <li>Implement <strong>JIT access for privileged users</strong>.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Managing identity sprawl across multiple platforms.</li>
             <li>Resistance to MFA and access restrictions.</li>
             <li>Balancing user experience with security controls.</li>
@@ -249,24 +253,24 @@
             <li>Ensuring secure API authentication.</li>
             <li>Implementing passwordless authentication effectively.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>
             IAM is the <strong>backbone of cybersecurity</strong> and prevents <strong>unauthorized</strong> access.
             Implementing <strong>RBAC, MFA, and PAM</strong> enhances security while <strong>SSO and FIM improve user
                 convenience</strong>.
             Regular <strong>access reviews</strong> help detect <strong>privilege misuse</strong>.
             <strong>Zero Trust principles</strong> should be applied to IAM to minimize risks.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>IAM protects against unauthorized access.</strong></li>
             <li><strong>MFA and PAM</strong> reduce privilege misuse risks.</li>
             <li><strong>RBAC and ABAC</strong> improve access control.</li>
             <li><strong>SSO and FIM</strong> enhance usability and security.</li>
             <li><strong>Regular access reviews</strong> prevent security gaps.</li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">6. Security Assessment and Testing</h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h3 class="kb-heading">6. Security Assessment and Testing</h3>
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>
             Organizations should conduct <strong>regular Vulnerability Assessments (VA) and Penetration Testing
                 (PT)</strong>
             to identify weaknesses. <strong>Red Team vs. Blue Team</strong> exercises test defenses against real-world
@@ -276,7 +280,7 @@
             <strong>Incident response tabletop exercises</strong> ensure that security teams are prepared for
             <strong>cyberattacks</strong>.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Conduct <strong>Vulnerability Assessments and Penetration Testing (VAPT)</strong>.</li>
             <li>Perform <strong>Red Team/Blue Team exercises</strong>.</li>
             <li>Deploy <strong>SIEM for real-time security monitoring</strong>.</li>
@@ -284,8 +288,8 @@
             <li>Implement <strong>incident response tabletop exercises</strong>.</li>
             <li>Regularly audit <strong>security controls and policies</strong>.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Difficulty in testing <strong>live environments without disruptions</strong>.</li>
             <li>Identifying <strong>zero-day vulnerabilities</strong>.</li>
             <li>Cost of <strong>hiring expert penetration testers</strong>.</li>
@@ -297,23 +301,23 @@
             <li>Measuring the <strong>effectiveness of security assessments</strong>.</li>
             <li>Training security teams on <strong>new testing methodologies</strong>.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>
             Continuous security assessment is <strong>critical to identifying vulnerabilities</strong> before attackers do.
             <strong>Regular penetration testing, vulnerability scanning, and security audits</strong> improve defenses.
             <strong>SIEM and continuous monitoring</strong> help detect threats in real time. Organizations should
             integrate <strong>security testing into DevSecOps</strong> for proactive security.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Regular security testing detects vulnerabilities early.</li>
             <li>SIEM and monitoring tools improve detection.</li>
             <li>Penetration testing enhances security posture.</li>
             <li>Integrating security testing in <strong>DevSecOps</strong> is essential.</li>
             <li>Incident response exercises prepare teams for cyberattacks.</li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">7. Security Operations</h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">Security Operations focuses on <strong>incident detection, response, and
+        <h3 class="kb-heading">7. Security Operations</h3>
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>Security Operations focuses on <strong>incident detection, response, and
                 recovery</strong> to ensure the
             organization's security posture remains strong. Organizations should establish a <strong>Security Operations
                 Center
@@ -328,7 +332,7 @@
             practice an <strong>Incident Response Plan (IRP)</strong>, which includes incident detection, containment,
             eradication, recovery, and lessons learned.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Establish a Security Operations Center (SOC).</strong></li>
             <li><strong>Implement SIEM and SOAR</strong> for real-time monitoring.</li>
             <li><strong>Deploy EDR solutions</strong> for endpoint security.</li>
@@ -336,8 +340,8 @@
             <li><strong>Perform regular patch management</strong> and vulnerability scans.</li>
             <li><strong>Conduct security logging, auditing, and forensic analysis.</strong></li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li><em>Difficulty in detecting and responding</em> to sophisticated cyber threats.</li>
             <li><em>Managing false positives</em> in security alerts.</li>
             <li><em>Ensuring timely patch management</em> without downtime.</li>
@@ -349,8 +353,8 @@
             <li><em>Managing cloud and hybrid security operations.</em></li>
             <li><em>Ensuring compliance</em> with security regulations and frameworks.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">A well-structured <strong>Security Operations strategy</strong> enables an organization
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>A well-structured <strong>Security Operations strategy</strong> enables an organization
             to detect, respond to,
             and
             recover from security incidents effectively. A <strong>SOC</strong> with <strong>SIEM, SOAR, and EDR
@@ -359,7 +363,7 @@
             <em>security logging</em> enhance preparedness. <strong>Threat intelligence feeds</strong> help in anticipating
             emerging attacks.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>SOC enables real-time monitoring and response.</strong></li>
             <li><strong>SIEM and SOAR improve automation</strong> and visibility.</li>
             <li><strong>EDR solutions protect against endpoint threats.</strong></li>
@@ -367,9 +371,9 @@
             <li><strong>Regular patching and vulnerability scans</strong> prevent attacks.</li>
             <li><strong>Threat intelligence improves proactive defense strategies.</strong></li>
         </ul>
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">8. Software Development Security</h3>
-        <h4 class="font-bold text-brand-500 text-lg">How this domain can be implemented:</h4>
-        <p class="mb-3 mt-3 text-lg">Software Development Security focuses on <strong>securing applications throughout the
+        <h3 class="kb-heading">8. Software Development Security</h3>
+        <h4 class="kb-subheading">How this domain can be implemented:</h4>
+        <p>Software Development Security focuses on <strong>securing applications throughout the
                 Software Development Life
                 Cycle
                 (SDLC)</strong>. Organizations should implement <strong>Secure Software Development Practices
@@ -385,7 +389,7 @@
             with. <strong>Secure API development</strong> with authentication mechanisms like <strong>OAuth 2.0</strong> and
             <strong>OpenID Connect</strong> enhances application security.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Implement Secure Software Development Lifecycle (SDLC).</strong></li>
             <li><strong>Enforce DevSecOps practices</strong> for security automation.</li>
             <li><strong>Conduct SAST, DAST, and RASP</strong> for vulnerability detection.</li>
@@ -393,8 +397,8 @@
             <li><strong>Use code signing</strong> and integrity validation.</li>
             <li><strong>Secure APIs with OAuth 2.0, OpenID Connect, and JWT.</strong></li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementation</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementation</h4>
+        <ul>
             <li>Resistance from developers to adopt security practices.</li>
             <li>Identifying and fixing vulnerabilities in legacy applications.</li>
             <li>Securing third-party libraries and dependencies.</li>
@@ -406,8 +410,8 @@
             <li>Ensuring compliance with application security regulations (e.g., PCI-DSS, GDPR).</li>
             <li>Conducting effective security awareness training for developers.</li>
         </ul>
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for this Domain</h4>
-        <p class="mb-3 mt-3 text-lg">Software security should be embedded in the <strong>SDLC</strong>, ensuring
+        <h4 class="kb-subheading">Takeaways for this Domain</h4>
+        <p>Software security should be embedded in the <strong>SDLC</strong>, ensuring
             applications are built with security
             in
             mind. Automated security testing (<strong>SAST, DAST, RASP</strong>), <strong>secure API development</strong>,
@@ -416,7 +420,7 @@
             developer training help prevent vulnerabilities. <strong>DevSecOps practices</strong> accelerate secure software
             delivery.
         </p>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>DevSecOps integrates security</strong> into development workflows.</li>
             <li><strong>SAST, DAST, and RASP</strong> improve application security.</li>
             <li><strong>OWASP Top 10 best practices</strong> reduce vulnerabilities.</li>

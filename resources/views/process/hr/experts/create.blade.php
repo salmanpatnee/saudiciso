@@ -60,7 +60,7 @@
                     <div>
                         <x-form.multiselect label="Certifications" name="certifications[]"
                             :data="$certifications" id_key="certification_id" value_key="certification_title"
-                            :value="isset($humanResource) ? $humanResource->certifications->pluck('certification_id')->toArray() : []" required="true"/>
+                            :value="isset($humanResource) ? $humanResource->certifications->pluck('certification_id')->toArray() : []" required="true" show_key="true"/>
                     </div>
 
                 </x-form.grid-col>

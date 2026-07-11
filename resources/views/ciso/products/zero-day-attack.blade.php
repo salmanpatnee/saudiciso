@@ -1,11 +1,17 @@
 @extends('layouts.ciso-full')
 @section('title', 'Zero Day Attack')
 @section('title_ar', '')
+
+@push('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
 @section('content')
 
 
-    <div class="px-7 process-content">
-        <h2 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white mt-7">Technology Background</h2>
+    <div class="sm:px-7 kb-product-detail">
+        <h2 class="kb-heading">Technology Background</h2>
         <p>Zero-day attacks exploit vulnerabilities in software, hardware, or firmware that are unknown to vendors and
             security researchers. These attacks occur before a fix or patch is available, making them particularly
             dangerous. Cybercriminals leverage zero-day vulnerabilities to gain unauthorized access, execute malicious code,
@@ -25,7 +31,7 @@
             with AI-driven cybersecurity frameworks, enable proactive monitoring and automated response mechanisms. The
             future of zero-day attack mitigation lies in AI-powered predictive analytics, automated patch management, and
             global threat intelligence sharing to reduce the time between vulnerability discovery and remediation.</p>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">2. Justification of Technology
+        <h3 class="kb-heading">2. Justification of Technology
             Deployment Based
             on Regulatory and Cybersecurity Controls</h3>
         <x-table.table>
@@ -87,7 +93,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">3. Gartner Magic Quadrant
+        <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for Zero Day
             Attack Protection</h3>
         <x-table.table>
@@ -163,7 +169,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">4. Commercial Zero Day Attack
+        <h3 class="kb-heading">4. Commercial Zero Day Attack
             Protection
             Products</h3>
         <x-table.table>
@@ -248,7 +254,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">5. Top 10 Challenges Related
+        <h3 class="kb-heading">5. Top 10 Challenges Related
             to Zero Day Attack
             Protection</h3>
         <ol>
@@ -263,7 +269,7 @@
             <li>Preventing zero-day exploits in IoT and mobile devices.</li>
             <li>Automating threat response and remediation.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">6. Key Features of Top 10
+        <h3 class="kb-heading">6. Key Features of Top 10
             Zero Day Attack
             Protection Products</h3>
         <x-table.table>
@@ -355,7 +361,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">7. Top 10 Takeaways for CISO
+        <h3 class="kb-heading">7. Top 10 Takeaways for CISO
         </h3>
         <ol>
             <li>Zero-day threats require AI-driven behavioral analytics.</li>
@@ -375,7 +381,7 @@
                 response
                 mechanisms.</li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">8. Integration with Other
+        <h3 class="kb-heading">8. Integration with Other
             Cybersecurity
             Products</h3>
         <x-table.table>
@@ -464,7 +470,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">9. Future of Zero Day Attack
+        <h3 class="kb-heading">9. Future of Zero Day Attack
             Protection (3-5
             Years)</h3>
         <x-table.table>
@@ -525,7 +531,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">10. Top 10 Points for
+        <h3 class="kb-heading">10. Top 10 Points for
             Zero-Trust Readiness
         </h3>
         <ol>
@@ -559,7 +565,7 @@
                 zero-day security policies.
             </li>
         </ol>
-        <h3 class="bg-black font-bold  my-6 p-3 rounded-md text-white secondary-heading">11. Top 10 Points for
+        <h3 class="kb-heading">11. Top 10 Points for
             AI-Readiness</h3>
         <ol>
             <li>AI-powered predictive analytics for

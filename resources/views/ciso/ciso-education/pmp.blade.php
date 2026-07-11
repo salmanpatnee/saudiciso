@@ -1,14 +1,18 @@
 @extends('layouts.ciso-full')
 @section('title', 'Applying PMP Knowledge in Practice')
 @section('title_ar', '')
+
+@push('css')
+    <link href="{{ asset('css/product-detail.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 
+    <div class="sm:px-7 kb-product-detail">
+        <h3 class="kb-heading">1. People Domain in Cybersecurity</h3>
 
-    <div class="px-7">
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 mt-7 rounded-md text-white">1. People Domain in Cybersecurity</h3>
-
-        <h4 class="font-bold text-brand-500 text-lg">Implementation in Cybersecurity</h4>
-        <p class="mb-3 mt-3 text-lg">The <b>People domain</b> in cybersecurity projects focuses on leading and managing
+        <h4 class="kb-subheading">Implementation in Cybersecurity</h4>
+        <p>The <b>People domain</b> in cybersecurity projects focuses on leading and managing
             security teams, handling
             stakeholders, and fostering collaboration among departments. Effective leadership ensures that teams understand
             security protocols, implement controls effectively, and address threats proactively. Building a strong
@@ -18,7 +22,7 @@
 
         <b>Key Implementation Steps:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Develop a <strong>cybersecurity leadership strategy</strong> to assign roles and responsibilities.</li>
             <li>Conduct <strong>security awareness and training</strong> programs for employees and stakeholders.</li>
             <li>Promote <strong>collaboration between cybersecurity, IT, and business units.</strong></li>
@@ -27,8 +31,8 @@
             <li>Foster a culture of <strong>continuous improvement and security-first mindset.</strong></li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementing the People Domain</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementing the People Domain</h4>
+        <ul>
             <li>Resistance to security policies from employees.</li>
             <li>Lack of executive sponsorship and leadership buy-in.</li>
             <li>Difficulty in aligning cybersecurity goals with business objectives.</li>
@@ -41,8 +45,8 @@
             <li>Overcoming communication barriers between technical and non-technical stakeholders.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for the People Domain</h4>
-        <p class="mb-3 mt-3 text-lg">Implementing the <b>People domain</b> in cybersecurity projects strengthens security
+        <h4 class="kb-subheading">Takeaways for the People Domain</h4>
+        <p>Implementing the <b>People domain</b> in cybersecurity projects strengthens security
             culture, improves incident
             response
             effectiveness, and enhances collaboration. Strong leadership helps bridge the gap between security professionals
@@ -51,7 +55,7 @@
 
         <b>Key Takeaways:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Cybersecurity leadership</strong> is crucial for project success.</li>
             <li><strong>Security awareness training</strong> reduces human-based security risks.</li>
             <li><strong>Cross-team collaboration</strong> enhances security decision-making.</li>
@@ -60,10 +64,10 @@
             <li><strong>Building a security culture</strong> leads to long-term resilience.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">2. Process Domain in Cybersecurity</h3>
+        <h3 class="kb-heading">2. Process Domain in Cybersecurity</h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation in Cybersecurity</h4>
-        <p class="mb-3 mt-3 text-lg">The <b>Process domain</b> ensures structured execution of cybersecurity initiatives,
+        <h4 class="kb-subheading">Implementation in Cybersecurity</h4>
+        <p>The <b>Process domain</b> ensures structured execution of cybersecurity initiatives,
             governance, and compliance
             with
             regulatory frameworks. A strong process-driven approach is essential for risk assessment, vulnerability
@@ -75,7 +79,7 @@
 
         <b>Key Implementation Steps:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Establish <b>standardized cybersecurity frameworks</b> (ISO 27001, NIST, CIS, etc.).</li>
             <li>Implement <b>structured risk assessment</b> methodologies (ISO 31000, FAIR, etc.).</li>
             <li>Define <b>incident response and threat management processes</b>.</li>
@@ -84,8 +88,8 @@
             <li>Develop <b>change management processes</b> to secure IT infrastructure.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementing the Process Domain</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementing the Process Domain</h4>
+        <ul>
             <li>Lack of clear cybersecurity governance and policies.</li>
             <li>Difficulty in integrating security processes into business workflows.</li>
             <li>Resistance from IT teams to follow formal security processes.</li>
@@ -98,8 +102,8 @@
             <li>Managing third-party security risks effectively.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for the Process Domain</h4>
-        <p class="mb-3 mt-3 text-lg">Applying <b>structured security processes</b> enhances risk visibility, compliance, and
+        <h4 class="kb-subheading">Takeaways for the Process Domain</h4>
+        <p>Applying <b>structured security processes</b> enhances risk visibility, compliance, and
             proactive threat
             management.
             A well-defined security process aligns cybersecurity initiatives with business goals while ensuring the
@@ -109,7 +113,7 @@
 
         <b>Key Takeaways:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Defined security frameworks</strong> improve risk management.</li>
             <li><strong>Automated security monitoring</strong> enhances incident detection.</li>
             <li><strong>Compliance-driven processes</strong> reduce regulatory risks.</li>
@@ -118,11 +122,11 @@
             <li><strong>Integration of security into IT processes</strong> ensures seamless protection.</li>
         </ul>
 
-        <h3 class="bg-brand-950 font-bold mb-3 p-3 rounded-md text-white">3. Business Environment Domain in
+        <h3 class="kb-heading">3. Business Environment Domain in
             Cybersecurity</h3>
 
-        <h4 class="font-bold text-brand-500 text-lg">Implementation in Cybersecurity</h4>
-        <p class="mb-3 mt-3 text-lg">The <b>Business Environment domain</b> ensures cybersecurity aligns with business
+        <h4 class="kb-subheading">Implementation in Cybersecurity</h4>
+        <p>The <b>Business Environment domain</b> ensures cybersecurity aligns with business
             objectives, regulatory
             compliance,
             and
@@ -134,7 +138,7 @@
 
         <b>Key Implementation Steps:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li>Align cybersecurity strategy with <b>business objectives and risk appetite</b>.</li>
             <li>Ensure compliance with <b>regulatory and industry standards</b> (NCA, SAMA, GDPR, etc.).</li>
             <li>Conduct <b>business impact analysis (BIA) for cybersecurity risks</b>.</li>
@@ -143,8 +147,8 @@
             <li>Monitor cybersecurity trends to adjust <b>security strategies accordingly</b>.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Challenges in Implementing the Business Environment Domain</h4>
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <h4 class="kb-subheading">Challenges in Implementing the Business Environment Domain</h4>
+        <ul>
             <li>Misalignment of cybersecurity strategies with business goals.</li>
             <li>Difficulty in securing <b>executive sponsorship</b> for cybersecurity investments.</li>
             <li>Ensuring <b>regulatory compliance</b> in a constantly evolving legal environment.</li>
@@ -157,8 +161,8 @@
             <li>Adapting security strategies to <b>new business models and digital transformation</b>.</li>
         </ul>
 
-        <h4 class="font-bold text-brand-500 text-lg">Takeaways for the Business Environment Domain</h4>
-        <p class="mb-3 mt-3 text-lg">Cybersecurity should not be viewed as a <b>technical function</b> but rather as a
+        <h4 class="kb-subheading">Takeaways for the Business Environment Domain</h4>
+        <p>Cybersecurity should not be viewed as a <b>technical function</b> but rather as a
             <b>business enabler</b>.
             Aligning
             cybersecurity initiatives with business strategy ensures resilience, regulatory compliance, and risk reduction.
@@ -169,7 +173,7 @@
         </p>
         <b>Key Takeaways:</b>
         <hr class="my-6">
-        <ul class="list-disc mb-3 pl-4 text-lg">
+        <ul>
             <li><strong>Cybersecurity must align with business strategy</strong>.</li>
             <li><strong>Regulatory compliance</strong> is a key driver of cybersecurity investments.</li>
             <li><strong>Cyber risk quantification</strong> helps in strategic decision-making.</li>

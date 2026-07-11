@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', $hotTopic->title)
+@section('title', html_entity_decode($hotTopic->title))
 
 @push('css')
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -139,9 +139,31 @@
         }
 
         .kb-card__content {
-            padding: 1.5rem;
+            padding: 1.5rem 1.1rem;
             color: var(--ink);
             line-height: 1.7;
+        }
+
+        /* Body is admin-authored rich text (CKEditor) that often carries roomy
+           Tailwind utility classes (p-3, my-6, px-3 py-3, etc). Tighten it here so
+           pasted content matches the rest of the page regardless of what classes
+           the editor happened to save. */
+        .kb-card__content :where(h1, h2, h3, h4) {
+            padding: .6rem .7rem;
+            margin: 1.5rem 0 .75rem;
+        }
+
+        .kb-card__content :where(h1, h2, h3, h4):first-child {
+            margin-top: 0;
+        }
+
+        .kb-card__content p {
+            margin: 0 0 .85rem;
+        }
+
+        .kb-card__content table th,
+        .kb-card__content table td {
+            padding: .55rem .55rem;
         }
 
         .kb-row {
@@ -292,7 +314,7 @@
         <div class="kb__head">
             <div>
                 <p class="kb__eyebrow">{{ $hotTopic->category?->value ?? 'Hot Topics' }}</p>
-                <h1 class="kb__title">{{ $hotTopic->title }}</h1>
+                <h1 class="kb__title">{!! html_entity_decode($hotTopic->title) !!}</h1>
                 <span class="kb__rule"></span>
             </div>
             <a class="kb__pill" href="{{ route('hot-topics.index') }}">
