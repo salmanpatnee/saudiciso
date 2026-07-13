@@ -386,7 +386,7 @@
                                 </td>
                                 <td>{{ $row->organization?->industry?->industry_name }}</td>
                                 <td>{{ $row->organization?->organization_name }}</td>
-                                <td class="kb-wrap kb-wrap--certs">{!! $row->certifications->pluck('certification_title')->filter()->map(fn ($title) => '<span class="kb-line">'.e($title).'</span>')->implode('') ?: '-' !!}</td>
+                                <td class="kb-wrap kb-wrap--certs">{!! $row->certifications->filter(fn ($cert) => $cert->certification_title)->map(fn ($cert) => '<span class="kb-line">'.e($cert->certification_id.' - '.$cert->certification_title).'</span>')->implode('') ?: '-' !!}</td>
                                 <td class="kb-wrap">{!! $row->experties->pluck('expertise_title')->filter()->map(fn ($title) => '<span class="kb-line">'.e($title).'</span>')->implode('') ?: '-' !!}</td>
                                 <td>{{ $row->designation }}</td>
                                 <td>{{ $row->experience }}</td>
