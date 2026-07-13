@@ -12,7 +12,7 @@
                 <x-table.th label="S.No" />
                 <x-table.th label="Organization ID" />
                 <x-table.th label="Organization Name" />
-                <x-table.th label="Contact Number" />
+                <x-table.th label="Industry" />
                 <x-table.th label="Action" />
             </x-table.thead-sticky>
             <x-table.tbody>
@@ -21,7 +21,7 @@
                         <x-table.td> <x-table.serial :loop="$loop" :paginator="$organizations" /></x-table.td>
                         <x-table.td>{{ $organization->organization_id }}</x-table.td>
                         <x-table.td>{{ $organization->organization_name }}</x-table.td>
-                        <x-table.td>{{ $organization->contact_number }}</x-table.td>
+                        <x-table.td>{{ $organization->industry?->industry_name }}</x-table.td>
 
                         <x-table.td action_col="true">
                             <x-action.view route_name="organizations.show" param="{{ $organization->id }}" />

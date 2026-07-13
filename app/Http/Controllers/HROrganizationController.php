@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HROrganization;
+use App\Models\Industry;
 use Illuminate\Http\Request;
 
 class HROrganizationController extends Controller
@@ -17,7 +18,7 @@ class HROrganizationController extends Controller
      */
     public function index(): \Illuminate\View\View
     {
-        $organizations = HROrganization::orderBy('organization_name', 'ASC')->paginate(100);
+        $organizations = HROrganization::with('industry')->orderBy('organization_name', 'ASC')->paginate(100);
 
         return view('process.hr.organizations.index', compact('organizations'));
     }
@@ -28,8 +29,9 @@ class HROrganizationController extends Controller
     public function create(): \Illuminate\View\View
     {
         $organization = null;
+        $industries = Industry::orderBy('industry_name', 'ASC')->get();
 
-        return view('process.hr.organizations.create', compact('organization'));
+        return view('process.hr.organizations.create', compact('organization', 'industries'));
     }
 
     /**
@@ -43,12 +45,13 @@ class HROrganizationController extends Controller
             'organization_address' => 'nullable',
             'contact_number' => 'nullable',
             'website_link' => 'nullable|url',
+            'industry_id' => 'required|exists:hr_industry_table,industry_id',
         ]);
 
         HROrganization::create($attributes);
 
         return redirect()->route('organizations.index')
-                         ->with('success', 'Organization created successfully.');
+            ->with('success', 'Organization created successfully.');
     }
 
     /**
@@ -56,6 +59,8 @@ class HROrganizationController extends Controller
      */
     public function show(HROrganization $organization): \Illuminate\View\View
     {
+        $organization->load('industry');
+
         return view('process.hr.organizations.show', compact('organization'));
     }
 
@@ -64,7 +69,9 @@ class HROrganizationController extends Controller
      */
     public function edit(HROrganization $organization): \Illuminate\View\View
     {
-        return view('process.hr.organizations.create', compact('organization'));
+        $industries = Industry::orderBy('industry_name', 'ASC')->get();
+
+        return view('process.hr.organizations.create', compact('organization', 'industries'));
     }
 
     /**
@@ -73,17 +80,18 @@ class HROrganizationController extends Controller
     public function update(HROrganization $organization, Request $request): \Illuminate\Http\RedirectResponse
     {
         $attributes = $request->validate([
-            'organization_id' => ['required', 'unique:hr_organization_table,organization_id,' . $organization->id],
+            'organization_id' => ['required', 'unique:hr_organization_table,organization_id,'.$organization->id],
             'organization_name' => 'required',
             'organization_address' => 'nullable',
             'contact_number' => 'nullable',
             'website_link' => 'nullable|url',
+            'industry_id' => 'required|exists:hr_industry_table,industry_id',
         ]);
 
         $organization->update($attributes);
 
         return redirect()->route('organizations.index')
-                         ->with('success', 'Organization updated successfully.');
+            ->with('success', 'Organization updated successfully.');
     }
 
     /**
@@ -95,10 +103,10 @@ class HROrganizationController extends Controller
             $organization->delete();
 
             return redirect()->route('organizations.index')
-                             ->with('success', 'Organization deleted successfully.');
+                ->with('success', 'Organization deleted successfully.');
         } catch (\Exception $e) {
             return redirect()->route('organizations.index')
-                             ->with('error', 'Could not delete organization. It may be associated with other records.');
+                ->with('error', 'Could not delete organization. It may be associated with other records.');
         }
     }
 }

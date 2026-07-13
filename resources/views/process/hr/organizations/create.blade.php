@@ -28,8 +28,8 @@
                             placeholder="Enter Organization Address" :value="$organization?->organization_address" />
                     </div>
                     <div>
-                        <x-form.field label="Contact Number" name="contact_number"
-                            placeholder="Enter Contact Number" :value="$organization?->contact_number" />
+                        <x-form.select label="Industry" name="industry_id" required="true" :data="$industries"
+                            id_key="industry_id" value_key="industry_name" hide_keys="true" :value="$organization?->industry_id" />
                     </div>
                 </x-form.grid-col>
                 <x-form.grid-col>
@@ -38,7 +38,8 @@
                             placeholder="Enter Website Link" :value="$organization?->website_link" />
                     </div>
                     <div>
-
+                        <x-form.field label="Contact Number" name="contact_number"
+                            placeholder="Enter Contact Number" :value="$organization?->contact_number" />
                     </div>
                 </x-form.grid-col>
 
