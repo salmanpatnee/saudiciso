@@ -316,10 +316,6 @@
                 <h1 class="kb__title">Browse Expert Resources</h1>
                 <span class="kb__rule"></span>
             </div>
-            <span class="kb__pill">
-                <i class='bx bx-group'></i>
-                {{ $humanResource->total() }} {{ $humanResource->total() === 1 ? 'Expert' : 'Experts' }}
-            </span>
         </div>
 
         <form action="{{ route('people.index') }}" method="GET">
