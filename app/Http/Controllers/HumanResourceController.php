@@ -118,6 +118,7 @@ class HumanResourceController extends Controller
                     }
                 });
             })
+            ->orderBy('name', 'ASC')
             ->paginate(100);
 
         $humanResource->appends([
