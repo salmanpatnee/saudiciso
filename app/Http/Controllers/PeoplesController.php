@@ -58,8 +58,8 @@ class PeoplesController extends Controller
             '20+ years',
         ]);
 
-        $humanResource = HumanResource::select('expert_id', 'organization_id', 'industry_id', 'name', 'nationality_id', 'linkedin_profile', 'designation', 'experience')
-            ->with('certifications', 'organization', 'roles', 'industry', 'experties', 'nationality')
+        $humanResource = HumanResource::select('expert_id', 'organization_id', 'name', 'nationality_id', 'linkedin_profile', 'designation', 'experience')
+            ->with('certifications', 'organization.industry', 'roles', 'experties', 'nationality')
             ->when($nationality, function ($query, $nationality) {
                 $query->where(function ($q) use ($nationality) {
                     $q->where(function ($subquery) use ($nationality) {
@@ -89,11 +89,13 @@ class PeoplesController extends Controller
                 }
             })
             ->when($industry, function ($query, $industry) {
-                if (is_array($industry)) {
-                    $query->whereIn('industry_id', $industry);
-                } else {
-                    $query->where('industry_id', $industry);
-                }
+                $query->whereHas('organization', function ($query) use ($industry) {
+                    if (is_array($industry)) {
+                        $query->whereIn('industry_id', $industry);
+                    } else {
+                        $query->where('industry_id', $industry);
+                    }
+                });
             })
             ->when($organization, function ($query, $organization) {
                 if (is_array($organization)) {

@@ -23,7 +23,7 @@
                     {{ $humanResource->organization->organization_name ?? '' }}
                 </x-info-col>
                 <x-info-col label="Industry">
-                    {{ $humanResource->industry->industry_name ?? '' }}
+                    {{ $humanResource->organization?->industry?->industry_name ?? '' }}
                 </x-info-col>
             </x-info-row>
 

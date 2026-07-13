@@ -54,8 +54,8 @@ class HumanResourceController extends Controller
             ->orderBy('expertise_title', 'ASC')
             ->get();
 
-        $humanResource = HumanResource::select('id', 'expert_id', 'organization_id', 'industry_id', 'name', 'nationality_id', 'linkedin_profile', 'designation', 'experience')
-            ->with('certifications', 'organization', 'roles', 'industry', 'experties', 'nationality')
+        $humanResource = HumanResource::select('id', 'expert_id', 'organization_id', 'name', 'nationality_id', 'linkedin_profile', 'designation', 'experience')
+            ->with('certifications', 'organization.industry', 'roles', 'experties', 'nationality')
             ->when($nationality, function ($query, $nationality) {
                 $query->where(function ($q) use ($nationality) {
                     $q->where(function ($subquery) use ($nationality) {
@@ -85,11 +85,13 @@ class HumanResourceController extends Controller
                 }
             })
             ->when($industry, function ($query, $industry) {
-                if (is_array($industry)) {
-                    $query->whereIn('industry_id', $industry);
-                } else {
-                    $query->where('industry_id', $industry);
-                }
+                $query->whereHas('organization', function ($query) use ($industry) {
+                    if (is_array($industry)) {
+                        $query->whereIn('industry_id', $industry);
+                    } else {
+                        $query->where('industry_id', $industry);
+                    }
+                });
             })
             ->when($organization, function ($query, $organization) {
                 if (is_array($organization)) {
@@ -140,13 +142,12 @@ class HumanResourceController extends Controller
     public function create()
     {
         $nationalities = \App\Models\Nationality::orderBy('name', 'ASC')->get();
-        $industries = \App\Models\Industry::orderBy('industry_name', 'ASC')->get();
         $organizations = \App\Models\HROrganization::orderBy('organization_name', 'ASC')->get();
         $certifications = \App\Models\HRCertification::orderBy('certification_title', 'ASC')->get();
         $experties = \App\Models\Experties::orderBy('expertise_title', 'ASC')->get();
         $humanResource = null;
 
-        return view('process.hr.experts.create', compact('nationalities', 'industries', 'organizations', 'certifications', 'experties', 'humanResource'));
+        return view('process.hr.experts.create', compact('nationalities', 'organizations', 'certifications', 'experties', 'humanResource'));
     }
 
     /**
@@ -164,7 +165,6 @@ class HumanResourceController extends Controller
             'linkedin_profile' => 'nullable|url|max:255',
             'experience' => 'nullable|string|max:255',
             'organization_id' => 'required|exists:hr_organization_table,organization_id',
-            'industry_id' => 'required|exists:hr_industry_table,industry_id',
             'nationality_id' => 'required|exists:nationalities,id',
             'designation' => 'required|string|max:255',
             'certifications' => 'nullable|array',
@@ -181,7 +181,6 @@ class HumanResourceController extends Controller
             'linkedin_profile' => $validated['linkedin_profile'] ?? null,
             'experience' => $validated['experience'] ?? null,
             'organization_id' => $validated['organization_id'],
-            'industry_id' => $validated['industry_id'],
             'nationality_id' => $validated['nationality_id'],
             // Backward compatibility
             // 'nationality' => \App\Models\Nationality::find($validated['nationality_id'])->name,
@@ -207,7 +206,7 @@ class HumanResourceController extends Controller
      */
     public function show($id)
     {
-        $humanResource = HumanResource::with('certifications', 'experties', 'organization', 'industry', 'nationality')->findOrFail($id);
+        $humanResource = HumanResource::with('certifications', 'experties', 'organization.industry', 'nationality')->findOrFail($id);
 
         return view('process.hr.experts.show', compact('humanResource'));
     }
@@ -222,12 +221,11 @@ class HumanResourceController extends Controller
     {
         $humanResource = HumanResource::with('certifications', 'experties')->findOrFail($id);
         $nationalities = \App\Models\Nationality::orderBy('name', 'ASC')->get();
-        $industries = \App\Models\Industry::orderBy('industry_name', 'ASC')->get();
         $organizations = \App\Models\HROrganization::orderBy('organization_name', 'ASC')->get();
         $certifications = \App\Models\HRCertification::orderBy('certification_title', 'ASC')->get();
         $experties = \App\Models\Experties::orderBy('expertise_title', 'ASC')->get();
 
-        return view('process.hr.experts.create', compact('humanResource', 'nationalities', 'industries', 'organizations', 'certifications', 'experties'));
+        return view('process.hr.experts.create', compact('humanResource', 'nationalities', 'organizations', 'certifications', 'experties'));
     }
 
     /**
@@ -248,7 +246,6 @@ class HumanResourceController extends Controller
             'linkedin_profile' => 'nullable|url|max:255',
             'experience' => 'nullable|string|max:255',
             'organization_id' => 'required|exists:hr_organization_table,organization_id',
-            'industry_id' => 'required|exists:hr_industry_table,industry_id',
             'nationality_id' => 'required|exists:nationalities,id',
             'designation' => 'required|string|max:255',
             'certifications' => 'nullable|array',
@@ -265,7 +262,6 @@ class HumanResourceController extends Controller
             'linkedin_profile' => $validated['linkedin_profile'] ?? null,
             'experience' => $validated['experience'] ?? null,
             'organization_id' => $validated['organization_id'],
-            'industry_id' => $validated['industry_id'],
             'nationality_id' => $validated['nationality_id'],
             // Backward compatibility
             // 'nationality' => \App\Models\Nationality::find($validated['nationality_id'])->name,

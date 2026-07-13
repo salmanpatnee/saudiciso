@@ -65,7 +65,7 @@
                         <x-table.td> <x-table.serial :loop="$loop" :paginator="$humanResource" /></x-table.td>
                         <x-table.td>{{ $expert->name }}</x-table.td>
                         <x-table.td>{{ $expert->organization->organization_name ?? '' }}</x-table.td>
-                        <x-table.td>{{ $expert->industry->industry_name ?? '' }}</x-table.td>
+                        <x-table.td>{{ $expert->organization?->industry?->industry_name ?? '' }}</x-table.td>
                         <x-table.td>{{ $expert->designation->name ?? $expert->designation }}</x-table.td>
 
                         <x-table.td action_col="true">

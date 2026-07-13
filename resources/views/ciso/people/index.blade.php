@@ -384,7 +384,7 @@
                                 <td>
                                     {{ isset($row->nationality) && !is_string($row->nationality) ? $row->nationality->name : $row->nationality }}
                                 </td>
-                                <td>{{ $row->industry?->industry_name }}</td>
+                                <td>{{ $row->organization?->industry?->industry_name }}</td>
                                 <td>{{ $row->organization?->organization_name }}</td>
                                 <td class="kb-wrap kb-wrap--certs">{!! $row->certifications->pluck('certification_title')->filter()->map(fn ($title) => '<span class="kb-line">'.e($title).'</span>')->implode('') ?: '-' !!}</td>
                                 <td class="kb-wrap">{!! $row->experties->pluck('expertise_title')->filter()->map(fn ($title) => '<span class="kb-line">'.e($title).'</span>')->implode('') ?: '-' !!}</td>

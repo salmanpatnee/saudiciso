@@ -70,23 +70,18 @@
                             :data="$experties" id_key="expertise_id" value_key="expertise_title"
                             :value="isset($humanResource) ? $humanResource->experties->pluck('expertise_id')->toArray() : []" />
                     </div>
-                     <div>
-                        <x-form.select label="Industry" name="industry_id" required="true"
-                            :data="$industries" id_key="industry_id" value_key="industry_name"
-                            :value="$humanResource->industry_id ?? ''" />
-                    </div>
-
-                </x-form.grid-col>
-                <x-form.grid-col>
-                     <div>
+                    <div>
                         <x-form.select label="Nationality" name="nationality_id" required="true"
                             :data="$nationalities" id_key="id" value_key="name" hide_keys="true"
                             :value="$humanResource->nationality_id ?? ''" />
                     </div>
+                </x-form.grid-col>
+                <x-form.grid-col>
                     <div>
                         <x-form.field label="Designation" name="designation" required="true"
                             placeholder="Enter Designation" :value="$humanResource->designation ?? ''" />
                     </div>
+                    <div></div>
                 </x-form.grid-col>
 
                 <div class="flex justify-end">
