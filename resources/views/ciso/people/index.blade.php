@@ -144,6 +144,25 @@
             color: var(--gold);
         }
 
+        .kb-filter-hint {
+            margin: .35rem 0 0;
+            font-size: .72rem;
+            line-height: 1.3;
+            color: var(--muted);
+        }
+
+        .kb-filter-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .kb-filter-loading[hidden] {
+            display: none;
+        }
+
         /* ---- People table ---- */
         .kb-table-card {
             background: var(--card);
@@ -326,11 +345,23 @@
                     </div>
                     <div>
                         <x-form.multiselect label="Industry" name="industry_name[]" :value="$industry" :data="$industries"
-                            id_key="industry_id" value_key="industry_name" show_key="true" />
+                            id_key="industry_id" value_key="industry_name"  />
+                        <p class="kb-filter-hint">
+                            <span class="kb-filter-hint__text">Narrows the Organization list to matching organizations.</span>
+                            <span class="kb-filter-loading" data-loading-for="industry" hidden>
+                                <i class='bx bx-loader-alt bx-spin'></i> Updating options&hellip;
+                            </span>
+                        </p>
                     </div>
                     <div>
                         <x-form.multiselect label="Organization" name="organization_name[]" :value="$organization"
                             :data="$organizations" id_key="organization_id" value_key="organization_name" hide_keys="true" />
+                        <p class="kb-filter-hint">
+                            <span class="kb-filter-hint__text">Narrows the Industry list to its matching industry.</span>
+                            <span class="kb-filter-loading" data-loading-for="organization" hidden>
+                                <i class='bx bx-loader-alt bx-spin'></i> Updating options&hellip;
+                            </span>
+                        </p>
                     </div>
                     <div>
                         <x-form.multiselect label="Certification" name="certification_title[]" :value="$certification"
@@ -338,7 +369,7 @@
                     </div>
                     <div>
                         <x-form.multiselect label="Expertise" name="expertise_title[]" :value="$expertise" :data="$experties"
-                            id_key="expertise_id" value_key="expertise_title" show_key="true" />
+                            id_key="expertise_id" value_key="expertise_title"  />
                     </div>
                     <div>
                         <x-form.multiselect label="Designation" name="designation[]" :value="$designation"
@@ -417,3 +448,94 @@
         </x-pagination>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        window.peopleCascadeData = {
+            organizationIndustry: @json($organizations->pluck('industry_id', 'organization_id')),
+        };
+    </script>
+    <script>
+        $(function () {
+            var orgIndustryMap = window.peopleCascadeData.organizationIndustry || {};
+            var $industrySelect = $('select[name="industry_name[]"]');
+            var $orgSelect = $('select[name="organization_name[]"]');
+
+            var originalIndustryOptions = $industrySelect.find('option[value!=""]').clone();
+            var originalOrgOptions = $orgSelect.find('option[value!=""]').clone();
+
+            function selectedValues($select) {
+                return ($select.val() || []).map(String);
+            }
+
+            function rebuildOrgOptions() {
+                var selectedIndustries = selectedValues($industrySelect);
+                var currentOrgSelection = selectedValues($orgSelect);
+
+                $orgSelect.empty().append('<option value=""></option>');
+                originalOrgOptions.each(function () {
+                    var $opt = $(this);
+                    var orgId = String($opt.val());
+                    var orgIndustryId = orgIndustryMap[orgId] != null ? String(orgIndustryMap[orgId]) : null;
+                    var matches = selectedIndustries.length === 0
+                        || (orgIndustryId !== null && selectedIndustries.indexOf(orgIndustryId) !== -1)
+                        || currentOrgSelection.indexOf(orgId) !== -1;
+
+                    if (matches) {
+                        $orgSelect.append($opt.clone());
+                    }
+                });
+
+                $orgSelect.val(currentOrgSelection).trigger('change.select2');
+            }
+
+            function rebuildIndustryOptions() {
+                var selectedOrgs = selectedValues($orgSelect);
+                var currentIndustrySelection = selectedValues($industrySelect);
+
+                var relevantIndustryIds = selectedOrgs
+                    .map(function (orgId) {
+                        return orgIndustryMap[orgId] != null ? String(orgIndustryMap[orgId]) : null;
+                    })
+                    .filter(function (industryId) {
+                        return industryId !== null;
+                    });
+
+                $industrySelect.empty().append('<option value=""></option>');
+                originalIndustryOptions.each(function () {
+                    var $opt = $(this);
+                    var industryId = String($opt.val());
+                    var matches = relevantIndustryIds.length === 0
+                        || relevantIndustryIds.indexOf(industryId) !== -1
+                        || currentIndustrySelection.indexOf(industryId) !== -1;
+
+                    if (matches) {
+                        $industrySelect.append($opt.clone());
+                    }
+                });
+
+                $industrySelect.val(currentIndustrySelection).trigger('change.select2');
+            }
+
+            function withLoadingIndicator(target, rebuildFn) {
+                var $indicator = $('[data-loading-for="' + target + '"]');
+                $indicator.removeAttr('hidden');
+                // Deferred so the indicator actually paints before the (synchronous) rebuild runs.
+                setTimeout(function () {
+                    rebuildFn();
+                    $indicator.attr('hidden', true);
+                }, 0);
+            }
+
+            $industrySelect.on('change', function () {
+                withLoadingIndicator('organization', rebuildOrgOptions);
+            });
+            $orgSelect.on('change', function () {
+                withLoadingIndicator('industry', rebuildIndustryOptions);
+            });
+
+            rebuildOrgOptions();
+            rebuildIndustryOptions();
+        });
+    </script>
+@endpush

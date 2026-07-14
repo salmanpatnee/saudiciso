@@ -35,7 +35,7 @@ class PeoplesController extends Controller
             ->orderBy('industry_name', 'ASC')
             ->get();
 
-        $organizations = HROrganization::select('organization_id', 'organization_name')
+        $organizations = HROrganization::select('organization_id', 'organization_name', 'industry_id')
             ->distinct()
             ->orderBy('organization_name', 'ASC')
             ->get();
