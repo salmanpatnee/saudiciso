@@ -1497,6 +1497,12 @@
       background-color: color-mix(in oklab, var(--color-brand-500) 5%, transparent);
     }
   }
+  .bg-brand-500\/10 {
+    background-color: color-mix(in srgb, #465fff 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-brand-500) 10%, transparent);
+    }
+  }
   .bg-brand-600 {
     background-color: var(--color-brand-600);
   }
@@ -1563,6 +1569,12 @@
       background-color: color-mix(in oklab, var(--color-success-500) 5%, transparent);
     }
   }
+  .bg-success-500\/10 {
+    background-color: color-mix(in srgb, #12b76a 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-success-500) 10%, transparent);
+    }
+  }
   .bg-transparent {
     background-color: transparent;
   }
@@ -1573,6 +1585,12 @@
     background-color: color-mix(in srgb, #f79009 5%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-warning-500) 5%, transparent);
+    }
+  }
+  .bg-warning-500\/10 {
+    background-color: color-mix(in srgb, #f79009 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-warning-500) 10%, transparent);
     }
   }
   .bg-white {
@@ -1905,6 +1923,9 @@
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .py-\[4\.5px\] {
     padding-block: 4.5px;
