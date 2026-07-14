@@ -849,6 +849,20 @@ h3 {
   box-shadow: 0 26px 72px rgba(0, 0, 0, .34);
 }
 
+.service-card--image {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.service-card--image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 .icon-box {
   display: grid;
   width: 52px;
@@ -869,6 +883,7 @@ h3 {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
 
 .service-card h3 {
   margin-top: 26px;

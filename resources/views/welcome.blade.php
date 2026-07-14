@@ -7,7 +7,7 @@
     <title>SaudiCISO.net - Trusted Cybersecurity Expertise for Saudi Leaders</title>
     <meta name="description" content="SaudiCISO.net connects Saudi cybersecurity leaders with trusted talent, compliance documents, advisory support, and vendor-neutral product insight.">
     <meta name="color-scheme" content="dark">
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=4.6">
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=4.7">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,26 +107,14 @@
                     </div>
 
                     <div class="services-grid">
-                        <article class="service-card reveal" id="talent">
-                            <span class="icon-box">
-                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            </span>
-                            <h3>People</h3>
-                            <p>Find Top Saudi Talent Access 1200+ Certified Staff in KSA</p>
+                        <article class="service-card service-card--image reveal" id="talent">
+                            <img src="{{ asset('Images/People.png') }}" alt="People">
                         </article>
-                        <article class="service-card reveal">
-                            <span class="icon-box">
-                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
-                            </span>
-                            <h3>Products</h3>
-                            <p>Expert Product Insights Product Categories from A to Z</p>
+                        <article class="service-card service-card--image reveal" id="documents">
+                            <img src="{{ asset('Images/Process.png') }}" alt="Processes">
                         </article>
-                        <article class="service-card reveal" id="documents">
-                            <span class="icon-box">
-                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v6h6"></path><path d="M10 13h4"></path><path d="M10 17h6"></path><path d="M8 13h.01"></path><path d="M8 17h.01"></path></svg>
-                            </span>
-                            <h3>Processes</h3>
-                            <p>50+ Editable Compliance Documents</p>
+                        <article class="service-card service-card--image reveal">
+                            <img src="{{ asset('Images/Product.png') }}" alt="Products">
                         </article>
 
                         {{-- <article class="service-card reveal" id="advisory">
