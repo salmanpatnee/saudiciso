@@ -8,6 +8,7 @@ use App\Models\HROrganization;
 use App\Models\HumanResource;
 use App\Models\Industry;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class HumanResourceController extends Controller
 {
@@ -159,7 +160,7 @@ class HumanResourceController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'expert_id' => 'required|string|max:255|unique:hr_expert_master_table,expert_id',
+            'expert_id' => ['required', 'string', 'max:255', Rule::unique('hr_expert_master_table', 'expert_id')->whereNull('deleted_at')],
             'name' => 'required|string|max:255',
             // 'email' => 'nullable|email|max:255',
             // 'phone' => 'nullable|string|max:255',
@@ -240,7 +241,7 @@ class HumanResourceController extends Controller
         $humanResource = HumanResource::findOrFail($id);
 
         $validated = $request->validate([
-            'expert_id' => 'required|string|max:255|unique:hr_expert_master_table,expert_id,'.$humanResource->id,
+            'expert_id' => ['required', 'string', 'max:255', Rule::unique('hr_expert_master_table', 'expert_id')->ignore($humanResource->id)->whereNull('deleted_at')],
             'name' => 'required|string|max:255',
             // 'email' => 'nullable|email|max:255',
             // 'phone' => 'nullable|string|max:255',
