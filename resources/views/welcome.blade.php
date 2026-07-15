@@ -7,7 +7,7 @@
     <title>SaudiCISO.net - Trusted Cybersecurity Expertise for Saudi Leaders</title>
     <meta name="description" content="SaudiCISO.net connects Saudi cybersecurity leaders with trusted talent, compliance documents, advisory support, and vendor-neutral product insight.">
     <meta name="color-scheme" content="dark">
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=4.7">
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=5.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
