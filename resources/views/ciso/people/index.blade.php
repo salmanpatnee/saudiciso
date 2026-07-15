@@ -173,9 +173,14 @@
             animation: kb-rise .55s ease both;
         }
 
+        /* No max-height/vertical overflow here on purpose: it's what let the header only stick
+           within this box instead of the real page. overflow-x alone still provides horizontal
+           scrolling for the wide, no-wrap columns, scoped to just the table (not the filter form)
+           because this box's own height simply matches its content (the whole table), so it never
+           creates a competing vertical scroll region ­- it just moves with the page like normal
+           content, which is what lets thead th's sticky below track the real page scroll. */
         .kb-table-scroll {
-            max-height: 640px;
-            overflow: auto;
+            overflow-x: auto;
         }
 
         .kb-table {
@@ -185,7 +190,7 @@
 
         .kb-table thead th {
             position: sticky;
-            top: 0;
+            top: 88px;
             z-index: 5;
             background: linear-gradient(90deg, var(--navy), var(--navy-2));
             color: #fff;
@@ -262,6 +267,55 @@
 
         .kb-line:first-child {
             padding-top: 0;
+        }
+
+        .kb-line--has-tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .kb-line__info {
+            margin-right: .3rem;
+            color: var(--gold);
+            font-size: .85rem;
+            vertical-align: -1px;
+        }
+
+        .kb-tooltip {
+            position: absolute;
+            left: 0;
+            bottom: 100%;
+            z-index: 20;
+            width: max-content;
+            max-width: 280px;
+            margin-bottom: 8px;
+            padding: .55rem .75rem;
+            background: var(--navy);
+            color: #fff;
+            font-size: .72rem;
+            font-weight: 500;
+            line-height: 1.45;
+            white-space: normal;
+            border-radius: 8px;
+            box-shadow: 0 12px 28px -10px rgba(0, 5, 60, .5);
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .15s ease, visibility .15s ease;
+        }
+
+        .kb-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 14px;
+            border: 6px solid transparent;
+            border-top-color: var(--navy);
+        }
+
+        .kb-line--has-tooltip:hover .kb-tooltip {
+            visibility: visible;
+            opacity: 1;
         }
 
         .kb-table__linkedin {
@@ -431,7 +485,15 @@
                                 </td>
                                 <td>{{ $row->organization?->industry?->industry_name }}</td>
                                 <td>{{ $row->organization?->organization_name }}</td>
-                                <td class="kb-wrap kb-wrap--certs">{!! $row->certifications->filter(fn ($cert) => $cert->certification_title)->map(fn ($cert) => '<span class="kb-line">'.e($cert->certification_id.' - '.$cert->certification_title).'</span>')->implode('') ?: '-' !!}</td>
+                                <td class="kb-wrap kb-wrap--certs">{!! $row->certifications->filter(fn ($cert) => $cert->certification_title)->map(function ($cert) {
+                                        $label = e($cert->certification_id.' - '.$cert->certification_title);
+
+                                        if (! $cert->description) {
+                                            return '<span class="kb-line">'.$label.'</span>';
+                                        }
+
+                                        return '<span class="kb-line kb-line--has-tooltip"><i class="bx bx-info-circle kb-line__info"></i>'.$label.'<span class="kb-tooltip">'.e($cert->description).'</span></span>';
+                                    })->implode('') ?: '-' !!}</td>
                                 <td class="kb-wrap">{!! $row->experties->pluck('expertise_title')->filter()->map(fn ($title) => '<span class="kb-line">'.e($title).'</span>')->implode('') ?: '-' !!}</td>
                                 <td>{{ $row->designation }}</td>
                                 <td>{{ $row->experience }}</td>

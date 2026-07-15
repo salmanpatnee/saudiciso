@@ -28,7 +28,8 @@
                             placeholder="Enter Institute" :value="$certification?->institute" />
                     </div>
                     <div>
-
+                        <x-form.textarea-field label="Description" name="description"
+                            placeholder="Enter Description" :value="$certification?->description" />
                     </div>
                 </x-form.grid-col>
 

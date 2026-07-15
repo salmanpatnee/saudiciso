@@ -41,12 +41,13 @@ class HRCertificationController extends Controller
             'certification_id' => ['required', 'unique:hr_certification_table'],
             'certification_title' => 'required',
             'institute' => 'nullable',
+            'description' => 'nullable',
         ]);
 
         HRCertification::create($attributes);
 
         return redirect()->route('certifications.index')
-                         ->with('success', 'Certification created successfully.');
+            ->with('success', 'Certification created successfully.');
     }
 
     /**
@@ -71,15 +72,16 @@ class HRCertificationController extends Controller
     public function update(HRCertification $certification, Request $request): \Illuminate\Http\RedirectResponse
     {
         $attributes = $request->validate([
-            'certification_id' => ['required', 'unique:hr_certification_table,certification_id,' . $certification->id],
+            'certification_id' => ['required', 'unique:hr_certification_table,certification_id,'.$certification->id],
             'certification_title' => 'required',
             'institute' => 'nullable',
+            'description' => 'nullable',
         ]);
 
         $certification->update($attributes);
 
         return redirect()->route('certifications.index')
-                         ->with('success', 'Certification updated successfully.');
+            ->with('success', 'Certification updated successfully.');
     }
 
     /**
@@ -91,10 +93,10 @@ class HRCertificationController extends Controller
             $certification->delete();
 
             return redirect()->route('certifications.index')
-                             ->with('success', 'Certification deleted successfully.');
+                ->with('success', 'Certification deleted successfully.');
         } catch (\Exception $e) {
             return redirect()->route('certifications.index')
-                             ->with('error', 'Could not delete certification. It may be associated with other records.');
+                ->with('error', 'Could not delete certification. It may be associated with other records.');
         }
     }
 }

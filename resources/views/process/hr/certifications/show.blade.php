@@ -23,6 +23,10 @@
                     {{ $certification->institute }}
                 </x-info-col-lg>
 
+                <x-info-col-lg label="Description">
+                    {{ $certification->description }}
+                </x-info-col-lg>
+
         </div>
     </div>
 @endsection
