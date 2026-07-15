@@ -1,6 +1,6 @@
 # People Module
 
-Reference doc for the "People" module — what it is, how it's wired together, and where the sharp edges are. Written 2026-07-14. Use this as context instead of re-reading the whole module from scratch; update it when the module's structure changes.
+Reference doc for the "People" module — what it is, how it's wired together, and where the sharp edges are. Written 2026-07-14, updated 2026-07-15 (soft deletes added to `HumanResource`). Use this as context instead of re-reading the whole module from scratch; update it when the module's structure changes.
 
 ## What it is
 
@@ -15,7 +15,7 @@ Both faces query the same `HumanResource` model, but through two independently-w
 
 | Table | Model | Key columns | Rows (as of 2026-07-14) |
 |---|---|---|---|
-| `hr_expert_master_table` | `HumanResource` | `id`, `expert_id` (business key), `name`, `nationality_id`, `linkedin_profile`, `organization_id`, `designation` (free text), `experience` (numeric string), `industry_id` (populated but unused — see gotchas) | 357 |
+| `hr_expert_master_table` | `HumanResource` | `id`, `expert_id` (business key), `name`, `nationality_id`, `linkedin_profile`, `organization_id`, `designation` (free text), `experience` (numeric string), `industry_id` (populated but unused — see gotchas), `deleted_at` (soft-deletes, added 2026-07-15) | 357 |
 | `hr_organization_table` | `HROrganization` | `id`, `organization_id`, `organization_name`, `organization_address`, `contact_number`, `website_link`, `industry_id` | 137 |
 | `hr_industry_table` | `Industry` | `id`, `industry_id`, `industry_name`, `sector` | 36 |
 | `hr_certification_table` | `HRCertification` | `id`, `certification_id`, `certification_title`, `institute` | 219 |
@@ -29,7 +29,9 @@ Pivots (all simple `id`/`expert_id`/`<other>_id`, no extra columns):
 - `hr_expert_master_vs_expertise_table`
 - `hr_expert_master_vs_roles_table`
 
-**None of the tables above have a `CREATE TABLE` migration in this repo** — they're pre-existing/legacy tables. Only incremental `ALTER`-style migrations touch them (e.g. `2025_12_30_110000_add_nationality_id_to_hr_expert_master_table_table.php`). The only real DB-level foreign key in the whole schema is `hr_expert_master_table.nationality_id → nationalities.id`; everything else (`organization_id`, `certification_id`, `expertise_id`, etc.) is a plain string column with no DB constraint — validated only when going through the interactive admin forms.
+**None of the tables above have a `CREATE TABLE` migration in this repo** — they're pre-existing/legacy tables. Only incremental `ALTER`-style migrations touch them (e.g. `2025_12_30_110000_add_nationality_id_to_hr_expert_master_table_table.php`, `2026_07_15_085442_add_deleted_at_to_hr_expert_master_table.php`). The only real DB-level foreign key in the whole schema is `hr_expert_master_table.nationality_id → nationalities.id`; everything else (`organization_id`, `certification_id`, `expertise_id`, etc.) is a plain string column with no DB constraint — validated only when going through the interactive admin forms.
+
+**`HumanResource` uses `SoftDeletes` (added 2026-07-15).** `HumanResourceController::destroy()` now soft-deletes (sets `deleted_at`) instead of permanently removing the row. Both `HumanResourceController::index()` and `PeoplesController::__invoke()` automatically exclude trashed rows via Eloquent's default global scope — no explicit `whereNull('deleted_at')` needed in either controller. The `belongsTo`/`belongsToMany` relations on `HumanResource` (and `Nationality::hrExperts()`) inherit the same exclusion. `expert_id` uniqueness validation in `store()`/`update()` uses `Rule::unique(...)->whereNull('deleted_at')` so a soft-deleted expert's `expert_id` can be reused. There is no restore/trash UI anywhere in the app yet — a soft-deleted expert can only be brought back via `HumanResource::withTrashed()->find($id)->restore()` (tinker/DB access).
 
 ### Relations (`app/Models/HumanResource.php`)
 
@@ -70,7 +72,7 @@ Two routes for a bulk Excel/CSV uploader (`DataUploaderController::createHr`/`Up
 Single `__invoke()` action powering the public directory. Reads filter inputs from the query string (`nationality`, `industry_name`, `organization_name`, `certification_title`, `expertise_title`, `designation`, `experience`, each optionally an array from a multiselect), builds lookup-option lists for the filter dropdowns, then runs one big `HumanResource` query with a chain of `->when(...)` clauses — one per filter — eager-loading `certifications`, `organization.industry`, `roles`, `experties`, `nationality`. Paginates 50/page, renders `ciso.people.index`.
 
 ### `HumanResourceController` (`app/Http/Controllers/HumanResourceController.php`)
-Full resource controller (`index`, `create`, `store`, `show`, `edit`, `update`, `destroy`) for the admin side, renders `process.hr.experts.*`. `index()` re-implements almost the same filter-and-paginate logic as `PeoplesController` (see [Duplication](#duplication-between-the-two-controllers)). `store()`/`update()` validate inline (no Form Request) and `sync()` the `certifications`/`experties` pivots; `roles` and education are not exposed in this form at all.
+Full resource controller (`index`, `create`, `store`, `show`, `edit`, `update`, `destroy`) for the admin side, renders `process.hr.experts.*`. `index()` re-implements almost the same filter-and-paginate logic as `PeoplesController` (see [Duplication](#duplication-between-the-two-controllers)). `store()`/`update()` validate inline (no Form Request) and `sync()` the `certifications`/`experties` pivots; `roles` and education are not exposed in this form at all. `destroy()` soft-deletes (see soft-delete note above) — pivot rows (`certifications`, `experties`) are **not** detached on delete, so they remain linked and will reappear if the expert is ever restored.
 
 ### Lookup-table controllers
 `HROrganizationController`, `IndustryController`, `HRCertificationController`, `ExpertiseController`, `DesignationController`, `NationalityController` — six near-identical resource controllers, each: validate inline (`required`/`unique`/`exists` rules), `create()`/`update()`, `destroy()` wrapped in try/catch. Only `NationalityController::destroy()` actually pre-checks usage (`$nationality->hrExperts()->count() > 0`) before deleting; the others just try the delete and catch whatever the DB throws (which, since there's no real FK, is usually nothing — see gotchas).
@@ -149,8 +151,9 @@ Controllers:  app/Http/Controllers/PeoplesController.php
               app/Http/Controllers/HumanResourceController.php
               app/Http/Controllers/{HROrganization,Industry,HRCertification,Expertise,Designation,Nationality}Controller.php
               app/Http/Controllers/DataUploaderController.php (dead bulk-import code)
-Models:       app/Models/HumanResource.php
+Models:       app/Models/HumanResource.php (SoftDeletes)
               app/Models/{HROrganization,Industry,HRCertification,Experties,HRRole,Designation,Nationality}.php
+Migrations:   database/migrations/2026_07_15_085442_add_deleted_at_to_hr_expert_master_table.php
 Views:        resources/views/ciso/people/index.blade.php (public)
               resources/views/process/hr/{experts,organizations,industries,certifications,experties,designations,nationalities}/*.blade.php (admin)
               resources/views/components/form/multiselect.blade.php (shared filter widget)
