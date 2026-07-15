@@ -225,6 +225,16 @@
             color: var(--navy);
         }
 
+        a.kb-table__name {
+            text-decoration: underline;
+            text-decoration-color: currentColor;
+            text-underline-offset: 2px;
+        }
+
+        a.kb-table__name:hover {
+            color: var(--gold);
+        }
+
         .kb-table td.kb-wrap {
             white-space: normal;
             min-width: 200px;
@@ -410,7 +420,11 @@
                             <tr>
                                 <td>{{ ($humanResource->currentPage() - 1) * $humanResource->perPage() + $loop->index + 1 }}</td>
                                 <td>
-                                    <div class="kb-table__name">{{ $row->name }}</div>
+                                    @if (!empty($row->linkedin_profile))
+                                        <a class="kb-table__name" href="{{ $row->linkedin_profile }}" target="_blank" rel="noopener">{{ $row->name }}</a>
+                                    @else
+                                        <div class="kb-table__name">{{ $row->name }}</div>
+                                    @endif
                                 </td>
                                 <td>
                                     {{ isset($row->nationality) && !is_string($row->nationality) ? $row->nationality->name : $row->nationality }}
