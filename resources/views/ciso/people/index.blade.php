@@ -173,14 +173,9 @@
             animation: kb-rise .55s ease both;
         }
 
-        /* No max-height/vertical overflow here on purpose: it's what let the header only stick
-           within this box instead of the real page. overflow-x alone still provides horizontal
-           scrolling for the wide, no-wrap columns, scoped to just the table (not the filter form)
-           because this box's own height simply matches its content (the whole table), so it never
-           creates a competing vertical scroll region ­- it just moves with the page like normal
-           content, which is what lets thead th's sticky below track the real page scroll. */
         .kb-table-scroll {
-            overflow-x: auto;
+            max-height: 640px;
+            overflow: auto;
         }
 
         .kb-table {
@@ -190,7 +185,7 @@
 
         .kb-table thead th {
             position: sticky;
-            top: 88px;
+            top: var(--kb-sticky-top, 0px);
             z-index: 5;
             background: linear-gradient(90deg, var(--navy), var(--navy-2));
             color: #fff;
@@ -613,5 +608,60 @@
             rebuildOrgOptions();
             rebuildIndustryOptions();
         });
+    </script>
+    <script>
+        (function () {
+            var scrollBox = document.querySelector('.kb-table-scroll');
+
+            if (!scrollBox) {
+                return;
+            }
+
+            var stickyBars = [document.querySelector('header.sticky'), document.querySelector('.z-99995')];
+            var tableHead = scrollBox.querySelector('thead');
+            var ticking = false;
+
+            // The header must pin below the contiguous stack of sticky bars (navbar +
+            // breadcrumb). On mid-size screens the breadcrumb pins at 88px while the
+            // navbar is shorter, leaving an uncovered band — pinning at the breadcrumb's
+            // bottom there would let rows peek out above the table header.
+            function pinTop() {
+                var covered = 0;
+                stickyBars.forEach(function (bar) {
+                    if (!bar) {
+                        return;
+                    }
+                    var rect = bar.getBoundingClientRect();
+                    if (rect.top <= covered + 1 && rect.bottom > covered) {
+                        covered = rect.bottom;
+                    }
+                });
+
+                return covered;
+            }
+
+            function updateStickyTop() {
+                ticking = false;
+                var overshoot = pinTop() - scrollBox.getBoundingClientRect().top;
+                // Clamp so the header never escapes past the table's bottom edge
+                // (sticky containment alone does not constrain table cells here).
+                var maxTop = scrollBox.clientHeight - tableHead.offsetHeight;
+                var top = Math.min(Math.max(0, overshoot), Math.max(0, maxTop));
+                scrollBox.style.setProperty('--kb-sticky-top', top + 'px');
+            }
+
+            function requestStickyUpdate() {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(updateStickyTop);
+                }
+            }
+
+            // Page scrolling happens in the layout's inner overflow-y-auto container,
+            // not on window, so a capture-phase document listener is required.
+            document.addEventListener('scroll', requestStickyUpdate, true);
+            window.addEventListener('resize', requestStickyUpdate);
+            updateStickyTop();
+        })();
     </script>
 @endpush
