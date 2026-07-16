@@ -617,5 +617,13 @@
                 DLP policy
                 improvements.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>DLP is only as effective as the policies behind it — generic, default rules either miss real
+            exfiltration or bury security teams in false positives, so tuning detection to your organization's
+            actual sensitive data types is the real work, not the deployment itself. Coverage matters more than any
+            single feature: data leaves through email, cloud apps, USB drives, and browser uploads, so a strategy
+            that only covers the network perimeter misses most modern exfiltration paths. Because DLP sits directly
+            in user workflows, a phased rollout — monitor before enforce — avoids blocking legitimate work and
+            losing organizational buy-in early.</p>
     </div>
 @endsection

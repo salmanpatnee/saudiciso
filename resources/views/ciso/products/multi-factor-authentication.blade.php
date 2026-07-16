@@ -630,5 +630,13 @@
                 authentication
                 security frameworks.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>MFA's effectiveness comes from forcing an attacker to compromise multiple, independent factors — but
+            that only holds if the factors are genuinely independent, which is why SMS-based codes are increasingly
+            considered the weakest option compared to authenticator apps or hardware keys. Adaptive, risk-based MFA
+            that adjusts friction based on context gets far higher user compliance than blanket enforcement, which
+            matters because employees will route around security controls that feel unnecessarily heavy. Given how
+            much account takeover starts with a single-factor password breach, MFA on privileged and remote-access
+            accounts specifically should be treated as non-negotiable, not optional.</p>
     </div>
 @endsection

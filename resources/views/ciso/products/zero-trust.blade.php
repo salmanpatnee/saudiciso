@@ -599,5 +599,13 @@
                 Zero Trust security
                 frameworks.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Zero Trust is a principle before it's a product — "never trust, always verify" has to be implemented
+            through existing controls like MFA, micro-segmentation, and continuous monitoring, so a vendor selling
+            a single "Zero Trust" box is selling a piece of the architecture, not the architecture itself. The most
+            common implementation mistake is treating it as a network project when it's really an identity project:
+            access decisions need to follow the user and device, not the network location, which means IAM
+            maturity often determines how far a rollout can actually go. Start with your highest-value assets and
+            highest-risk access paths rather than attempting an all-at-once perimeter replacement.</p>
     </div>
 @endsection

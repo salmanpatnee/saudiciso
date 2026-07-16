@@ -623,5 +623,12 @@
                 access control
                 decisions.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Most container security incidents trace back to a misconfigured cluster or an insecure image, not a
+            novel exploit — which makes shifting security left into the CI/CD pipeline more valuable than relying
+            on runtime detection alone. Kubernetes' own access model needs active configuration: a permissive
+            default RBAC policy or missing namespace isolation is one of the most common ways an attacker moves
+            laterally after an initial container compromise. As adoption grows, treat this as inseparable from your
+            DevSecOps practice rather than a bolt-on security product layered on afterward.</p>
     </div>
 @endsection

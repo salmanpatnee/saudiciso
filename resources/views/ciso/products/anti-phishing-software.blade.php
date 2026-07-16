@@ -481,5 +481,12 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Phishing remains the most common way attackers get an initial foothold, and no single control fully closes
+            that gap — anti-phishing software works best as one layer alongside security awareness training and a
+            strong email security baseline. When evaluating vendors, prioritize AI-driven detection and zero-day
+            phishing coverage over checklist feature parity, since attacker techniques change faster than static
+            rule sets. Treat this as an ongoing investment, not a one-time deployment: pair the technology with
+            regular phishing simulations and a fast reporting path for employees.</p>
     </div>
 @endsection

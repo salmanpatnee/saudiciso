@@ -632,5 +632,12 @@
                 control decisions.
             </li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>The core value of a CASB is visibility into shadow IT — cloud applications employees adopt without IT's
+            knowledge are exactly where data leaks and compliance gaps happen, and you can't secure what you can't
+            see. Deployment mode matters more than feature checklists: API-based CASBs give broader app coverage
+            with some detection lag, while proxy-based deployments inspect traffic in real time but need more
+            network integration work. As SASE and ZTNA architectures mature, CASB increasingly functions as one
+            policy point within a broader access framework rather than a standalone tool.</p>
     </div>
 @endsection

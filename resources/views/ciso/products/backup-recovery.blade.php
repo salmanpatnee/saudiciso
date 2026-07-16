@@ -614,5 +614,12 @@
                 training for backup
                 security.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Backups only protect you if attackers can't reach or corrupt them too, which is why immutable storage
+            and air-gapped copies matter more than raw backup frequency once ransomware is the primary threat
+            model. The real test of a backup strategy isn't whether data was saved, but how fast it can be restored
+            — recovery time objectives deserve as much attention in a vendor evaluation as retention policies do.
+            As backup increasingly moves to multi-cloud and BaaS/DRaaS models, treat the backup platform itself as
+            a security-critical system requiring its own access controls, not just a passive archive.</p>
     </div>
 @endsection

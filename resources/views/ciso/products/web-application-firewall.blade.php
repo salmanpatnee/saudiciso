@@ -618,5 +618,13 @@
                 web application
                 security frameworks.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>A WAF's job is stopping attacks that never reach the application layer where your own code could catch
+            them — SQL injection and XSS attempts get filtered at the edge instead of relying on every developer to
+            have written airtight input validation. Rule tuning is the real ongoing work: an overly aggressive WAF
+            blocks legitimate traffic and gets disabled by frustrated teams, while an overly permissive one
+            provides false confidence, so budget for tuning time, not just the initial deployment. As applications
+            move to APIs and microservices, confirm a WAF's API security capabilities specifically rather than
+            assuming traditional web-traffic rules translate automatically.</p>
     </div>
 @endsection

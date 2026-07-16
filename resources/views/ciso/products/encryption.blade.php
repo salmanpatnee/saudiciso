@@ -619,5 +619,12 @@
                 encryption policy
                 improvements.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Encryption only protects the data actually covered by it, so the real gap in most organizations isn't
+            the algorithm — it's inconsistent coverage across laptops, removable media, and file shares that were
+            never enrolled. Key management matters more than the encryption standard itself: a lost or poorly
+            managed key turns encrypted data into permanently inaccessible data, which is its own kind of incident.
+            As quantum-resistant algorithms move toward standardization, building crypto-agility into policy now
+            avoids a full re-architecture when that transition eventually becomes mandatory.</p>
     </div>
 @endsection

@@ -607,5 +607,13 @@
                 threat prevention
                 strategies.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>NAC's real job is answering one question before granting access — is this device actually compliant,
+            not just who is the user — which is what separates it from simple authentication and makes it
+            effective against unmanaged and unpatched devices connecting to the network. BYOD and IoT have made
+            this harder, not easier, since NAC now has to assess devices it doesn't fully control, which pushes
+            modern deployments toward continuous posture checks rather than one-time access decisions. Pair NAC
+            with network segmentation so that even a device that passes the initial check has its lateral movement
+            limited if it's later compromised.</p>
     </div>
 @endsection

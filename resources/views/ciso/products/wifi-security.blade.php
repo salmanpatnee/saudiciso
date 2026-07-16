@@ -616,5 +616,13 @@
                 WiFi security
                 frameworks.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>WiFi is the network boundary most organizations think about least, even though a rogue access point or
+            a weak authentication protocol gives an attacker a foothold without ever touching a firewall or
+            endpoint. WPA3 and 802.1X enterprise authentication should be treated as the baseline, not an upgrade —
+            older protocols and pre-shared keys are increasingly the easiest entry point in an otherwise
+            well-defended network. As IoT devices multiply on wireless networks, segment them onto separate SSIDs
+            and VLANs from corporate traffic, since most IoT devices can't support the same authentication rigor as
+            managed endpoints.</p>
     </div>
 @endsection

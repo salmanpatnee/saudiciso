@@ -612,5 +612,13 @@
                 automated IoT policy
                 enforcement.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Most IoT devices simply weren't designed with security headroom for encryption or regular patching,
+            which means network segmentation — isolating IoT from critical systems rather than trying to harden the
+            devices themselves — is usually the more realistic control. Device authentication and unique identities
+            matter as much as network controls: without them, a single compromised sensor can impersonate a trusted
+            device indefinitely. Because IoT deployments often outlive any single security team's tenure,
+            prioritize solutions with straightforward lifecycle management over ones that require constant
+            manual, device-by-device oversight.</p>
     </div>
 @endsection

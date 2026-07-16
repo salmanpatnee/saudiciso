@@ -621,5 +621,13 @@
                 endpoint security
                 improvements.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>EDR's real advantage over traditional antivirus isn't detection alone — it's automated response,
+            isolating a compromised endpoint or rolling back malicious changes in the minutes before an analyst
+            even sees the alert, often the difference between a contained incident and a lateral-movement breach.
+            The telemetry EDR generates is only useful if it feeds a SIEM or SOAR workflow; a standalone console
+            nobody's watching in real time defeats the purpose. If your team is stretched thin, weigh vendors
+            partly on managed detection and response (MDR) options, since EDR without 24/7 monitoring behind it is
+            a partial solution.</p>
     </div>
 @endsection

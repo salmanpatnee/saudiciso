@@ -633,5 +633,13 @@
                 training for secure
                 application usage.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>Application whitelisting flips the usual security model from blocking known-bad to allowing only
+            known-good, which is what makes it effective against zero-day and fileless malware that signature-based
+            antivirus simply won't catch. The tradeoff is operational: a whitelist that isn't actively maintained
+            becomes either a productivity blocker or a false sense of security, so this only pays off with a real
+            process for reviewing and updating approved software. It's most worth the overhead in environments
+            where the cost of an unauthorized executable running is genuinely severe — regulated, high-value, or
+            tightly controlled systems — rather than as a blanket rollout across every endpoint.</p>
     </div>
 @endsection

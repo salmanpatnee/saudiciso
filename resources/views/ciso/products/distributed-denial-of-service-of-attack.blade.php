@@ -626,5 +626,13 @@
                 DDoS threat
                 intelligence.</li>
         </ol>
+        <h2 class="kb-heading">Takeaway</h2>
+        <p>DDoS attacks succeed by exhausting capacity, so mitigation is fundamentally about absorbing scale — a
+            cloud-based scrubbing service with global traffic distribution will outperform any on-premises
+            appliance once an attack exceeds your own network's bandwidth. Application-layer attacks are the harder
+            case: they mimic legitimate traffic patterns and need behavioral analysis, not just volumetric
+            filtering, to distinguish a real user from a botnet request. Because downtime during an attack is the
+            actual cost, evaluate providers on time-to-mitigation and guaranteed uptime SLAs, not just peak traffic
+            capacity claims.</p>
     </div>
 @endsection
