@@ -261,7 +261,7 @@
             </x-table.tbody>
         </x-table.table>
         <h3 class="kb-heading">5. Top 10 Challenges Related
-            to SIEM</h3>
+            to Threat Intelligence</h3>
         <ol>
             <li>Managing high volumes of threat data and reducing false positives.</li>
             <li>Ensuring real-time analysis and automated threat response.</li>

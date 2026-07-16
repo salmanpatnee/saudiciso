@@ -216,15 +216,15 @@
                 </tr>
                 <tr>
                     <x-table.td>5</x-table.td>
-                    <x-table.td>Thales QipherTrust Database Protection</x-table.td>
+                    <x-table.td>Thales CipherTrust Database Protection</x-table.td>
                     <x-table.td>Thales</x-table.td>
                     <x-table.td>Cloud & On-Prem</x-table.td>
                     <x-table.td>Integrated encryption and database monitoring.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>6</x-table.td>
-                    <x-table.td>HexaList Database Security</x-table.td>
-                    <x-table.td>HexaList</x-table.td>
+                    <x-table.td>HexaTier Database Security</x-table.td>
+                    <x-table.td>HexaTier</x-table.td>
                     <x-table.td>Cloud & On-Prem</x-table.td>
                     <x-table.td>Database security with real-time anomaly detection.</x-table.td>
                 </tr>
@@ -266,7 +266,7 @@
                 </tr>
                 <tr>
                     <x-table.td>2</x-table.td>
-                    <x-table.td>Imperva Database</x-table.td>
+                    <x-table.td>Imperva Database Security</x-table.td>
                     <x-table.td>Automated threat detection, real-time blocking, audit
                         and
                         compliance
@@ -276,7 +276,7 @@
                 </tr>
                 <tr>
                     <x-table.td>3</x-table.td>
-                    <x-table.td>Security</x-table.td>
+                    <x-table.td>Oracle Audit Vault and Database Firewall</x-table.td>
                     <x-table.td>Database firewall protection, audit and activity
                         monitoring,
                         privileged
@@ -287,11 +287,6 @@
                 </tr>
                 <tr>
                     <x-table.td>4</x-table.td>
-                    <x-table.td>Oracle Audit Vault and Database Firewall</x-table.td>
-                    <x-table.td>N/A</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>5</x-table.td>
                     <x-table.td>McAfee Database Security</x-table.td>
                     <x-table.td>Continuous database activity monitoring, real-time
                         alerts,
@@ -302,8 +297,8 @@
                         McAfee ePolicy Orchestrator.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>6</x-table.td>
-                    <x-table.td>Trustwave DDProtect</x-table.td>
+                    <x-table.td>5</x-table.td>
+                    <x-table.td>Trustwave DbProtect</x-table.td>
                     <x-table.td>Vulnerability assessment, activity monitoring, automated
                         compliance
                         reporting, threat
@@ -311,7 +306,7 @@
                         integration.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>7</x-table.td>
+                    <x-table.td>6</x-table.td>
                     <x-table.td>Microsoft Defender for SQL</x-table.td>
                     <x-table.td>AI-powered anomaly detection, SQL threat protection,
                         compliance
@@ -321,7 +316,7 @@
                         security solutions.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>8</x-table.td>
+                    <x-table.td>7</x-table.td>
                     <x-table.td>AWS Database Activity Streams</x-table.td>
                     <x-table.td>Cloud-native database activity logging, real-time
                         anomaly
@@ -331,7 +326,7 @@
                         services, centralized auditing.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>9</x-table.td>
+                    <x-table.td>8</x-table.td>
                     <x-table.td>Datadog Database Monitoring</x-table.td>
                     <x-table.td>Full-stack database performance and security monitoring,
                         anomaly
@@ -340,8 +335,8 @@
                         integration with SIEM solutions.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>10</x-table.td>
-                    <x-table.td>Thales QDnetTrust Database Protection</x-table.td>
+                    <x-table.td>9</x-table.td>
+                    <x-table.td>Thales CipherTrust Database Protection</x-table.td>
                     <x-table.td>Data encryption, key management, activity monitoring,
                         compliance
                         enforcement,
@@ -350,7 +345,7 @@
                         security ecosystem.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>11</x-table.td>
+                    <x-table.td>10</x-table.td>
                     <x-table.td>HexaTier Database Security</x-table.td>
                     <x-table.td>Database firewall, advanced user access control, SQL
                         injection
@@ -396,7 +391,7 @@
                 <tr>
                     <x-table.td>1</x-table.td>
                     <x-table.td>IBM Guardium</x-table.td>
-                    <x-table.td>SIEM (Splunk, QRagāz), CASB, Zero Trust
+                    <x-table.td>SIEM (Splunk, QRadar), CASB, Zero Trust
                         Security
                         Frameworks.
                     </x-table.td>
@@ -404,7 +399,7 @@
                 <tr>
                     <x-table.td>2</x-table.td>
                     <x-table.td>Imperva Database Security</x-table.td>
-                    <x-table.td>SIEM (Splunk, QRagāz), CASB, EDR
+                    <x-table.td>SIEM (Splunk, QRadar), CASB, EDR
                         platforms.</x-table.td>
                 </tr>
                 <tr>
@@ -420,7 +415,7 @@
                 <tr>
                     <x-table.td>4</x-table.td>
                     <x-table.td>McAfee Database Security</x-table.td>
-                    <x-table.td>McAfee gEQjGx Orchestrator, SIEM solutions,
+                    <x-table.td>McAfee ePolicy Orchestrator, SIEM solutions,
                         Endpoint
                         Security
                         platforms.</x-table.td>
@@ -428,7 +423,7 @@
                 <tr>
                     <x-table.td>5</x-table.td>
                     <x-table.td>Microsoft Defender for SQL</x-table.td>
-                    <x-table.td>SIEM (Splunk, QRagāz), Threat Intelligence
+                    <x-table.td>SIEM (Splunk, QRadar), Threat Intelligence
                         Platforms, Zero Trust
                         solutions.</x-table.td>
                 </tr>
@@ -449,25 +444,25 @@
                 </tr>
                 <tr>
                     <x-table.td>8</x-table.td>
-                    <x-table.td>N/A</x-table.td>
-                    <x-table.td>SIEM (Splunk, QRagāz), Cloud Workload
+                    <x-table.td>Trustwave DbProtect</x-table.td>
+                    <x-table.td>SIEM (Splunk, QRadar), Cloud Workload
                         Protection
                         Platforms
                         (CWPP).</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>9</x-table.td>
-                    <x-table.td>Thales Qubie/Trust Database
+                    <x-table.td>Thales CipherTrust Database
                         Protection</x-table.td>
                     <x-table.td>Thales Security Suite, SIEM Integrations,
                         CASB.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
-                    <x-table.td>Ussa/List Database Security</x-table.td>
+                    <x-table.td>HexaTier Database Security</x-table.td>
                     <x-table.td>Cloud-native security integrations, SIEM
                         (Splunk,
-                        QRagāz),
+                        QRadar),
                         Secure Web Gateways.</x-table.td>
                 </tr>
             </x-table.tbody>

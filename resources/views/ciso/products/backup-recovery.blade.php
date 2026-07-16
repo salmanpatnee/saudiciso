@@ -416,7 +416,7 @@
                 <tr>
                     <x-table.td>1</x-table.td>
                     <x-table.td>Veeam Backup & Replication</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Microsoft
+                    <x-table.td>SIEM (Splunk, QRadar), Microsoft
                         Defender,
                         VMware, AWS
                         Backup.</x-table.td>
@@ -424,7 +424,7 @@
                 <tr>
                     <x-table.td>2</x-table.td>
                     <x-table.td>Commvault Backup & Recovery</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Microsoft
+                    <x-table.td>SIEM (Splunk, QRadar), Microsoft
                         Azure
                         Backup, AWS
                         Security Hub.</x-table.td>
@@ -433,13 +433,13 @@
                     <x-table.td>3</x-table.td>
                     <x-table.td>Dell EMC Data Protection Suite</x-table.td>
                     <x-table.td>VMware, SIEM platforms, RSA
-                        <b>NetWitness</b>, AWS
+                        NetWitness, AWS
                         Backup.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>4</x-table.td>
                     <x-table.td>Rubrik Cloud Data Management</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Palo Alto
+                    <x-table.td>SIEM (Splunk, QRadar), Palo Alto
                         Networks,
                         Microsoft
                         Sentinel.</x-table.td>
@@ -448,12 +448,12 @@
                     <x-table.td>5</x-table.td>
                     <x-table.td>Cohesity DataProtect</x-table.td>
                     <x-table.td>SIEM platforms, Splunk, CrowdStrike,
-                        <b>SentinelOne</b>.</x-table.td>
+                        SentinelOne.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>6</x-table.td>
                     <x-table.td>IBM Spectrum Protect</x-table.td>
-                    <x-table.td>IBM Security <b>QRadar</b>, VMware,
+                    <x-table.td>IBM Security QRadar, VMware,
                         Microsoft
                         Defender, AWS
                         Backup.</x-table.td>
@@ -461,7 +461,7 @@
                 <tr>
                     <x-table.td>7</x-table.td>
                     <x-table.td>Acronis Cyber Protect</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Acronis Active
+                    <x-table.td>SIEM (Splunk, QRadar), Acronis Active
                         Protection, EDR
                         platforms.</x-table.td>
                 </tr>
@@ -474,7 +474,7 @@
                 <tr>
                     <x-table.td>9</x-table.td>
                     <x-table.td>Veritas NetBackup</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Broadcom
+                    <x-table.td>SIEM (Splunk, QRadar), Broadcom
                         Security
                         Suite, AWS
                         Backup.</x-table.td>

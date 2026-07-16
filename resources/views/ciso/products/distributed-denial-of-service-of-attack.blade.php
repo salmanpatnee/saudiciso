@@ -156,7 +156,7 @@
                 </tr>
                 <tr>
                     <x-table.td>7</x-table.td>
-                    <x-table.td>Netscout Ancor Edge Defense</x-table.td>
+                    <x-table.td>Netscout Arbor Edge Defense</x-table.td>
                     <x-table.td>Netscout</x-table.td>
                     <x-table.td>On-premise and cloud hybrid DDoS mitigation platform.</x-table.td>
                 </tr>
@@ -175,7 +175,7 @@
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
-                    <x-table.td>Fortinet Ionx-table.tdDoS</x-table.td>
+                    <x-table.td>Fortinet FortiDDoS</x-table.td>
                     <x-table.td>Fortinet</x-table.td>
                     <x-table.td>Advanced network-layer DDoS protection with real-time traffic
                         analysis.</x-table.td>
@@ -274,7 +274,7 @@
             </x-table.tbody>
         </x-table.table>
         <h3 class="kb-heading">5. Top 10 Challenges Related
-            to DAM</h3>
+            to DDoS</h3>
         <ol>
             <li>Increasing scale and complexity of DDoS attacks.</li>
             <li>Differentiating between legitimate and malicious traffic.</li>
@@ -287,8 +287,8 @@
             <li>Lack of skilled professionals to manage and configure DDoS mitigation.</li>
             <li>Automating responses to minimize downtime and service disruption.</li>
         </ol>
-        <h3 class="kb-heading">6. Key Features of Top 10 DAM
-            Products</h3>
+        <h3 class="kb-heading">6. Key Features of Top 10 DDoS
+            Protection Products</h3>
         <x-table.table>
             <x-table.thead>
                 <tr>

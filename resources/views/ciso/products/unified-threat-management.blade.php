@@ -409,7 +409,7 @@
                 <tr>
                     <x-table.td>2</x-table.td>
                     <x-table.td>Cisco Meraki MX</x-table.td>
-                    <x-table.td>Cisco <b>SecureX</b>, Cisco Umbrella, SIEM
+                    <x-table.td>Cisco SecureX, Cisco Umbrella, SIEM
                         solutions, Cloud
                         Security Posture
                         Management (CSPM).</x-table.td>
@@ -433,8 +433,8 @@
                     <x-table.td>5</x-table.td>
                     <x-table.td>Palo Alto Networks PA-Series</x-table.td>
                     <x-table.td>Palo Alto Cortex XDR, Prisma Cloud, SIEM
-                        (<b>Splunk,
-                            QRadar</b>).</x-table.td>
+                        (Splunk,
+                            QRadar).</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>6</x-table.td>
@@ -447,7 +447,7 @@
                 <tr>
                     <x-table.td>7</x-table.td>
                     <x-table.td>SonicWall TZ Series</x-table.td>
-                    <x-table.td>SIEM (<b>Splunk, QRadar</b>), Secure Web
+                    <x-table.td>SIEM (Splunk, QRadar), Secure Web
                         Gateway,
                         Zero Trust
                         security frameworks.

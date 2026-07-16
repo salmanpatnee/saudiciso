@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Brand protection')
+@section('title', 'Brand Protection')
 @section('title_ar', '')
 
 @push('css')
@@ -26,7 +26,7 @@
             services, digital watermarking, domain monitoring, and legal enforcement to counter cyber threats targeting
             brand
             integrity. Additionally, organizations deploy these technologies to protect against domain spoofing, fraudulent
-            advertisements, and unauthorized app distributions that exploit their brand identity</p>
+            advertisements, and unauthorized app distributions that exploit their brand identity.</p>
         <p>Organizations that rely on e-commerce, online services, and digital communications increasingly integrate brand
             protection solutions into their cybersecurity strategies. Many regulations and industry compliance standards
             mandate

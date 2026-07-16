@@ -45,7 +45,7 @@
                 <tr>
                     <x-table.td>1</x-table.td>
                     <x-table.td>NCA - Essential Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-ECC-2.19.3</x-table.td>
+                    <x-table.td>NCA-ECC2-2.19.3</x-table.td>
                     <x-table.td>Implement IAM solutions to enforce authentication and access control policies.</x-table.td>
                 </tr>
                 <tr>

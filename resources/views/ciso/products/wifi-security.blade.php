@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Wifi Security')
+@section('title', 'WiFi Security')
 @section('title_ar', '')
 
 @push('css')
@@ -105,7 +105,7 @@
             <x-table.thead>
                 <tr>
                     <x-table.th label="S.No" />
-                    <x-table.th label="UTM Solution" />
+                    <x-table.th label="Product Name" />
 
                     <x-table.th label="Vendor" />
                     <x-table.th label="Description" />
@@ -259,7 +259,7 @@
             </x-table.tbody>
         </x-table.table>
         <h3 class="kb-heading">5. Top 10 Challenges Related
-            to WAF</h3>
+            to WiFi Security</h3>
         <ol>
             <li>Managing rogue access points and unauthorized devices.</li>
             <li>Securing IoT devices connected to WiFi networks.</li>

@@ -175,8 +175,8 @@
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
-                    <x-table.td>Bix-table.tdefender</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender</x-table.td>
                     <x-table.td>Machine learning-powered ransomware prevention and remediation.</x-table.td>
                 </tr>
             </x-table.tbody>
@@ -259,8 +259,8 @@
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
-                    <x-table.td>Bix-table.tdefender</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender</x-table.td>
                     <x-table.td>Cloud-based</x-table.td>
                     <x-table.td>Machine learning-driven ransomware prevention.</x-table.td>
                 </tr>
@@ -386,7 +386,7 @@
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
                     <x-table.td>Machine learning-based ransomware detection, exploit
                         prevention,
                         automated response,
@@ -498,7 +498,7 @@
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
                     <x-table.td>GravityZone Control Center, SIEM (Splunk,
                         QRadar),
                         cloud

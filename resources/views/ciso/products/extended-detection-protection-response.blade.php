@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Extended Detection Protection Response (XDR)')
+@section('title', 'Extended Detection and Response (XDR)')
 @section('title_ar', '')
 
 @push('css')
@@ -41,7 +41,7 @@
                 <tr>
                     <x-table.td>1</x-table.td>
                     <x-table.td>NCA - Essential Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA–ECC2-1.8.3</x-table.td>
+                    <x-table.td>NCA-ECC2-2.8.3</x-table.td>
                     <x-table.td>Implement XDR solutions to enhance security visibility and threat response.</x-table.td>
                 </tr>
                 <tr>

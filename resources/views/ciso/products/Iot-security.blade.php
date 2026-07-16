@@ -147,6 +147,7 @@
                 <tr>
                     <x-table.td>7</x-table.td>
                     <x-table.td>Trend Micro IoT Security</x-table.td>
+                    <x-table.td>Trend Micro</x-table.td>
                     <x-table.td>Endpoint security for IoT devices with behavior-based anomaly
                         detection.</x-table.td>
                 </tr>

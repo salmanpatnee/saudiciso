@@ -418,7 +418,7 @@
                 <tr>
                     <x-table.td>1</x-table.td>
                     <x-table.td>Core Impact</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Endpoint
+                    <x-table.td>SIEM (Splunk, QRadar), Endpoint
                         Detection and
                         Response
                         (EDR), Threat
@@ -428,7 +428,7 @@
                 <tr>
                     <x-table.td>2</x-table.td>
                     <x-table.td>Metasploit Pro</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), EDR solutions,
+                    <x-table.td>SIEM (Splunk, QRadar), EDR solutions,
                         Security
                         Orchestration, Automation, and
                         Response (SOAR)
@@ -445,16 +445,16 @@
                 <tr>
                     <x-table.td>4</x-table.td>
                     <x-table.td>ImmuniWeb AI</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), API Security
+                    <x-table.td>SIEM (Splunk, QRadar), API Security
                         solutions, Compliance
                         Management
                         Platforms.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>5</x-table.td>
-                    <x-table.td>IBM Security <b>QRadar</b>
+                    <x-table.td>IBM Security QRadar
                         Advisor</x-table.td>
-                    <x-table.td>IBM <b>QRadar</b> SIEM, Threat Intelligence
+                    <x-table.td>IBM QRadar SIEM, Threat Intelligence
                         Platforms, Endpoint
                         Security solutions.
                     </x-table.td>
@@ -464,7 +464,7 @@
                     <x-table.td>Acunetix</x-table.td>
                     <x-table.td>SIEM integrations, Web Application Firewalls
                         (WAFs),
-                        <b>DevSecOps</b> platforms.
+                        DevSecOps platforms.
                     </x-table.td>
                 </tr>
                 <tr>
@@ -477,8 +477,8 @@
                 <tr>
                     <x-table.td>8</x-table.td>
                     <x-table.td>Tenable.io Web App Scanning</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>),
-                        <b>DevSecOps</b>
+                    <x-table.td>SIEM (Splunk, QRadar),
+                        DevSecOps
                         security tools,
                         Threat Intelligence
                         solutions.</x-table.td>
@@ -495,14 +495,14 @@
                 <tr>
                     <x-table.td>10</x-table.td>
                     <x-table.td>Nexpose</x-table.td>
-                    <x-table.td>SIEM (Splunk, <b>QRadar</b>), Vulnerability
+                    <x-table.td>SIEM (Splunk, QRadar), Vulnerability
                         Management
                         platforms, Risk Assessment
                         Tools.</x-table.td>
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="kb-heading">9. Future of NGFW (3-5 Years)
+        <h3 class="kb-heading">9. Future of Penetration Testing (3-5 Years)
         </h3>
         <x-table.table>
             <x-table.thead>

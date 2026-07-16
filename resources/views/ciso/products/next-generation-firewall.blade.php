@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Next Generation Firewall')
+@section('title', 'Next-Generation Firewall (NGFW)')
 @section('title_ar', '')
 
 @push('css')

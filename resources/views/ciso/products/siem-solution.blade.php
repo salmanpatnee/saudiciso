@@ -152,11 +152,13 @@
                 <tr>
                     <x-table.td>9</x-table.td>
                     <x-table.td>RSA NetWitness</x-table.td>
+                    <x-table.td>RSA</x-table.td>
                     <x-table.td>Advanced security analytics and threat hunting platform.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>10</x-table.td>
                     <x-table.td>Fortinet FortiSIEM</x-table.td>
+                    <x-table.td>Fortinet</x-table.td>
                     <x-table.td>Unified security event monitoring and network threat detection.</x-table.td>
                 </tr>
             </x-table.tbody>

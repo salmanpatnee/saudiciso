@@ -98,7 +98,7 @@
             <x-table.thead>
                 <tr>
                     <x-table.th label="S.No" />
-                    <th>UTM Solution</th>
+                    <x-table.th label="Product Name" />
                     <x-table.th label="Vendor" />
                     <x-table.th label="Description" />
             </x-table.thead>
@@ -476,7 +476,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="kb-heading">9. Future of UTM (3-5 Years)
+        <h3 class="kb-heading">9. Future of UEBA (3-5 Years)
         </h3>
         <x-table.table>
             <x-table.thead>

@@ -44,44 +44,44 @@
                 <tr>
                     <x-table.td>1</x-table.td>
                     <x-table.td>NCA - Essential Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-ECC2-2.2.1.3</x-table.td>
+                    <x-table.td>NCA-ECC2-2.2.1</x-table.td>
                     <x-table.td>Implement MFA to protect against unauthorized access to sensitive accounts and
                         systems.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>2</x-table.td>
                     <x-table.td>NCA - Critical Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-CSCC-4.2.0.2</x-table.td>
+                    <x-table.td>NCA-CSCC-4.2.0</x-table.td>
                     <x-table.td>Enforce MFA for privileged users and critical system access.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>3</x-table.td>
                     <x-table.td>NCA - Cloud Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-CCC-3.2.1.1</x-table.td>
+                    <x-table.td>NCA-CCC-3.2.1</x-table.td>
                     <x-table.td>Require MFA for cloud-based applications and SaaS platforms.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>4</x-table.td>
                     <x-table.td>NCA - Telework Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-TCC-5.1.8.4</x-table.td>
+                    <x-table.td>NCA-TCC-5.1.8</x-table.td>
                     <x-table.td>Secure remote access to corporate resources using MFA.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>5</x-table.td>
                     <x-table.td>NCA - Organization Social Media Account Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-OSMACC-6.2.1.2</x-table.td>
+                    <x-table.td>NCA-OSMACC-6.2.1</x-table.td>
                     <x-table.td>Prevent unauthorized access to corporate social media accounts through MFA.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>6</x-table.td>
                     <x-table.td>NCA - Data Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-DCC-7.1.9.5</x-table.td>
+                    <x-table.td>NCA-DCC-7.1.9</x-table.td>
                     <x-table.td>Enforce MFA for accessing sensitive data repositories and encryption keys.</x-table.td>
                 </tr>
                 <tr>
                     <x-table.td>7</x-table.td>
                     <x-table.td>SAMA - Cybersecurity Framework</x-table.td>
-                    <x-table.td>SAMA-CSF-2.2.0.3</x-table.td>
+                    <x-table.td>SAMA-CSF-2.2.0</x-table.td>
                     <x-table.td>Mandate MFA for accessing financial systems and critical banking applications.</x-table.td>
                 </tr>
                 <tr>

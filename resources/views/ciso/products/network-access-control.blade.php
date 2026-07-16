@@ -478,7 +478,7 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="kb-heading">9. Future of NGFW (3-5 Years)
+        <h3 class="kb-heading">9. Future of NAC (3-5 Years)
         </h3>
         <x-table.table>
             <x-table.thead>

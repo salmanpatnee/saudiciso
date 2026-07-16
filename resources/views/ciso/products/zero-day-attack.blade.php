@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Zero Day Attack')
+@section('title', 'Zero Day Attack Protection')
 @section('title_ar', '')
 
 @push('css')

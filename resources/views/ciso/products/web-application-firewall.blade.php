@@ -105,7 +105,7 @@
             <x-table.thead>
                 <tr>
                     <x-table.th label="S.No" />
-                    <x-table.th label="UTM Solution" />
+                    <x-table.th label="Product Name" />
                     <x-table.th label="Vendor" />
                     <x-table.th label="Description" />
             </x-table.thead>

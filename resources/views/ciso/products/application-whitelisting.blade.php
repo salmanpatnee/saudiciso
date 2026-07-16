@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Application Whitelisting (Application Security)')
+@section('title', 'Application Whitelisting')
 @section('title_ar', '')
 
 @push('css')
@@ -105,7 +105,7 @@
         </x-table.table>
         <h3 class="kb-heading">3. Gartner Magic Quadrant
             Leaders for
-            Application Whitelisting (Application Security)</h3>
+            Application Whitelisting</h3>
         <x-table.table>
             <x-table.thead>
                 <tr>
@@ -154,8 +154,8 @@
                 </tr>
                 <tr>
                     <x-table.td>7</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
-                    <x-table.td>Bix-table.tdefender</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender</x-table.td>
                     <x-table.td>Machine learning-driven application security.</x-table.td>
                 </tr>
                 <tr>
@@ -178,9 +178,8 @@
                 </tr>
             </x-table.tbody>
         </x-table.table>
-        <h3 class="kb-heading">4. Commercial Products
-            (Application
-            Whitelisting Vendors)</h3>
+        <h3 class="kb-heading">4. Commercial
+            Application Whitelisting Products</h3>
         <x-table.table>
             <x-table.thead>
                 <tr>
@@ -238,8 +237,8 @@
                 </tr>
                 <tr>
                     <x-table.td>7</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
-                    <x-table.td>Bix-table.tdefender</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender</x-table.td>
                     <x-table.td>Cloud-based</x-table.td>
                     <x-table.td>Machine learning-powered whitelisting and security.</x-table.td>
                 </tr>
@@ -356,7 +355,7 @@
                 </tr>
                 <tr>
                     <x-table.td>7</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
                     <x-table.td>AI-enhanced application whitelisting, behavioral
                         monitoring,
                         file
@@ -478,7 +477,7 @@
                 </tr>
                 <tr>
                     <x-table.td>7</x-table.td>
-                    <x-table.td>Bix-table.tdefender GravityZone</x-table.td>
+                    <x-table.td>Bitdefender GravityZone</x-table.td>
                     <x-table.td>GravityZone Control Center, SIEM (Splunk,
                         QRadar),
                         cloud

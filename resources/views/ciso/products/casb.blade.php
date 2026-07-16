@@ -87,37 +87,13 @@
                     <x-table.td>Implement data encryption and DLP policies in cloud environments.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>1</x-table.td>
-                    <x-table.td>NCA - Essential Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-ECC2-2.9.3</x-table.td>
-                    <x-table.td>Implement security measures to monitor and protect cloud applications.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>2</x-table.td>
-                    <x-table.td>NCA - Critical Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-CSCC-4.8.2</x-table.td>
-                    <x-table.td>Enforce policies to prevent unauthorized access to cloud services.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>3</x-table.td>
-                    <x-table.td>NCA - Cloud Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-CCC-3.9.1</x-table.td>
-                    <x-table.td>Deploy CASB solutions to enhance cloud security and visibility.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>4</x-table.td>
-                    <x-table.td>NCA - Telework Cybersecurity Controls</x-table.td>
-                    <x-table.td>NCA-TCC-5.6.4</x-table.td>
-                    <x-table.td>Secure remote access to cloud applications with controlled access policies.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>5</x-table.td>
+                    <x-table.td>7</x-table.td>
                     <x-table.td>SAMA - Cybersecurity Framework</x-table.td>
                     <x-table.td>SAMA-CSF-2.8.3</x-table.td>
                     <x-table.td>Enforce identity and access control measures for cloud security.</x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>6</x-table.td>
+                    <x-table.td>8</x-table.td>
                     <x-table.td>Personal Data Protection Law (PDPL)</x-table.td>
                     <x-table.td>PDPL-4.8.1</x-table.td>
                     <x-table.td>Protect personal data stored in cloud applications against unauthorized access.</x-table.td>
@@ -396,7 +372,7 @@
                 <tr>
                     <x-table.td>9</x-table.td>
                     <x-table.td>Zscaler CASB</x-table.td>
-                    <x-table.td> traffic inspection, API security, adaptive policy
+                    <x-table.td>Deep traffic inspection, API security, adaptive policy
                         control,
                         advanced malware
                         detection, Zero
@@ -441,144 +417,12 @@
                     <x-table.th label="S.No" />
                     <x-table.th label="Product Name" />
                     <x-table.th label="Related Cybersecurity Products" />
-                    <x-table.th label="Deployment Model" />
-                    <x-table.th label="Description" />
                 </tr>
             </x-table.thead>
             <x-table.tbody>
                 <tr>
                     <x-table.td>1</x-table.td>
-                    <x-table.td>McAfee MVISION Cloud</x-table.td>
-                    <x-table.td>McAfee</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>API-based CASB, AI-powered anomaly
-                        detection, data
-                        encryption,
-                        threat protection,
-                        UEBA.</x-table.td>
-                    <x-table.td>McAfee ePolicy Orchestrator, SIEM solutions,
-                        Microsoft 365
-                        Security.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>2</x-table.td>
-                    <x-table.td>Cisco Cloudlock</x-table.td>
-                    <x-table.td>Cisco</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>API-based CASB, compliance monitoring,
-                        machine
-                        learning-powered
-                        anomaly detection.
-                    </x-table.td>
-                    <x-table.td>Cisco SecureX, Cisco Umbrella, SIEM (Splunk,
-                        QRadar).</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>3</x-table.td>
-                    <x-table.td>Forcepoint CASB</x-table.td>
-                    <x-table.td>Forcepoint</x-table.td>
-                    <x-table.td>Cloud & On-Prem</x-table.td>
-                    <x-table.td>Real-time risk assessment, cloud activity
-                        monitoring, AI-driven
-                        threat intelligence,
-                        policy
-                        enforcement.
-                    </x-table.td>
-                    <x-table.td>Forcepoint DLP, SIEM integrations, Zero
-                        Trust
-                        security
-                        frameworks.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>4</x-table.td>
-                    <x-table.td>Bitglass CASB</x-table.td>
-                    <x-table.td>Bitglass</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>Agentless architecture, real-time data
-                        protection,
-                        multi-cloud
-                        security, AI-based
-                        threat detection.
-                    </x-table.td>
-                    <x-table.td>SIEM (Splunk, QRadar), Secure Web Gateways,
-                        EDR
-                        platforms.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>5</x-table.td>
-                    <x-table.td>Palo Alto Prisma Access</x-table.td>
-                    <x-table.td>Palo Alto Networks</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>Zero Trust-based cloud security, deep
-                        traffic
-                        inspection,
-                        AI-powered risk analytics,
-                        DLP
-                        enforcement.
-                    </x-table.td>
-                    <x-table.td>Palo Alto Next-Generation Firewall, Cortex
-                        XDR, SIEM
-                        platforms.
-                    </x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>6</x-table.td>
-                    <x-table.td>Symantec CloudSOC</x-table.td>
-                    <x-table.td>Broadcom</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>Cloud application governance, UEBA, machine
-                        learning-based
-                        anomaly detection, cloud
-                        DLP integration.
-                    </x-table.td>
-                    <x-table.td>Broadcom Security Suite, SIEM (Splunk,
-                        QRadar), DLP
-                        solutions.
-                    </x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>7</x-table.td>
-                    <x-table.td>Zscaler CASB</x-table.td>
-                    <x-table.td>Zscaler</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td> traffic inspection, API security,
-                        adaptive
-                        policy
-                        control, advanced malware
-                        detection, Zero
-                        Trust
-                        integration.</x-table.td>
-                    <x-table.td>Zscaler Zero Trust Exchange, SIEM solutions,
-                        Endpoint Security
-                        tools.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>8</x-table.td>
-                    <x-table.td>Trend Micro Cloud App Security</x-table.td>
-                    <x-table.td>Trend Micro</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>Cloud email security, AI-powered threat
-                        detection,
-                        sandboxing,
-                        API-based security
-                        enforcement.</x-table.td>
-                    <x-table.td>Trend Micro Vision One, SIEM integrations,
-                        EDR
-                        platforms.</x-table.td>
-                </tr>
-                <tr>
-                    <x-table.td>9</x-table.td>
-                    <x-table.td>Microsoft Defender for Cloud
-                        Apps</x-table.td>
-                    <x-table.td>Microsoft</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>AI-driven threat detection, real-time
-                        session
-                        control, shadow IT
-                        discovery, data
-                        loss prevention
-                        (DLP),
-                        compliance monitoring.</x-table.td>
+                    <x-table.td>Microsoft Defender for Cloud Apps</x-table.td>
                     <x-table.td>Microsoft 365 Security, Azure Security
                         Center,
                         Microsoft
@@ -586,20 +430,69 @@
                     </x-table.td>
                 </tr>
                 <tr>
-                    <x-table.td>10</x-table.td>
+                    <x-table.td>2</x-table.td>
                     <x-table.td>Netskope Security Cloud</x-table.td>
-                    <x-table.td>Netskope</x-table.td>
-                    <x-table.td>Cloud-based</x-table.td>
-                    <x-table.td>Cloud DLP, advanced threat protection,
-                        real-time
-                        risk
-                        assessment, adaptive access
-                        control, Zero
-                        Trust
-                        integration.</x-table.td>
                     <x-table.td>SIEM (Splunk, QRadar), Zero Trust Security
                         Platforms, EDR
                         solutions.</x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>3</x-table.td>
+                    <x-table.td>McAfee MVISION Cloud</x-table.td>
+                    <x-table.td>McAfee ePolicy Orchestrator, SIEM solutions,
+                        Microsoft 365
+                        Security.</x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>4</x-table.td>
+                    <x-table.td>Cisco Cloudlock</x-table.td>
+                    <x-table.td>Cisco SecureX, Cisco Umbrella, SIEM (Splunk,
+                        QRadar).</x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>5</x-table.td>
+                    <x-table.td>Forcepoint CASB</x-table.td>
+                    <x-table.td>Forcepoint DLP, SIEM integrations, Zero
+                        Trust
+                        security
+                        frameworks.</x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>6</x-table.td>
+                    <x-table.td>Bitglass CASB</x-table.td>
+                    <x-table.td>SIEM (Splunk, QRadar), Secure Web Gateways,
+                        EDR
+                        platforms.</x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>7</x-table.td>
+                    <x-table.td>Palo Alto Prisma Access</x-table.td>
+                    <x-table.td>Palo Alto Next-Generation Firewall, Cortex
+                        XDR, SIEM
+                        platforms.
+                    </x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>8</x-table.td>
+                    <x-table.td>Symantec CloudSOC</x-table.td>
+                    <x-table.td>Broadcom Security Suite, SIEM (Splunk,
+                        QRadar), DLP
+                        solutions.
+                    </x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>9</x-table.td>
+                    <x-table.td>Zscaler CASB</x-table.td>
+                    <x-table.td>Zscaler Zero Trust Exchange, SIEM solutions,
+                        Endpoint Security
+                        tools.</x-table.td>
+                </tr>
+                <tr>
+                    <x-table.td>10</x-table.td>
+                    <x-table.td>Trend Micro Cloud App Security</x-table.td>
+                    <x-table.td>Trend Micro Vision One, SIEM integrations,
+                        EDR
+                        platforms.</x-table.td>
                 </tr>
             </x-table.tbody>
         </x-table.table>

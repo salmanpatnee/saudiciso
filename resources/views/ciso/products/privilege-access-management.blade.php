@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Privilege Access Management (PAM)')
+@section('title', 'Privileged Access Management (PAM)')
 @section('title_ar', '')
 
 @push('css')
