@@ -70,40 +70,16 @@
                     </div>
 
                     <div class="vciso-card-grid">
-                        <a href="{{ route('people.index') }}" class="vciso-card vciso-card--compact">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </span>
-                            <h3>People</h3>
-                            <p>Find Top Saudi Talent Access 1200+ Certified Staff in KSA</p>
+                        <a href="{{ route('people.index') }}" class="vciso-card vciso-card--compact vciso-card--image">
+                            <img src="{{ asset('Images/admin/People.JPG') }}" alt="People">
                         </a>
 
-                        <a href="{{ route('ciso-process.index') }}" class="vciso-card vciso-card--compact">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                    <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1A2 2 0 1 1 4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3h.1a1.7 1.7 0 0 0 .9-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1A2 2 0 1 1 19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.6.9h.1a2 2 0 1 1 0 4H21a1.7 1.7 0 0 0-1.6 1Z"></path>
-                                </svg>
-                            </span>
-                            <h3>Processes</h3>
-                            <p>50+ Editable Compliance Documents</p>
+                        <a href="{{ route('ciso-process.index') }}" class="vciso-card vciso-card--compact vciso-card--image">
+                            <img src="{{ asset('Images/admin/Process.JPG') }}" alt="Processes">
                         </a>
 
-                        <a href="{{ route('ciso-products.index') }}" class="vciso-card vciso-card--compact">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <rect x="3" y="4" width="18" height="12" rx="2"></rect>
-                                    <path d="M8 20h8"></path>
-                                    <path d="M12 16v4"></path>
-                                </svg>
-                            </span>
-                            <h3>Products</h3>
-                            <p>Expert Product Insights Product Categories from A to Z</p>
+                        <a href="{{ route('ciso-products.index') }}" class="vciso-card vciso-card--compact vciso-card--image">
+                            <img src="{{ asset('Images/admin/Products.JPG') }}" alt="Products">
                         </a>
                     </div>
                 </div>
@@ -117,38 +93,16 @@
                     </div>
 
                     <div class="vciso-card-grid vciso-card-grid--primary">
-                        <a href="{{ route('ciso-toolkit.index') }}" class="vciso-card">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M14.7 6.3a4 4 0 0 0-5 5L3 18v3h3l6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-2-2 2.4-2.4Z"></path>
-                                </svg>
-                            </span>
-                            <span class="vciso-card__meta">Templates and aids</span>
-                            <h3>CISO Toolkit</h3>
-                            <p>Access practical checklists, governance assets, and reusable security leadership tools.</p>
+                        <a href="{{ route('ciso-toolkit.index') }}" class="vciso-card vciso-card--image">
+                            <img src="{{ asset('Images/admin/Toolkit.JPG') }}" alt="CISO Toolkit">
                         </a>
 
-                        <a href="{{ route('ciso-education.index') }}" class="vciso-card">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M22 10 12 5 2 10l10 5 10-5Z"></path>
-                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                                </svg>
-                            </span>
-                            <span class="vciso-card__meta">Learning paths</span>
-                            <h3>CISO Education</h3>
-                            <p>Build applied leadership depth across certifications, frameworks, and cyber practice.</p>
+                        <a href="{{ route('ciso-education.index') }}" class="vciso-card vciso-card--image">
+                            <img src="{{ asset('Images/admin/Education.JPG') }}" alt="CISO Education">
                         </a>
 
-                        <a href="{{ route('hot-topics.index') }}" class="vciso-card">
-                            <span class="icon-box vciso-card__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 22c4-2 7-5 7-10a7 7 0 0 0-4-6c0 3-2 4-3 5 0-3-2-6-5-7 1 4-2 6-2 10a7 7 0 0 0 7 8Z"></path>
-                                </svg>
-                            </span>
-                            <span class="vciso-card__meta">Current priorities</span>
-                            <h3>Hot Topics for CISO</h3>
-                            <p>Review timely cyber leadership issues, emerging risks, and decision-ready perspectives.</p>
+                        <a href="{{ route('hot-topics.index') }}" class="vciso-card vciso-card--image">
+                            <img src="{{ asset('Images/admin/Hot-Topics.JPG') }}" alt="Hot Topics for CISO">
                         </a>
                     </div>
                 </div>
