@@ -57,7 +57,7 @@
 
                     <div class="vciso-hero__panel" aria-label="Platform focus">
                         <span>Executive-ready resources</span>
-                        <strong>Six focused pathways for cyber leadership decisions.</strong>
+                        <strong>Focused pathways for cyber leadership decisions.</strong>
                     </div>
                 </div>
             </section>
