@@ -91,78 +91,46 @@
         }
 
         /* ---- Education grid ---- */
-        .kb-edu__grid {
+        .kb-products__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
-        .kb-edu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 2.25rem 1.5rem 1.75rem;
-            border-radius: 22px;
-            background: linear-gradient(180deg, #ffffff, #fbfbfe);
+        .kb-product {
+            position: relative;
+            display: block;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--card);
             border: 1px solid var(--border);
-            box-shadow: 0 18px 40px -24px rgba(0, 5, 60, .28), inset 0 1px 0 rgba(255, 255, 255, .4);
+            box-shadow: 0 18px 40px -20px rgba(0, 5, 60, .28), inset 0 1px 0 rgba(255, 255, 255, .4);
             transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
             animation: kb-rise .5s ease both;
         }
 
-        .kb-edu:hover {
+        .kb-product:hover {
             transform: translateY(-7px);
             border-color: rgba(201, 162, 39, .45);
             box-shadow: 0 24px 48px -18px rgba(0, 5, 60, .35), 0 0 0 1px rgba(201, 162, 39, .25);
         }
 
-        .kb-edu__logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .kb-product__frame {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+
+        .kb-product__img {
             width: 100%;
-            height: 108px;
-            margin-bottom: 1.35rem;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
         }
 
-        .kb-edu__logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform .35s ease;
-        }
-
-        .kb-edu:hover .kb-edu__logo img {
-            transform: scale(1.05);
-        }
-
-        .kb-edu__title {
-            margin: 0 0 .9rem;
-            font-family: "Playfair Display", Georgia, serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            line-height: 1.35;
-            color: var(--navy);
-        }
-
-        .kb-edu__cta {
-            display: inline-flex;
-            align-items: center;
-            gap: .35rem;
-            font-size: .8rem;
-            font-weight: 700;
-            letter-spacing: .02em;
-            color: #7a5f10;
-        }
-
-        .kb-edu__cta i {
-            font-size: 1rem;
-            transition: transform .2s ease;
-        }
-
-        .kb-edu:hover .kb-edu__cta i {
-            transform: translateX(3px);
+        .kb-product:hover .kb-product__img {
+            transform: scale(1.06);
         }
 
         /* ---- Motion ---- */
@@ -177,7 +145,7 @@
         }
 
         @media (max-width: 900px) {
-            .kb-edu__grid {
+            .kb-products__grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -193,22 +161,22 @@
                 margin-bottom: 1.25rem;
             }
 
-            .kb-edu__grid {
+            .kb-products__grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .kb, .kb-edu {
+            .kb, .kb-product {
                 animation: none;
             }
 
-            .kb-edu:hover {
+            .kb-product:hover {
                 transform: none;
             }
 
-            .kb-edu:hover .kb-edu__logo img {
+            .kb-product:hover .kb-product__img {
                 transform: none;
             }
         }
@@ -230,16 +198,14 @@
 
         <p class="kb__lead">Enhance your knowledge and skills in information security leadership. Explore comprehensive educational resources, training materials, and best practices for CISO excellence.</p>
 
-        <div class="kb-edu__grid">
+        <div class="kb-products__grid">
             @foreach ($data as $index => $item)
-                <a href="{{ route('ciso-education.show', $item) }}" class="kb-edu" style="animation-delay: {{ $index * 60 }}ms">
+                <a href="{{ route('ciso-education.show', $item) }}" class="kb-product" style="animation-delay: {{ $index * 60 }}ms">
                     @if ($item->featured_image_path)
-                        <div class="kb-edu__logo">
-                            <img src="{{ asset('storage/' . $item->featured_image_path) }}" alt="{{ $item->title }}" loading="lazy">
+                        <div class="kb-product__frame">
+                            <img src="{{ asset('storage/' . $item->featured_image_path) }}" alt="{{ $item->title }}" loading="lazy" class="kb-product__img">
                         </div>
                     @endif
-                    <h3 class="kb-edu__title">{{ $item->title }}</h3>
-                    <span class="kb-edu__cta">Explore <i class='bx bx-right-arrow-alt'></i></span>
                 </a>
             @endforeach
         </div>
