@@ -6,3 +6,4 @@
 <x-sidebar-menu-item route_name="admin.ciso-toolkit.index" label="CISO Toolkit" />
 <x-sidebar-menu-item route_name="admin.hot-topics.index" label="Hot Topics" />
 <x-sidebar-menu-item route_name="admin.ciso-education.index" label="CISO Education" />
+<x-sidebar-menu-item route_name="admin.products.index" label="Products" />

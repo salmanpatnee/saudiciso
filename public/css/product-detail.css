@@ -162,6 +162,65 @@ h2.kb-heading {
     justify-content: center;
 }
 
+.kb-product-detail table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -24px rgba(0, 5, 60, .28);
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.kb-product-detail table thead,
+.kb-product-detail table tbody,
+.kb-product-detail table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.kb-product-detail table thead {
+    background: linear-gradient(90deg, var(--navy), var(--navy-2));
+}
+
+.kb-product-detail table th {
+    padding: .85rem 1.1rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.kb-product-detail table th:first-child,
+.kb-product-detail table td:first-child {
+    width: 4.5rem;
+}
+
+.kb-product-detail table td {
+    padding: .85rem 1.1rem;
+    border-bottom: 1px solid var(--divider);
+    color: var(--ink);
+    font-size: .92rem;
+    line-height: 1.6;
+    vertical-align: top;
+}
+
+.kb-product-detail table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.kb-product-detail table tbody tr:nth-child(even) {
+    background: rgba(244, 246, 248, .55);
+}
+
 .kb-product-detail > div {
     margin-bottom: 1.75rem;
 }
@@ -185,6 +244,12 @@ h2.kb-heading {
 
     .kb-product-detail p {
         text-align: justify;
+    }
+
+    .kb-product-detail table th,
+    .kb-product-detail table td {
+        padding: .6rem .75rem;
+        font-size: .82rem;
     }
 }
 

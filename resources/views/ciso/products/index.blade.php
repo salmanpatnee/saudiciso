@@ -1,5 +1,5 @@
 @extends('layouts.ciso-full')
-@section('title', 'Compliance Challenges Framework Model')
+@section('title', 'Products')
 @section('title_ar', '')
 
 @push('css')
@@ -205,10 +205,12 @@
 
         <div class="kb-products__grid">
             @foreach ($productsData as $index => $product)
-                <a href="{{ route($product->route_name) }}" class="kb-product" style="animation-delay: {{ $index * 60 }}ms">
-                    <div class="kb-product__frame">
-                        <img src="/Images/products/Slide{{ $index + 1 }}.JPG" alt="{{ $product->title }}" loading="lazy" class="kb-product__img">
-                    </div>
+                <a href="{{ route('products.show', $product) }}" class="kb-product" style="animation-delay: {{ $index * 60 }}ms">
+                    @if ($product->featured_image_path)
+                        <div class="kb-product__frame">
+                            <img src="{{ asset('storage/' . $product->featured_image_path) }}" alt="{{ $product->title }}" loading="lazy" class="kb-product__img">
+                        </div>
+                    @endif
                 </a>
             @endforeach
         </div>
