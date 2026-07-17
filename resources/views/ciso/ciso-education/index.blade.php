@@ -232,11 +232,13 @@
 
         <div class="kb-edu__grid">
             @foreach ($data as $index => $item)
-                <a href="{{ route($item['route']) }}" class="kb-edu" style="animation-delay: {{ $index * 60 }}ms">
-                    <div class="kb-edu__logo">
-                        <img src="/Images/{{ $item['image_url'] }}" alt="{{ $item['title'] }}" loading="lazy">
-                    </div>
-                    <h3 class="kb-edu__title">{{ $item['title'] }}</h3>
+                <a href="{{ route('ciso-education.show', $item) }}" class="kb-edu" style="animation-delay: {{ $index * 60 }}ms">
+                    @if ($item->featured_image_path)
+                        <div class="kb-edu__logo">
+                            <img src="{{ asset('storage/' . $item->featured_image_path) }}" alt="{{ $item->title }}" loading="lazy">
+                        </div>
+                    @endif
+                    <h3 class="kb-edu__title">{{ $item->title }}</h3>
                     <span class="kb-edu__cta">Explore <i class='bx bx-right-arrow-alt'></i></span>
                 </a>
             @endforeach

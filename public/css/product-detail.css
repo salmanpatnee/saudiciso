@@ -95,10 +95,8 @@ h2.kb-heading {
 }
 
 .kb-product-detail ul li {
-    display: flex;
-    align-items: flex-start;
-    gap: .9rem;
-    padding: .85rem 1.25rem;
+    position: relative;
+    padding: .85rem 1.25rem .85rem 2.65rem;
     border-bottom: 1px solid var(--divider);
     color: var(--ink);
     font-size: .92rem;
@@ -111,10 +109,11 @@ h2.kb-heading {
 
 .kb-product-detail ul li::before {
     content: '';
-    flex: none;
+    position: absolute;
+    left: 1.25rem;
+    top: 1.4rem;
     width: 8px;
     height: 8px;
-    margin-top: .55rem;
     border-radius: 50%;
     background: var(--gold);
 }
@@ -133,10 +132,8 @@ h2.kb-heading {
 
 .kb-product-detail ol li {
     counter-increment: kb-counter;
-    display: flex;
-    align-items: flex-start;
-    gap: .9rem;
-    padding: .85rem 1.25rem;
+    position: relative;
+    padding: .85rem 1.25rem .85rem 3.775rem;
     border-bottom: 1px solid var(--divider);
     color: var(--ink);
     font-size: .92rem;
@@ -149,10 +146,11 @@ h2.kb-heading {
 
 .kb-product-detail ol li::before {
     content: counter(kb-counter);
-    flex: none;
+    position: absolute;
+    left: 1.25rem;
+    top: .9rem;
     width: 26px;
     height: 26px;
-    margin-top: .05rem;
     border-radius: 50%;
     background: rgba(240, 207, 58, .16);
     border: 1px solid rgba(201, 162, 39, .4);

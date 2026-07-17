@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArtifactAttachmentController;
 use App\Http\Controllers\ArtifactController;
 use App\Http\Controllers\BestPracticeController;
+use App\Http\Controllers\CisoEducationAdminController;
 use App\Http\Controllers\CisoEducationController;
 use App\Http\Controllers\CisoToolkitController;
 use App\Http\Controllers\CMS_ISO_27001Controller;
@@ -172,6 +173,13 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
     Route::resource('hot-topics', HotTopicController::class)->except(['show'])->names('admin.hot-topics');
     Route::delete('hot-topics-resource/{resource}', [HotTopicController::class, 'destroyResource'])->name('admin.hot-topics.resource.destroy');
 
+    // ------------MANAGE CISO EDUCATION--------------
+
+    Route::resource('ciso-education-content', CisoEducationAdminController::class)
+        ->except(['show'])
+        ->names('admin.ciso-education')
+        ->parameters(['ciso-education-content' => 'cisoEducation']);
+
     // ------------MANAGE ISO-27001 CONTENT--------------
 
     Route::resource('iso27001', CMS_ISO_27001Controller::class);
@@ -201,15 +209,8 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
 
         // ------------------CISO Education-------------------------
 
-        Route::get('/education', CisoEducationController::class)->name('ciso-education.index');
-
-        Route::prefix('education')->group(function () {
-            Route::view('/applying-cissp-knowledge-in-practice', 'ciso/ciso-education/cissp')->name('cissp');
-            Route::view('/applying-cism-knowledge-in-practice', 'ciso/ciso-education/cism')->name('cism');
-            Route::view('/applying-cgeit-knowledge-in-practice', 'ciso/ciso-education/cgeit')->name('cgeit');
-            Route::view('/applying-pmp-knowledge-in-practice', 'ciso/ciso-education/pmp')->name('pmp');
-            Route::view('/applying-agile-approach', 'ciso/ciso-education/agile')->name('agile');
-        });
+        Route::get('/education', [CisoEducationController::class, 'index'])->name('ciso-education.index');
+        Route::get('/education/{cisoEducation:slug}', [CisoEducationController::class, 'show'])->name('ciso-education.show');
 
         // ------------------Hot Topics-------------------------
 

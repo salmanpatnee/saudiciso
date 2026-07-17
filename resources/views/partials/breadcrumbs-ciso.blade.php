@@ -119,12 +119,7 @@
                     </li>
                 @endif
 
-                @if (request()->route()->getName() != 'ciso-education.index' &&
-                    (request()->route()->getName() == 'cissp' ||
-                    request()->route()->getName() == 'cism' ||
-                    request()->route()->getName() == 'cgeit' ||
-                    request()->route()->getName() == 'pmp' ||
-                    request()->route()->getName() == 'agile'))
+                @if (request()->route()->getName() == 'ciso-education.show')
                     <li>
                         <a class="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400"
                             href="{{ route('ciso-education.index') }}">
