@@ -235,17 +235,17 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
         // ------------------Process-------------------------
 
         Route::get('/process', [ProcessController::class, 'index'])->name('ciso-process.index');
-        Route::get('/process/{process:process_id}', [ProcessController::class, 'show'])->name('process.view.show');
+        Route::get('/process/{process:slug}', [ProcessController::class, 'show'])->name('process.view.show');
 
         // ------------------Process Resources-------------------------
 
-        Route::get('/resource/{process:process_id}/checklist/', [ProcessResourceController::class, 'checklist'])->name('process.resource.checklist');
+        Route::get('/resource/{process:slug}/checklist/', [ProcessResourceController::class, 'checklist'])->name('process.resource.checklist');
 
-        Route::get('/resource/{process:process_id}/videos/', [ProcessResourceController::class, 'videos'])->name('process.resource.videos');
+        Route::get('/resource/{process:slug}/videos/', [ProcessResourceController::class, 'videos'])->name('process.resource.videos');
         Route::get('/video/stream/{resource}', [ProcessResourceController::class, 'stream'])->name('secure.video.stream');
-        Route::get('/resource/{process:process_id}/template/', [ProcessResourceController::class, 'template'])->name('process.resource.template');
+        Route::get('/resource/{process:slug}/template/', [ProcessResourceController::class, 'template'])->name('process.resource.template');
         Route::get('/resource/template/{resource}', [ProcessResourceController::class, 'pdfTemplate'])->name('process.resource.template.pdf');
-        Route::get('/resource/{process:process_id}/glossary/', [ProcessResourceController::class, 'glossary'])->name('process.resource.glossary');
+        Route::get('/resource/{process:slug}/glossary/', [ProcessResourceController::class, 'glossary'])->name('process.resource.glossary');
         Route::get('/resource/download/{resource}', [ProcessResourceController::class, 'download'])->name('process.resource.download');
         Route::delete('/resources/{resource}', [ProcessResourceController::class, 'destroy'])->name('process.resource.destroy');
 

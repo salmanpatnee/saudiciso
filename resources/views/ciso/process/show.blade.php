@@ -107,10 +107,6 @@
 @endpush
 
 @section('content')
-    @php
-        $process_id = html_entity_decode($process->process_id);
-    @endphp
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <x-two-column-layout>
             <x-slot:main>
@@ -122,9 +118,9 @@
             <x-slot:sidebar>
                 <div class="kb-process-sidebar">
                     <x-resource-sidebar>
-                        <x-iso-templates link="{{ route('process.resource.template', $process_id) }}" />
-                        <x-iso-checklist link="{{ route('process.resource.checklist', $process_id) }}" />
-                        <x-iso-glossary link="{{ route('process.resource.glossary', $process_id) }}" />
+                        <x-iso-templates link="{{ route('process.resource.template', $process->slug) }}" />
+                        <x-iso-checklist link="{{ route('process.resource.checklist', $process->slug) }}" />
+                        <x-iso-glossary link="{{ route('process.resource.glossary', $process->slug) }}" />
                     </x-resource-sidebar>
                 </div>
             </x-slot:sidebar>

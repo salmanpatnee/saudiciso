@@ -6,6 +6,7 @@ use App\Models\Process;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CMSController extends Controller
 {
@@ -43,6 +44,7 @@ class CMSController extends Controller
 
         Process::create([
             'process_id' => $attributes['process_id'],
+            'slug' => $this->generateUniqueSlug($attributes['title']),
             'title' => $attributes['title'],
             'title_ar' => $attributes['title_ar'] ?? null,
             'description' => $attributes['description'] ?? null,
@@ -75,6 +77,10 @@ class CMSController extends Controller
             'description' => $attributes['description'] ?? null,
         ];
 
+        if ($attributes['title'] !== $cm->title) {
+            $data['slug'] = $this->generateUniqueSlug($attributes['title'], $cm->id);
+        }
+
         if ($request->hasFile('featured_image')) {
             if ($cm->featured_image_path) {
                 Storage::disk('public')->delete($cm->featured_image_path);
@@ -104,5 +110,22 @@ class CMSController extends Controller
 
         return redirect(route('cms.index'))
             ->with('success', 'Process deleted successfully.');
+    }
+
+    private function generateUniqueSlug(string $title, ?int $ignoreId = null): string
+    {
+        $slug = Str::slug($title);
+        $original = $slug;
+        $suffix = 1;
+
+        while (
+            Process::where('slug', $slug)
+                ->when($ignoreId, fn ($query) => $query->where('id', '!=', $ignoreId))
+                ->exists()
+        ) {
+            $slug = $original.'-'.++$suffix;
+        }
+
+        return $slug;
     }
 }

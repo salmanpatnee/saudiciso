@@ -204,7 +204,7 @@
 
         <div class="kb-products__grid">
             @foreach ($allProcess as $index => $process)
-                <a href="{{ route('process.view.show', $process->process_id) }}" class="kb-product" style="animation-delay: {{ $index * 60 }}ms">
+                <a href="{{ route('process.view.show', $process->slug) }}" class="kb-product" style="animation-delay: {{ $index * 60 }}ms">
                     <div class="kb-product__frame">
                         <img src="{{ $process->featured_image_path ? asset('storage/' . $process->featured_image_path) : asset('Images/process/Slide' . ($index + 1) . '.JPG') }}" alt="{{ $process->title }}" loading="lazy" class="kb-product__img">
                     </div>
