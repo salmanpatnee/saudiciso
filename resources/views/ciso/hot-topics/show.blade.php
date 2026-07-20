@@ -149,16 +149,53 @@
            pasted content matches the rest of the page regardless of what classes
            the editor happened to save. */
         .kb-card__content :where(h1, h2, h3, h4) {
-            padding: .6rem .7rem;
             margin: 1.5rem 0 .75rem;
+            font-weight: 700;
+            color: var(--navy);
         }
 
         .kb-card__content :where(h1, h2, h3, h4):first-child {
             margin-top: 0;
         }
 
+        .kb-card__content h1 {
+            font-size: 1.5rem;
+        }
+
+        .kb-card__content h2 {
+            font-size: 1.3rem;
+        }
+
+        .kb-card__content h3 {
+            font-size: 1.15rem;
+        }
+
+        .kb-card__content h4 {
+            font-size: 1.05rem;
+        }
+
         .kb-card__content p {
             margin: 0 0 .85rem;
+        }
+
+        .kb-card__content ul {
+            list-style: disc;
+            padding-left: 1.4rem;
+            margin: 0 0 .85rem;
+        }
+
+        .kb-card__content ol {
+            list-style: decimal;
+            padding-left: 1.4rem;
+            margin: 0 0 .85rem;
+        }
+
+        .kb-card__content li {
+            margin-bottom: .4rem;
+        }
+
+        .kb-card__content li:last-child {
+            margin-bottom: 0;
         }
 
         .kb-card__content table th,
