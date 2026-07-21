@@ -340,6 +340,31 @@
             cursor: default;
         }
 
+        .kb-table th.kb-table__sticky-col,
+        .kb-table td.kb-table__sticky-col {
+            position: sticky;
+            left: 0;
+            z-index: 2;
+        }
+
+        .kb-table thead th.kb-table__sticky-col {
+            z-index: 6;
+        }
+
+        .kb-table tbody td.kb-table__sticky-col {
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+
+        .kb-table tbody tr:hover td.kb-table__sticky-col {
+            background: #F8FAFC;
+        }
+
+        .kb-table-scroll.is-scrolled td.kb-table__sticky-col,
+        .kb-table-scroll.is-scrolled th.kb-table__sticky-col {
+            box-shadow: 4px 0 6px -4px rgba(0, 5, 60, .35);
+        }
+
         .kb-table .kb-empty {
             padding: 2.5rem 1.5rem;
             white-space: normal;
@@ -453,7 +478,7 @@
                     <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>Expert</th>
+                            <th class="kb-table__sticky-col">Expert</th>
                             <th>Nationality</th>
                             <th>Industry</th>
                             <th>Organization</th>
@@ -468,7 +493,7 @@
                         @forelse ($humanResource as $row)
                             <tr>
                                 <td>{{ ($humanResource->currentPage() - 1) * $humanResource->perPage() + $loop->index + 1 }}</td>
-                                <td>
+                                <td class="kb-table__sticky-col">
                                     @if (!empty($row->linkedin_profile))
                                         <a class="kb-table__name" href="{{ $row->linkedin_profile }}" target="_blank" rel="noopener">{{ $row->name }}</a>
                                     @else
@@ -620,6 +645,8 @@
             var stickyBars = [document.querySelector('header.sticky'), document.querySelector('.z-99995')];
             var tableHead = scrollBox.querySelector('thead');
             var ticking = false;
+            var BOTTOM_GUTTER = 24;
+            var MIN_HEIGHT = 280;
 
             // The header must pin below the contiguous stack of sticky bars (navbar +
             // breadcrumb). On mid-size screens the breadcrumb pins at 88px while the
@@ -640,28 +667,43 @@
                 return covered;
             }
 
-            function updateStickyTop() {
+            function updateLayout() {
                 ticking = false;
-                var overshoot = pinTop() - scrollBox.getBoundingClientRect().top;
+
+                var covered = pinTop();
+
+                // Fit the box's bottom edge (and its horizontal scrollbar) inside the
+                // viewport once the table has scrolled to rest below the sticky bars,
+                // instead of relying on a fixed height that can push the scrollbar
+                // below the fold.
+                var availableHeight = window.innerHeight - covered - BOTTOM_GUTTER;
+                scrollBox.style.maxHeight = Math.max(MIN_HEIGHT, availableHeight) + 'px';
+
+                var overshoot = covered - scrollBox.getBoundingClientRect().top;
                 // Clamp so the header never escapes past the table's bottom edge
                 // (sticky containment alone does not constrain table cells here).
                 var maxTop = scrollBox.clientHeight - tableHead.offsetHeight;
                 var top = Math.min(Math.max(0, overshoot), Math.max(0, maxTop));
                 scrollBox.style.setProperty('--kb-sticky-top', top + 'px');
+
+                // Only show the frozen column's divider shadow once there's actually
+                // scrolled content hiding underneath it.
+                scrollBox.classList.toggle('is-scrolled', scrollBox.scrollLeft > 0);
             }
 
-            function requestStickyUpdate() {
+            function requestUpdate() {
                 if (!ticking) {
                     ticking = true;
-                    requestAnimationFrame(updateStickyTop);
+                    requestAnimationFrame(updateLayout);
                 }
             }
 
             // Page scrolling happens in the layout's inner overflow-y-auto container,
-            // not on window, so a capture-phase document listener is required.
-            document.addEventListener('scroll', requestStickyUpdate, true);
-            window.addEventListener('resize', requestStickyUpdate);
-            updateStickyTop();
+            // not on window, so a capture-phase document listener is required. This
+            // also catches the table's own horizontal/vertical scroll events.
+            document.addEventListener('scroll', requestUpdate, true);
+            window.addEventListener('resize', requestUpdate);
+            updateLayout();
         })();
     </script>
 @endpush
