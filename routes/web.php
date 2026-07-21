@@ -40,6 +40,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SubDomainController;
 use App\Http\Controllers\TempFileUploadController;
+use App\Http\Controllers\UserActivityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -139,6 +140,8 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
     Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
 
     Route::middleware('superadmin')->group(function () {
+        Route::get('/user-activity', [UserActivityController::class, 'index'])->name('user-activity.index');
+
         Route::resource('users', UserController::class);
         Route::resource('hr-experts', HumanResourceController::class);
 

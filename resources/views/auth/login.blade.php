@@ -282,7 +282,8 @@
                     <h2 id="login-title">Access <span class="text-accent">Saudi CISO</span></h2>
                 </div>
 
-                <form method="POST" action="{{ route('login.store') }}" class="login-form">
+                <form method="POST" action="{{ route('login.store') }}" class="login-form"
+                    x-data="{ submitting: false }" @submit="submitting = true">
                     @csrf
 
                     <div>
@@ -320,7 +321,8 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="login-form__submit">
+                    <button type="submit" class="login-form__submit" :disabled="submitting"
+                        x-text="submitting ? 'Signing in…' : 'Enter Platform'">
                         Enter Platform
                     </button>
                 </form>

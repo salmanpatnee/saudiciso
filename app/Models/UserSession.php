@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Models;
+
+use App\Enums\SessionStatus;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+
+class UserSession extends Model
+{
+    use HasFactory;
+
+    protected $guarded = [];
+
+    protected function casts(): array
+    {
+        return [
+            'login_at' => 'datetime',
+            'logout_at' => 'datetime',
+            'last_activity_at' => 'datetime',
+            'status' => SessionStatus::class,
+        ];
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('status', SessionStatus::Active);
+    }
+
+    public function scopeForDateRange(Builder $query, Carbon $from, Carbon $to): Builder
+    {
+        return $query->whereBetween('login_at', [$from, $to]);
+    }
+
+    public function scopeStale(Builder $query, Carbon $cutoff): Builder
+    {
+        return $query->active()->where('last_activity_at', '<', $cutoff);
+    }
+
+    public function isCurrentlyOnline(): bool
+    {
+        return $this->status === SessionStatus::Active
+            && $this->last_activity_at !== null
+            && $this->last_activity_at->gte(self::onlineCutoff());
+    }
+
+    public function liveDurationSeconds(): int
+    {
+        if ($this->status === SessionStatus::Active) {
+            return now()->diffInSeconds($this->login_at);
+        }
+
+        return $this->duration_seconds ?? 0;
+    }
+
+    public function durationForHumans(): string
+    {
+        return self::formatDuration($this->liveDurationSeconds());
+    }
+
+    public static function formatDuration(?int $seconds): string
+    {
+        $seconds ??= 0;
+
+        if ($seconds < 60) {
+            return '<1m';
+        }
+
+        $days = intdiv($seconds, 86400);
+        $hours = intdiv($seconds % 86400, 3600);
+        $minutes = intdiv($seconds % 3600, 60);
+
+        if ($days > 0) {
+            return "{$days}d {$hours}h";
+        }
+
+        if ($hours > 0) {
+            return "{$hours}h {$minutes}m";
+        }
+
+        return "{$minutes}m";
+    }
+
+    public static function onlineCutoff(): Carbon
+    {
+        return now()->subMinutes((int) config('session.lifetime') + 5);
+    }
+}
