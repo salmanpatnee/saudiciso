@@ -37,7 +37,10 @@ class RecordUserLogin
                 ->first();
 
             if ($duplicate) {
-                session(['user_activity_token' => $duplicate->session_token]);
+                session([
+                    'user_activity_token' => $duplicate->session_token,
+                    'user_activity_session_id' => $duplicate->id,
+                ]);
 
                 return;
             }
@@ -49,7 +52,7 @@ class RecordUserLogin
             $userAgent = (string) $request->userAgent();
             $agent = UserAgentParser::parse($userAgent);
 
-            UserSession::create([
+            $session = UserSession::create([
                 'user_id' => $user->id,
                 'session_token' => $token,
                 'login_at' => now(),
@@ -62,6 +65,8 @@ class RecordUserLogin
                 'device_type' => $agent['device_type'],
                 'user_agent' => $userAgent,
             ]);
+
+            session(['user_activity_session_id' => $session->id]);
         } catch (Throwable $e) {
             Log::error('Failed to record user login activity.', [
                 'user_id' => $user->id,

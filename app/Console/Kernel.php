@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('sessions:close-stale')->everyFiveMinutes()->withoutOverlapping();
+        $schedule->command('sessions:prune-activities')->daily()->withoutOverlapping();
     }
 
     /**

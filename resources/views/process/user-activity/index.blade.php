@@ -60,10 +60,11 @@
             </form>
         </div>
 
-        <x-table.table>
-            <x-table.thead>
+        <div class="rounded-[18px] border border-[rgba(5,7,57,.08)] max-h-[70vh] overflow-auto custom-scrollbar">
+            <table class="w-full border-collapse">
+            <x-table.thead class="sticky top-0 z-30">
                 <x-table.th label="S.No" />
-                <x-table.th label="User" />
+                <x-table.th label="User" class="sticky left-0 z-40 bg-brand-950 border-r border-white/10" />
                 <x-table.th label="Status" />
                 <x-table.th label="Login Time" />
                 <x-table.th label="Logout Time" />
@@ -72,12 +73,13 @@
                 <x-table.th label="Last Activity" />
                 <x-table.th label="IP Address" />
                 <x-table.th label="Browser / Device" />
+                <x-table.th label="Details" />
             </x-table.thead>
             <x-table.tbody>
                 @forelse ($sessions as $session)
                     <tr>
                         <x-table.td><x-table.serial :loop="$loop" :paginator="$sessions" /></x-table.td>
-                        <x-table.td>{{ $session->user->first_name . ' ' . $session->user->last_name }}</x-table.td>
+                        <x-table.td class="sticky left-0 z-10 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">{{ $session->user->first_name . ' ' . $session->user->last_name }}</x-table.td>
                         <x-table.td><x-online-indicator :online="$session->isCurrentlyOnline()" /></x-table.td>
                         <x-table.td>
                             <time data-local-datetime="{{ $session->login_at->toIso8601String() }}">{{ $session->login_at->format('d M Y, h:i A') }}</time>
@@ -94,14 +96,16 @@
                         <x-table.td>{{ $session->last_activity_at?->diffForHumans() ?? '—' }}</x-table.td>
                         <x-table.td>{{ $session->ip_address ?? '—' }}</x-table.td>
                         <x-table.td>{{ ($session->browser ?? 'Unknown') . ' / ' . ($session->platform ?? 'Unknown') }}</x-table.td>
+                        <x-table.td><x-action.view route_name="user-activity.show" param="{{ $session->id }}" /></x-table.td>
                     </tr>
                 @empty
                     <tr>
-                        <x-table.td class="text-center" colspan="10">No activity found for the selected filters.</x-table.td>
+                        <x-table.td class="text-center" colspan="11">No activity found for the selected filters.</x-table.td>
                     </tr>
                 @endforelse
             </x-table.tbody>
-        </x-table.table>
+            </table>
+        </div>
 
         <x-pagination>
             {{ $sessions->links() }}

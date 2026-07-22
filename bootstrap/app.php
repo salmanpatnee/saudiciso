@@ -24,6 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->web(append: [
             \App\Http\Middleware\TrackUserActivity::class,
+            \App\Http\Middleware\TrackPageVisit::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

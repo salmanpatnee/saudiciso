@@ -77,6 +77,60 @@ class UserActivityController extends Controller
         ]);
     }
 
+    public function show(UserSession $session): View
+    {
+        $session->load('user:id,first_name,last_name,username');
+
+        $activities = $session->activities()
+            ->orderBy('occurred_at')
+            ->paginate(25)
+            ->withQueryString();
+
+        return view('process.user-activity.show', [
+            'session' => $session,
+            'activities' => $activities,
+            'summary' => $this->buildActivitySummary($session),
+        ]);
+    }
+
+    /**
+     * @return array{top_page_label: string, top_page_visits: int, longest_stay_label: string, longest_stay_duration: string, top_module: string}|null
+     */
+    private function buildActivitySummary(UserSession $session): ?array
+    {
+        $rows = $session->activities()->orderBy('occurred_at')->get(['label', 'module', 'occurred_at']);
+
+        if ($rows->count() < 2) {
+            return null;
+        }
+
+        $boundary = $session->logout_at ?? now();
+
+        $withDurations = $rows->map(function ($row, $i) use ($rows, $boundary) {
+            $until = $rows->get($i + 1)?->occurred_at ?? $boundary;
+
+            return [
+                'label' => $row->label,
+                'module' => $row->module,
+                'seconds' => $row->occurred_at->diffInSeconds($until),
+            ];
+        });
+
+        $topPage = $rows->countBy('label')->sortDesc();
+        $longestStay = $withDurations->sortByDesc('seconds')->first();
+        $topModule = $withDurations->groupBy('module')
+            ->map(fn ($group) => $group->sum('seconds'))
+            ->sortDesc();
+
+        return [
+            'top_page_label' => $topPage->keys()->first(),
+            'top_page_visits' => $topPage->first(),
+            'longest_stay_label' => $longestStay['label'],
+            'longest_stay_duration' => UserSession::formatDuration($longestStay['seconds']),
+            'top_module' => $topModule->keys()->first(),
+        ];
+    }
+
     /**
      * @return array{0: string, 1: string}
      */
