@@ -115,4 +115,16 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Lead Notification Recipient
+    |--------------------------------------------------------------------------
+    |
+    | The address that receives an email whenever a new lead is submitted
+    | through the contact form.
+    |
+    */
+
+    'lead_notification_to' => env('LEAD_NOTIFICATION_EMAIL', 'anas@saudiciso.net'),
+
 ];

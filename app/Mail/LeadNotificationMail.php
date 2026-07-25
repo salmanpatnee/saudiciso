@@ -4,7 +4,6 @@ namespace App\Mail;
 
 use App\Models\Lead;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -29,8 +28,8 @@ class LeadNotificationMail extends Mailable
         // Log that the email is being prepared
         Log::info('Lead notification email being prepared', [
             'lead_id' => $lead->id,
-            'recipient' => 'anas@saudiciso.net',
-            'timestamp' => now()
+            'recipient' => config('mail.lead_notification_to'),
+            'timestamp' => now(),
         ]);
     }
 
@@ -42,7 +41,7 @@ class LeadNotificationMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: '[New Lead] Inquiry from ' . $this->lead->fullname,
+            subject: '[New Lead] Inquiry from '.$this->lead->fullname,
         );
     }
 
@@ -75,7 +74,7 @@ class LeadNotificationMail extends Mailable
      */
     public function build()
     {
-        return $this->to('anas@saudiciso.net')
-                    ->with('lead', $this->lead);
+        return $this->to(config('mail.lead_notification_to'))
+            ->with('lead', $this->lead);
     }
 }
