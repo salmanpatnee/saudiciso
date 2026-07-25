@@ -40,6 +40,7 @@ class CMSController extends Controller
             'title_ar' => 'nullable',
             'description' => 'nullable',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'order' => 'nullable|integer',
         ]);
 
         Process::create([
@@ -49,6 +50,7 @@ class CMSController extends Controller
             'title_ar' => $attributes['title_ar'] ?? null,
             'description' => $attributes['description'] ?? null,
             'featured_image_path' => $request->file('featured_image')?->store('cms/images', 'public'),
+            'order' => $attributes['order'] ?? null,
         ]);
 
         return redirect(route('cms.index'))
@@ -68,6 +70,7 @@ class CMSController extends Controller
             'title_ar' => 'nullable',
             'description' => 'nullable',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'order' => 'nullable|integer',
         ]);
 
         $data = [
@@ -75,6 +78,7 @@ class CMSController extends Controller
             'title' => $attributes['title'],
             'title_ar' => $attributes['title_ar'] ?? null,
             'description' => $attributes['description'] ?? null,
+            'order' => $attributes['order'] ?? null,
         ];
 
         if ($attributes['title'] !== $cm->title) {

@@ -38,6 +38,13 @@
                     </div>
                 </x-form.grid-col>
 
+                <x-form.grid-col>
+                    <div>
+                        <x-form.field label="Order" name="order" type="number" placeholder="Enter Order"
+                            :value="$cm?->order" />
+                    </div>
+                </x-form.grid-col>
+
                 <x-form.grid-col-full>
                     <x-form.textarea-field label="Process Description" name="description"
                         placeholder="Enter Process Description" :value="$cm?->description" html="true" />
