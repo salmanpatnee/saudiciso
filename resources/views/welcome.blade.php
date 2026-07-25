@@ -62,6 +62,34 @@
                             <a href="/vciso" class="btn btn--secondary btn--large">Access Platform</a>
                         </div>
 
+                        <div class="hero__messages">
+                            <div class="hero__value-prop">
+                                <span class="hero__value-prop-rule" aria-hidden="true"></span>
+                                <p>
+                                    <span class="hero__value-prop-question">Still facing cybersecurity challenges?</span>
+                                    Maybe it's because you don't have access to the resources on <strong>SaudiCISO.Net</strong>.
+                                </p>
+                            </div>
+
+                            <div class="hero__offer">
+                                <span class="hero__offer-eyebrow">
+                                    <span class="hero__offer-dot" aria-hidden="true"></span>
+                                    Limited-time offer
+                                </span>
+
+                                <div class="hero__offer-card">
+                                    <span class="hero__offer-icon-box" aria-hidden="true">🎉</span>
+                                    <div class="hero__offer-copy">
+                                        <p><strong>40% Discount</strong> on Subscription</p>
+                                        <span class="hero__offer-deadline">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                            Offer ends July 29, 2026
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="hero__proof" aria-label="Platform highlights">
                             <span>1200+ Cybersecurity Certified Staff in KSA</span>
                             <span>100+ Ready to Use Editable Cybersecurity Documents</span>
