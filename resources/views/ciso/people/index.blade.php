@@ -174,7 +174,7 @@
         }
 
         .kb-table-scroll {
-            max-height: 640px;
+            max-height: 440px;
             overflow: auto;
         }
 
@@ -645,7 +645,7 @@
             var stickyBars = [document.querySelector('header.sticky'), document.querySelector('.z-99995')];
             var tableHead = scrollBox.querySelector('thead');
             var ticking = false;
-            var BOTTOM_GUTTER = 24;
+            var BOTTOM_GUTTER = 124;
             var MIN_HEIGHT = 280;
 
             // The header must pin below the contiguous stack of sticky bars (navbar +
