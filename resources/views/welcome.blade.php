@@ -50,7 +50,7 @@
                 <div class="container hero__grid">
                     <div class="hero__content">
                         <p class="eyebrow">
-                            <span class="eyebrow__dot" aria-hidden="true"></span>
+                            {{-- <span class="eyebrow__dot" aria-hidden="true"></span> --}}
                             Saudi-focused cyber leadership platform
                         </p>
                         <h1>What is Your Biggest <span class="text-accent">Problem</span> Today?</h1>
