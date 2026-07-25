@@ -152,20 +152,25 @@ h3 {
   align-items: center;
   gap: 10px;
   width: fit-content;
-  color: var(--gold-bright);
+  color: #050739;
   font-size: .82rem;
   font-weight: 800;
   letter-spacing: .08em;
   line-height: 1.2;
   text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--gold-bright);
+  border: 1px solid transparent;
+  box-shadow: 0 8px 20px rgba(202, 164, 27, .35);
 }
 
 .eyebrow__dot {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: var(--gold-bright);
-  box-shadow: 0 0 0 7px rgba(240, 207, 58, .14);
+  background: #050739;
+  box-shadow: none;
 }
 
 .btn {
