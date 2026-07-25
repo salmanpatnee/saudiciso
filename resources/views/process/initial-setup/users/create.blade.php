@@ -37,10 +37,10 @@
                 <x-form.grid-col>
                     <div>
                         @if ($user?->id)
-                            <x-form.field type="password" label="Password" name="password"
+                            <x-form.field type="text" label="Password" name="password"
                                 placeholder="Enter Password" />
                         @else
-                            <x-form.field type="password" label="Password" name="password"
+                            <x-form.field type="text" label="Password" name="password"
                                 placeholder="Enter Password" required="true" />
                         @endif
                     </div>
