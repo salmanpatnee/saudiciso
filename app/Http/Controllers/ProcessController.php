@@ -8,7 +8,7 @@ class ProcessController extends Controller
 {
     public function index()
     {
-        $allProcess = Process::all();
+        $allProcess = Process::orderBy('order')->get();
 
         return view('ciso/process/index', compact('allProcess'));
     }

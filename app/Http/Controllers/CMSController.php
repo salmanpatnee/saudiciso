@@ -12,7 +12,7 @@ class CMSController extends Controller
 {
     public function index()
     {
-        $process = Process::select('id', 'process_id', 'title')->paginate(20);
+        $process = Process::select('id', 'process_id', 'title', 'order')->orderBy('order')->paginate(20);
 
         return view('process/cms/process/index', compact('process'));
     }
