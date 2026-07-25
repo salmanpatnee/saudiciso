@@ -25,7 +25,7 @@ class StoreLeadRequest extends FormRequest
     {
         return [
             'fullname' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:leads,email',
+            'email' => 'required|email|max:255',
             'phone' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'message' => 'required|string',
@@ -43,7 +43,6 @@ class StoreLeadRequest extends FormRequest
             'fullname.required' => 'Your full name is required.',
             'email.required' => 'Your email address is required.',
             'email.email' => 'Please provide a valid email address.',
-            'email.unique' => 'An inquiry with this email address already exists.',
             'phone.required' => 'Your phone number is required.',
             'company.required' => 'Your company name is required.',
             'message.required' => 'Your message is required.',
