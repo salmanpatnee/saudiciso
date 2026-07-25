@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="hero__proof" aria-label="Platform highlights">
-                            <span>1200+ Cybersecurity Certified Staff in kSA</span>
+                            <span>1200+ Cybersecurity Certified Staff in KSA</span>
                             <span>100+ Ready to Use Editable Cybersecurity Documents</span>
                             <span>Built for the Saudi Market</span>
                         </div>
