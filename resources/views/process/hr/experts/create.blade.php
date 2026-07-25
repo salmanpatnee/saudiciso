@@ -53,7 +53,7 @@
 
                 <x-form.grid-col>
                     <div>
-                        <x-form.select label="Organization" name="organization_id" required="true"
+                        <x-form.select label="Organization" name="organization_id" required="true" searchable="true"
                             :data="$organizations" id_key="organization_id" value_key="organization_name"
                             :value="$humanResource->organization_id ?? ''" />
                     </div>

@@ -11,7 +11,7 @@
 
 <script>
     $(document).ready(function() {
-        $('.multiselect').select2({
+        $('.multiselect, .select2-single').select2({
             placeholder: "Select an option",
             allowClear: true // optional, adds "x" to clear selection
         });
