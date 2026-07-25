@@ -61,26 +61,6 @@
             border-radius: 2px;
         }
 
-        .kb__pill {
-            flex: none;
-            display: inline-flex;
-            align-items: center;
-            gap: .45rem;
-            padding: .5rem .95rem;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 600;
-            color: var(--navy);
-            box-shadow: 0 1px 2px rgba(0, 5, 60, .04);
-        }
-
-        .kb__pill i {
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
         /* ---- Card ---- */
         .kb-card {
             background: var(--card);
@@ -276,9 +256,6 @@
                 <h1 class="kb__title">Browse Hot Topics</h1>
                 <span class="kb__rule"></span>
             </div>
-            <span class="kb__pill">
-                <i class='bx bx-grid-alt'></i> {{ $hotTopics->count() }} {{ $hotTopics->count() === 1 ? 'Topic' : 'Topics' }}
-            </span>
         </div>
 
         @foreach ($categories as $category)

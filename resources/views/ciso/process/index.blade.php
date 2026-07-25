@@ -61,26 +61,6 @@
             border-radius: 2px;
         }
 
-        .kb__pill {
-            flex: none;
-            display: inline-flex;
-            align-items: center;
-            gap: .45rem;
-            padding: .5rem .95rem;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 600;
-            color: var(--navy);
-            box-shadow: 0 1px 2px rgba(0, 5, 60, .04);
-        }
-
-        .kb__pill i {
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
         .kb__lead {
             color: var(--muted);
             font-size: 1rem;
@@ -195,9 +175,6 @@
                 <h1 class="kb__title">Browse Processes</h1>
                 <span class="kb__rule"></span>
             </div>
-            <span class="kb__pill">
-                <i class='bx bx-grid-alt'></i> {{ $allProcess->count() }} Processes
-            </span>
         </div>
 
         <p class="kb__lead">Explore the comprehensive framework for governance, risk, and compliance processes. Navigate through each process to understand and implement effective GRC practices.</p>

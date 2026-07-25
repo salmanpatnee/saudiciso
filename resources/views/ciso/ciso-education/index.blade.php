@@ -62,26 +62,6 @@
             border-radius: 2px;
         }
 
-        .kb__pill {
-            flex: none;
-            display: inline-flex;
-            align-items: center;
-            gap: .45rem;
-            padding: .5rem .95rem;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 600;
-            color: var(--navy);
-            box-shadow: 0 1px 2px rgba(0, 5, 60, .04);
-        }
-
-        .kb__pill i {
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
         .kb__lead {
             color: var(--muted);
             font-size: 1rem;
@@ -191,9 +171,6 @@
                 <h1 class="kb__title">Education &amp; Training</h1>
                 <span class="kb__rule"></span>
             </div>
-            <span class="kb__pill">
-                <i class='bx bx-certification'></i> {{ count($data) }} Programs
-            </span>
         </div>
 
         <p class="kb__lead">Enhance your knowledge and skills in information security leadership. Explore comprehensive educational resources, training materials, and best practices for CISO excellence.</p>

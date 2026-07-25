@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light only">
     <title>CISO 360 Survival Lifeline</title>
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=3.5">
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}?v=5.0">
     <link rel="stylesheet" href="{{ asset('css/ciso-lifeline.css') }}?v=2.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
