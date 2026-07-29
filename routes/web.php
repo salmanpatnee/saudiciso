@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\ArtifactAttachmentController;
 use App\Http\Controllers\ArtifactController;
 use App\Http\Controllers\BestPracticeController;
@@ -160,6 +161,19 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
         Route::resource('certifications', HRCertificationController::class);
         // Route::get('/options', [OptionsController::class, 'create'])->name('options.create');
         // Route::patch('/options', [OptionsController::class, 'update'])->name('options.update');
+    });
+
+    // Activity log / audit trail. The literal-segment routes must be declared
+    // before the bound {activityLog} routes, or implicit model binding tries to
+    // resolve "timeline" as an ID.
+    Route::middleware('activity.viewer')->group(function () {
+        Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
+        Route::get('/activity-logs/timeline', [ActivityLogController::class, 'timeline'])->name('activity-logs.timeline');
+        Route::delete('/activity-logs', [ActivityLogController::class, 'purge'])->name('activity-logs.purge');
+        Route::get('/activity-logs/{activityLog}', [ActivityLogController::class, 'show'])
+            ->whereNumber('activityLog')->name('activity-logs.show');
+        Route::delete('/activity-logs/{activityLog}', [ActivityLogController::class, 'destroy'])
+            ->whereNumber('activityLog')->name('activity-logs.destroy');
     });
 
     Route::view('/frameworks', 'process/framework')->name('frameworks');

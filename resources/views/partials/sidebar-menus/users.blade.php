@@ -1,5 +1,9 @@
 <x-sidebar-menu-item route_name="users.index" label="Manage Users" />
 <x-sidebar-menu-item route_name="user-activity.index" label="User Activity" />
+{{-- Guarded here because x-sidebar-menu-item performs no permission check of its own. --}}
+@if (\App\Http\Middleware\CanViewActivityLog::allows(auth()->id(), getUserRoleId()))
+    <x-sidebar-menu-item route_name="activity-logs.index" label="Activity Logs" />
+@endif
 <x-sidebar-menu-item route_name="cms.index" label="Manage Content" />
 <x-sidebar-menu-item route_name="artifacts.index" label="Artifact Management" />
 <x-sidebar-menu-item route_name="evidences.index" label="Evidence Management" />
