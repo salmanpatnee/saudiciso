@@ -96,7 +96,10 @@
                         <x-table.td>{{ $session->last_activity_at?->diffForHumans() ?? '—' }}</x-table.td>
                         <x-table.td>{{ $session->ip_address ?? '—' }}</x-table.td>
                         <x-table.td>{{ ($session->browser ?? 'Unknown') . ' / ' . ($session->platform ?? 'Unknown') }}</x-table.td>
-                        <x-table.td><x-action.view route_name="user-activity.show" param="{{ $session->id }}" /></x-table.td>
+                        <x-table.td action_col="true">
+                            <x-action.view route_name="user-activity.show" param="{{ $session->id }}" />
+                            <x-action.delete route_name="user-activity.destroy" param="{{ $session->id }}" />
+                        </x-table.td>
                     </tr>
                 @empty
                     <tr>

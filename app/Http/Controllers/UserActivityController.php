@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\SessionStatus;
 use App\Models\UserSession;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\View\View;
@@ -91,6 +92,17 @@ class UserActivityController extends Controller
             'activities' => $activities,
             'summary' => $this->buildActivitySummary($session),
         ]);
+    }
+
+    public function destroy(UserSession $session): RedirectResponse
+    {
+        try {
+            $session->delete();
+
+            return redirect()->back()->with('success', 'Session activity deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Could not delete this session activity.');
+        }
     }
 
     /**

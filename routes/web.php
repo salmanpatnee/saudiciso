@@ -142,6 +142,7 @@ Route::middleware(['auth', 'must.change.password'])->group(function () {
     Route::middleware('superadmin')->group(function () {
         Route::get('/user-activity', [UserActivityController::class, 'index'])->name('user-activity.index');
         Route::get('/user-activity/{session}', [UserActivityController::class, 'show'])->name('user-activity.show');
+        Route::delete('/user-activity/{session}', [UserActivityController::class, 'destroy'])->name('user-activity.destroy');
 
         Route::resource('users', UserController::class);
         Route::resource('hr-experts', HumanResourceController::class);
