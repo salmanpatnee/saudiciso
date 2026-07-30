@@ -83,7 +83,7 @@
                                         <p><strong>40% Discount</strong> on Subscription</p>
                                         <span class="hero__offer-deadline">
                                             <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                            Offer ends July 29, 2026
+                                            Offer ends end of the month
                                         </span>
                                     </div>
                                 </div>
